@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": "./"
+  },
+  "include": ["./src/index.tsx"]
+}
