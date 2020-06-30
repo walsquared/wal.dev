@@ -8,8 +8,7 @@
     "target": "es6",
     "jsx": "react",
     "resolveJsonModule": true,
-    "strict": true,
-    "baseUrl": "./"
+    "strict": true
   },
   "include": ["./src/index.tsx"]
 }
