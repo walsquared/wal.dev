@@ -6,6 +6,7 @@ import './index.css'
 
 import { Button } from './components'
 import NavBar from './navBar'
+import Footer from './footer'
 
 interface HelloWorldProps {
   userName: string
@@ -15,10 +16,11 @@ interface HelloWorldProps {
 const App = (props: HelloWorldProps) => (
   <Router>
     <NavBar />
-    <h1>
+    {/* <h1>
       I'm {props.userName} using {props.lang} with React!
     </h1>
-    <Button label='Test' link='hi' />
+    <Button label='Test' link='hi' /> */}
+    <Footer />
   </Router>
 )
 

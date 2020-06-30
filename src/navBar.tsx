@@ -30,8 +30,6 @@ const ButtonDiv = styled.div`
 
 type ThemeColor = 'red' | 'turquoise' | 'orange' | 'purple'
 const NavButton = styled(NavLink)<{ color: ThemeColor }>`
-  border-radius: 25px;
-
   text-decoration: none;
   font-size: 21px;
   text-align: center;
@@ -42,6 +40,9 @@ const NavButton = styled(NavLink)<{ color: ThemeColor }>`
   height: 50px;
   padding: 0px 25px;
   margin-left: 25px;
+  border-radius: 25px;
+
+  transition: 0.1s ease-in;
 
   &:hover {
     color: ${(props) => `var(--${props.color})`};
