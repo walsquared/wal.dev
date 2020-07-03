@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { ThemeColor } from './types'
 
 const StyledNavBar = styled.nav`
   display: flex;
@@ -28,7 +29,6 @@ const ButtonDiv = styled.div`
   flex-direction: row;
 `
 
-type ThemeColor = 'red' | 'turquoise' | 'orange' | 'purple'
 const NavButton = styled(NavLink)<{ color: ThemeColor }>`
   text-decoration: none;
   font-size: 21px;

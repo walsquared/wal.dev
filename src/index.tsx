@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import './index.css'
 
-import { Button } from './components'
+import { Button, Divider } from './components'
 import NavBar from './navBar'
 import Footer from './footer'
 
@@ -19,6 +19,7 @@ const App = (props: HelloWorldProps) => (
     <h1>
       I'm {props.userName} using {props.lang} with React!
     </h1>
+    <Divider theme='red' />
     <Button color='turquoise' label='Button' link='hi' />
     <Footer />
   </Router>

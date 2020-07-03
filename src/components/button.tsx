@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { ThemeColor } from '../types'
 
-type ThemeColor = 'red' | 'turquoise' | 'orange' | 'purple'
 interface ButtonProps {
   color: ThemeColor
   external?: boolean
