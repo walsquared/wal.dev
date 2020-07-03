@@ -7,9 +7,11 @@ body {
   --purple: #745296;
   --purple-dark: #b367ff;
   --content-width: 1200px;
+  --bkg: var(--white);
+  --text: var(--black);
 
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--bkg);
+  color: var(--text);
   font-family: 'Open Sans', sans-serif;
 }
 

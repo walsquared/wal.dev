@@ -16,10 +16,10 @@ interface HelloWorldProps {
 const App = (props: HelloWorldProps) => (
   <Router>
     <NavBar />
-    {/* <h1>
+    <h1>
       I'm {props.userName} using {props.lang} with React!
     </h1>
-    <Button label='Test' link='hi' /> */}
+    <Button color='turquoise' label='Button' link='hi' />
     <Footer />
   </Router>
 )
