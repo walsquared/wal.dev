@@ -9,8 +9,8 @@ const StyledNavBar = styled.nav`
   align-self: center;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: var(--content-width);
+  width: var(--mobile-width);
+  max-width: var(--desktop-width);
   margin: 10px 0 50px;
 `
 

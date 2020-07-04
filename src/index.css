@@ -11,7 +11,8 @@ body {
   --orange: #e19214;
   --purple: #745296;
   --purple-dark: #b367ff;
-  --content-width: 1200px;
+  --desktop-width: 1200px;
+  --mobile-width: 90%;
   --bkg: var(--white);
   --text: var(--black);
 

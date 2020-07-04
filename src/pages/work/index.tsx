@@ -18,7 +18,7 @@ const WorkPage = () => (
       description='Leading a team of developers in creating some cool software.'
       buttonProps={{ disabled: false, label: 'Read More' }}
       themeColors={['#7C39BF', '#00D0FE', '#280749']}
-      preview={cuHacking2020}
+      preview={cuHacking}
     />
   </>
 )

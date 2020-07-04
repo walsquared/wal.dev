@@ -16,12 +16,52 @@ interface CardProps {
 const StyledCard = styled.div`
   overflow: hidden;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: var(--content-width);
-  max-height: 400px;
+  flex-direction: column;
+
+  width: var(--mobile-width);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+
+  @media only screen and (min-width: 700px) {
+    max-width: 750px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+
+    width: 100%;
+
+    max-width: var(--desktop-width);
+    min-height: 400px;
+  }
+`
+
+const Preview = styled.div<{ image: string }>`
+  display: none;
+
+  @media only screen and (min-width: 700px) {
+    display: unset;
+
+    width: 100%;
+    height: 100vh;
+
+    max-width: 750px;
+    max-height: 300px;
+
+    background-image: url(${(props) => props.image});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    overflow: hidden;
+
+    width: 62.5%;
+    height: unset;
+
+    max-height: unset;
+  }
 `
 
 const Content = styled.div`
@@ -35,14 +75,14 @@ const Content = styled.div`
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 2.625rem;
+    font-size: 2rem;
   }
 
   h2 {
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: 1.375rem;
+    font-size: 1.1rem;
     color: var(--grey);
   }
 
@@ -50,24 +90,24 @@ const Content = styled.div`
     margin-bottom: 30px;
   }
 
+  @media only screen and (min-width: 700px) {
+    h1 {
+      font-size: 2.625rem;
+    }
+
+    h2 {
+      font-size: 1.375rem;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
   @media only screen and (min-width: 1200px) {
+    width: 37.5%;
   }
 `
-
-const Preview = styled.div<{ image: string }>`
-  overflow: hidden;
-
-  max-width: 750px;
-  max-height: 400px;
-
-  width: 62.5%;
-
-  background-image: url(${(props) => props.image});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-`
-
 const ThemeDisplay = styled.div`
   display: flex;
   flex-direction: row;
