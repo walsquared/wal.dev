@@ -16,7 +16,7 @@ const StyledNavBar = styled.nav`
 
 const Logo = styled(Link)`
   font-family: 'Inter', sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 900;
 `
 
@@ -31,13 +31,13 @@ const ButtonDiv = styled.div`
 
 const NavButton = styled(NavLink)<{ color: ThemeColor }>`
   text-decoration: none;
-  font-size: 21px;
+  font-size: 1.3rem;
   text-align: center;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 45px;
   padding: 0px 25px;
   margin-left: 25px;
   border-radius: 25px;

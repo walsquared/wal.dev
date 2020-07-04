@@ -29,24 +29,28 @@ const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 50px 40px;
+  background-color: #ffffff;
 
   h1 {
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 42px;
+    font-size: 2.625rem;
   }
 
   h2 {
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--grey);
   }
 
   p {
     margin-bottom: 30px;
+  }
+
+  @media only screen and (min-width: 1200px) {
   }
 `
 

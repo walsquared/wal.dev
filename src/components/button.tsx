@@ -23,7 +23,7 @@ const DisabledButton = styled.div`
 
   font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
   text-decoration: none;
 
@@ -48,23 +48,30 @@ const StyledButton = styled(Link)<{ color: string }>`
 
   font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
   text-decoration: none;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 45px;
   padding: 2px 25px 0;
 
   user-select: none;
 
   transition: 0.1s ease-in;
 
-  &:hover {
+  &:active {
     background-color: var(--bkg);
     color: ${(props) => props.color} !important;
+  }
+
+  @media only screen and (min-width: 700px) {
+    &:hover {
+      background-color: var(--bkg);
+      color: ${(props) => props.color} !important;
+    }
   }
 `
 
@@ -79,23 +86,30 @@ const StyledAnchor = styled.a<{ color: string }>`
 
   font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
   text-decoration: none;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 45px;
   padding: 2px 25px 0;
 
   user-select: none;
 
   transition: 0.1s ease-in;
 
-  &:hover {
+  &:active {
     background-color: var(--bkg);
     color: ${(props) => props.color} !important;
+  }
+
+  @media only screen and (min-width: 700px) {
+    &:hover {
+      background-color: var(--bkg);
+      color: ${(props) => props.color} !important;
+    }
   }
 `
 

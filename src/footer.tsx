@@ -17,7 +17,6 @@ const StyledFooter = styled.nav`
 
 const CopyrightText = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
 `
 
 const SocialDiv = styled.div`

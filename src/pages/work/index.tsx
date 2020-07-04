@@ -6,7 +6,7 @@ import { Button } from 'components'
 import Card from './card'
 
 import cuHacking from './cuHacking-preview.svg'
-import CuHacking2020 from './cuHacking-2020-preview.svg'
+import cuHacking2020 from './cuHacking-2020-preview.svg'
 import Ribbon from './ribbon-preview.svg'
 import SavingCindi from './saving-cindi-preview.svg'
 
@@ -16,9 +16,9 @@ const WorkPage = () => (
       title='cuHacking'
       subtitle='Director of Development'
       description='Leading a team of developers in creating some cool software.'
-      buttonProps={{ disabled: true, label: 'Read More' }}
+      buttonProps={{ disabled: false, label: 'Read More' }}
       themeColors={['#7C39BF', '#00D0FE', '#280749']}
-      preview={cuHacking}
+      preview={cuHacking2020}
     />
   </>
 )
