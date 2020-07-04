@@ -3,20 +3,22 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
-import { ThemeColor } from '../types'
 
-interface ButtonProps {
-  color: ThemeColor
+const disabledColor = '#8A8887'
+
+export interface ButtonProps {
+  color: string
   external?: boolean
-  label: string
-  link: string
+  disabled?: boolean
+  label?: string
+  link?: string
 }
 
-const StyledButton = styled(Link)<{ theme: ThemeColor }>`
-  background-color: ${(props) => `var(--${props.theme})`};
-  color: var(--white) !important;
+const DisabledButton = styled.div`
+  background-color: var(--bkg);
+  color: ${disabledColor} !important;
 
-  border-color: ${(props) => `var(--${props.theme})`};
+  border-color: ${disabledColor};
   border-width: 1px;
   border-style: solid;
   border-radius: 25px;
@@ -33,19 +35,46 @@ const StyledButton = styled(Link)<{ theme: ThemeColor }>`
   height: 50px;
   padding: 2px 25px 0;
 
+  user-select: none;
+  transition: 0.1s ease-in;
+`
+
+const StyledButton = styled(Link)<{ color: string }>`
+  background-color: ${(props) => props.color};
+  color: var(--white) !important;
+
+  border-color: ${(props) => props.color};
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 25px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 2px 25px 0;
+
+  user-select: none;
+
   transition: 0.1s ease-in;
 
   &:hover {
     background-color: var(--bkg);
-    color: ${(props) => `var(--${props.theme})`} !important;
+    color: ${(props) => props.color} !important;
   }
 `
 
-const StyledAnchor = styled.a<{ theme: ThemeColor }>`
-  background-color: ${(props) => `var(--${props.theme})`};
+const StyledAnchor = styled.a<{ color: string }>`
+  background-color: ${(props) => props.color};
   color: var(--white) !important;
 
-  border-color: ${(props) => `var(--${props.theme})`};
+  border-color: ${(props) => props.color};
   border-width: 1px;
   border-style: solid;
   border-radius: 25px;
@@ -62,11 +91,13 @@ const StyledAnchor = styled.a<{ theme: ThemeColor }>`
   height: 50px;
   padding: 2px 25px 0;
 
+  user-select: none;
+
   transition: 0.1s ease-in;
 
   &:hover {
     background-color: var(--bkg);
-    color: ${(props) => `var(--${props.theme})`} !important;
+    color: ${(props) => props.color} !important;
   }
 `
 
@@ -76,18 +107,25 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: -5px;
 `
 
-const Button = ({ color = 'turquoise', label, link = '/', external = false }: ButtonProps) => {
-  if (external) {
+const Button = ({ color, label, link = '/', external = false, disabled }: ButtonProps) => {
+  if (disabled) {
+    return <DisabledButton>{label?.toUpperCase()}</DisabledButton>
+  } else if (external) {
     return (
-      <StyledAnchor target='_blank' rel='noopener noreferrer external' href={link} theme={color}>
-        {label.toUpperCase()}
+      <StyledAnchor
+        target='_blank'
+        rel='noopener noreferrer external'
+        href={link}
+        color={disabled ? disabledColor : color}
+      >
+        {label?.toUpperCase()}
         <StyledIcon icon={faExternalLinkAlt} size='1x' />
       </StyledAnchor>
     )
   }
   return (
-    <StyledButton to={link} theme={color}>
-      {label.toUpperCase()}
+    <StyledButton to={link} color={color}>
+      {label?.toUpperCase()}
     </StyledButton>
   )
 }
