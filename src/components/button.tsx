@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
-const disabledColor = '#8A8887'
-
 export interface ButtonProps {
   color: string
   external?: boolean
@@ -16,9 +14,9 @@ export interface ButtonProps {
 
 const DisabledButton = styled.div`
   background-color: var(--bkg);
-  color: ${disabledColor} !important;
+  color: var(--grey) !important;
 
-  border-color: ${disabledColor};
+  border-color: var(--grey);
   border-width: 1px;
   border-style: solid;
   border-radius: 25px;
@@ -32,7 +30,7 @@ const DisabledButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 45px;
   padding: 2px 25px 0;
 
   user-select: none;
@@ -112,12 +110,7 @@ const Button = ({ color, label, link = '/', external = false, disabled }: Button
     return <DisabledButton>{label?.toUpperCase()}</DisabledButton>
   } else if (external) {
     return (
-      <StyledAnchor
-        target='_blank'
-        rel='noopener noreferrer external'
-        href={link}
-        color={disabled ? disabledColor : color}
-      >
+      <StyledAnchor target='_blank' rel='noopener noreferrer external' href={link} color={color}>
         {label?.toUpperCase()}
         <StyledIcon icon={faExternalLinkAlt} size='1x' />
       </StyledAnchor>
