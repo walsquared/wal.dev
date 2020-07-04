@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
+
+# Zero-install configuration
 .yarn/*
 !.yarn/cache
 !.yarn/releases

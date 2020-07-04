@@ -10,5 +10,5 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "include": ["./src/index.tsx"]
+  "include": ["./src/index.tsx", "./custom.d.ts"]
 }
