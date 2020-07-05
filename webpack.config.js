@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'source-map',
   devServer: {
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   },
   target: 'web',
   output: {

@@ -29,7 +29,7 @@ const StyledCard = styled.div`
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
 
-    width: 100%;
+    width: var(--mobile-width);
 
     max-width: var(--desktop-width);
     min-height: 400px;
@@ -129,8 +129,8 @@ const Card = ({ title, subtitle, description, buttonProps, themeColors, preview 
     <Preview image={preview} />
     <Content>
       <ThemeDisplay>
-        {themeColors.map((color) => (
-          <ThemeDot color={color} />
+        {themeColors.map((color, i) => (
+          <ThemeDot key={i} color={color} />
         ))}
       </ThemeDisplay>
       <h1>{title}</h1>
