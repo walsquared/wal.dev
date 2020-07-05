@@ -6,13 +6,18 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const StyledFooter = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   align-self: center;
   justify-content: space-between;
   align-items: center;
   width: var(--mobile-width);
   max-width: var(--desktop-width);
-  margin: 10px 0 50px;
+  margin: 50px 0;
+
+  @media only screen and (min-width: 700px) {
+    flex-direction: row;
+    margin: 10px 0 50px;
+  }
 `
 
 const CopyrightText = styled.p`
