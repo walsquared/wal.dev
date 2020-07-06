@@ -12,7 +12,15 @@ const StyledDiv = styled.div<{ theme: ThemeColor }>`
   width: 250px;
   height: 8px;
   border-radius: 4px;
-  margin: 50px 0;
+  margin: 20px 0;
+
+  @media only screen and (min-width: 700px) {
+    margin: 40px 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    margin: 50px 0;
+  }
 `
 
 const Divider = ({ theme }: DividerProps) => <StyledDiv theme={theme} />

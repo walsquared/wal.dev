@@ -29,7 +29,7 @@ const SocialDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 245px;
+  width: 16em;
 `
 const StyledIcon = styled.a`
   transition: 0.1s ease-in;
@@ -39,8 +39,8 @@ const StyledIcon = styled.a`
   }
 `
 
-export const Socials = () => (
-  <SocialDiv>
+export const Socials = ({ className }: { className?: string }) => (
+  <SocialDiv className={className}>
     <StyledIcon target='_blank' rel='noopener noreferrer external' href='https://github.com/Walsker'>
       <FontAwesomeIcon icon={faGithub} size='2x' />
     </StyledIcon>

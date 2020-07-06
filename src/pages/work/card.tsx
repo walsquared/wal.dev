@@ -18,7 +18,10 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: var(--mobile-width);
+  width: 100%;
+
+  margin-bottom: 50px;
+
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
 
@@ -28,8 +31,6 @@ const StyledCard = styled.div`
 
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
-
-    width: var(--mobile-width);
 
     max-width: var(--desktop-width);
     min-height: 400px;

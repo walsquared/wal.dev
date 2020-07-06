@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import './index.css'
 
 import { Button } from 'components'
@@ -17,7 +17,8 @@ interface HelloWorldProps {
 const App = (props: HelloWorldProps) => (
   <Router>
     <NavBar />
-    <WorkPage />
+    <Route exact path='/' component={WorkPage} />
+    <Route path='/work' render={() => <Redirect to='/' />} />
     <Footer />
   </Router>
 )
