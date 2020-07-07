@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import './index.css'
 
 import { Button } from 'components'
-import { WorkPage } from 'pages'
+import { WorkPage, AboutPage } from 'pages'
 
 import NavBar from './navBar'
 import Footer from './footer'
@@ -19,6 +19,7 @@ const App = (props: HelloWorldProps) => (
     <NavBar />
     <Route exact path='/' component={WorkPage} />
     <Route path='/work' render={() => <Redirect to='/' />} />
+    <Route exact path='/about' component={AboutPage} />
     <Footer />
   </Router>
 )

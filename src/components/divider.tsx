@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { ThemeColor } from '../types'
 
 interface DividerProps {
+  className?: string
   theme: ThemeColor
 }
 
@@ -23,6 +24,6 @@ const StyledDiv = styled.div<{ theme: ThemeColor }>`
   }
 `
 
-const Divider = ({ theme }: DividerProps) => <StyledDiv theme={theme} />
+const Divider = (props: DividerProps) => <StyledDiv className={props.className} theme={props.theme} />
 
 export default Divider
