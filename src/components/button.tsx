@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 export interface ButtonProps {
+  className?: string
   color: string
   external?: boolean
   disabled?: boolean
@@ -119,19 +120,19 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: -5px;
 `
 
-const Button = ({ color, label, link = '/', external = false, disabled }: ButtonProps) => {
+const Button = ({ className, color, label, link = '/', external = false, disabled }: ButtonProps) => {
   if (disabled) {
     return <DisabledButton>{label?.toUpperCase()}</DisabledButton>
   } else if (external) {
     return (
-      <StyledAnchor target='_blank' rel='noopener noreferrer external' href={link} color={color}>
+      <StyledAnchor className={className} target='_blank' rel='noopener noreferrer external' href={link} color={color}>
         {label?.toUpperCase()}
         <StyledIcon icon={faExternalLinkAlt} size='1x' />
       </StyledAnchor>
     )
   }
   return (
-    <StyledButton to={link} color={color}>
+    <StyledButton className={className} to={link} color={color}>
       {label?.toUpperCase()}
     </StyledButton>
   )
