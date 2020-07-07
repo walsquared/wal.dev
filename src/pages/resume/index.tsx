@@ -26,6 +26,8 @@ const Content = styled.div`
   width: var(--mobile-width);
   height: calc(100vh - 285px); /* 285px comes from the combined height of the navbar and footer */
 
+  min-height: 300px;
+
   @media only screen and (min-width: 700px) {
     height: unset;
   }
