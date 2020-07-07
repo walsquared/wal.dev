@@ -141,7 +141,13 @@ const DividerContainer = styled.div`
   @media only screen and (min-width: 700px) {
     width: var(--mobile-width);
     max-width: var(--desktop-width);
+
+    display: flex;
   }
+`
+
+const StyledButton = styled(Button)`
+  margin: 20px 0 50px;
 `
 
 const Adjective = () => {
@@ -244,7 +250,9 @@ const About = () => (
         Want to get in touch? The inbox is open so <strong>contact me below</strong>.
       </p>
     </Dialogue>
-    <Button color='var(--turquoise)' label='Email me' external link='mailto:wal@walsquared.ca' />
+    <DividerContainer>
+      <StyledButton color='var(--turquoise)' label='Email me' external link='mailto:wal@walsquared.ca' />
+    </DividerContainer>
   </>
 )
 
