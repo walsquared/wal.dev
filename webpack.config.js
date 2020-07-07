@@ -12,7 +12,8 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: '[name].[hash].bundle.js',
+    chunkFilename: '[name].[chunkhash].bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
@@ -25,12 +26,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/i,
-        loader: 'url-loader'
+        test: /\.svg$/,
+        loader: '@svgr/webpack'
       },
       {
-        test: /\.svg$/,
-        use: ['@svgr/webpack', 'url-loader']
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       },
       {
         test: /\.ts(x?)$/,

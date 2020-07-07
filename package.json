@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "rm -r build && webpack --mode production"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -27,6 +27,7 @@
     "@types/webpack": "^4",
     "@types/webpack-dev-server": "^3",
     "css-loader": "^3.6.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "pnp-webpack-plugin": "^1.6.4",
     "source-map-loader": "^1.0.0",
