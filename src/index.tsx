@@ -3,25 +3,20 @@ import * as ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import './index.css'
 
-import { Button } from 'components'
-import { WorkPage, AboutPage } from 'pages'
+import { WorkPage, AboutPage, ResumePage } from 'pages'
 
 import NavBar from './navBar'
 import Footer from './footer'
 
-interface HelloWorldProps {
-  userName: string
-  lang: string
-}
-
-const App = (props: HelloWorldProps) => (
+const App = () => (
   <Router>
     <NavBar />
     <Route exact path='/' component={WorkPage} />
     <Route path='/work' render={() => <Redirect to='/' />} />
     <Route exact path='/about' component={AboutPage} />
+    <Route exact path='/resume' component={ResumePage} />
     <Footer />
   </Router>
 )
 
-ReactDOM.render(<App userName='Wal' lang='TypeScript' />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

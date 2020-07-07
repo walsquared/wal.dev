@@ -38,4 +38,11 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px;
+}
+
+@media only screen and (min-width: 700px) {
+  #root {
+    padding-top: 0;
+  }
 }

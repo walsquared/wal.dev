@@ -12,9 +12,29 @@ const StyledNavBar = styled.nav`
   align-self: center;
   justify-content: space-between;
   align-items: center;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   width: var(--mobile-width);
-  max-width: var(--desktop-width);
-  margin: 10px 0 50px;
+  padding: 10px calc(calc(100% - var(--mobile-width)) / 2);
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  @media only screen and (min-width: 700px) {
+    background-color: unset;
+    box-shadow: unset;
+    width: var(--mobile-width);
+    padding: 0;
+    margin: 10px 0 50px;
+    position: relative;
+    top: unset;
+    left: unset;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: var(--desktop-width);
+  }
 `
 
 const Logo = styled(Link)`
@@ -102,6 +122,16 @@ const StyledMobileMenu = styled.div<{ isOpen: boolean; color: ThemeColor }>`
   }
 `
 
+const MobileNavBar = styled(StyledNavBar)`
+  position: relative;
+
+  margin: 0;
+  padding: 10px 0 50px;
+
+  background-color: unset;
+  box-shadow: unset;
+`
+
 const MenuButtonDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,14 +156,14 @@ interface MenuProps {
 const MobileMenu = (props: MenuProps) => {
   return (
     <StyledMobileMenu isOpen={props.isOpen} color={props.color}>
-      <StyledNavBar>
+      <MobileNavBar>
         <Logo to='/' onClick={props.close}>
           wal<LogoSpan>squared</LogoSpan>
         </Logo>
         <MenuButton type='button' onClick={props.close}>
           <CloseIcon />
         </MenuButton>
-      </StyledNavBar>
+      </MobileNavBar>
       <MenuButtonDiv>
         <MenuNavButton onClick={props.close} to='/'>
           work

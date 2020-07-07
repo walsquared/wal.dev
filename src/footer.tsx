@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-const StyledFooter = styled.nav`
+const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column-reverse;
   align-self: center;

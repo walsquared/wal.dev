@@ -64,6 +64,7 @@ const Introduction = styled.div`
 const NameText = styled.div`
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
+  font-weight: 300;
 
   margin: 16px 0;
 
