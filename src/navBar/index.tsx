@@ -27,7 +27,7 @@ const StyledNavBar = styled.nav`
     box-shadow: unset;
     width: var(--mobile-width);
     padding: 0;
-    margin: 10px 0 50px;
+    margin: 25px 0 60px;
     position: relative;
     top: unset;
     left: unset;
@@ -59,27 +59,23 @@ const ButtonDiv = styled.div`
 
 const NavButton = styled(NavLink)<{ color: ThemeColor }>`
   @media only screen and (min-width: 700px) {
-    text-decoration: none;
+    font-family: 'Inter', sans-serif;
     font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: none;
     text-align: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 45px;
-    padding: 0px 25px;
-    margin-left: 1vw;
-    border-radius: 25px;
+    margin-left: 35px;
 
-    transition: 0.1s ease-in;
+    transition: 0.2s ease-in;
 
     &:hover {
       color: ${(props) => `var(--${props.color})`};
     }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    margin-left: 25px;
   }
 `
 
@@ -223,9 +219,7 @@ const NavBar = () => {
           exact
           to='/'
           activeStyle={{
-            color: 'var(--white)',
-            fontWeight: 'bold',
-            backgroundColor: 'var(--red)'
+            color: 'var(--red)'
           }}
         >
           work
@@ -235,9 +229,7 @@ const NavBar = () => {
           exact
           to='/about'
           activeStyle={{
-            color: 'var(--white)',
-            fontWeight: 'bold',
-            backgroundColor: 'var(--turquoise)'
+            color: 'var(--turquoise)'
           }}
         >
           about
@@ -247,9 +239,7 @@ const NavBar = () => {
           exact
           to='/resume'
           activeStyle={{
-            color: 'var(--white)',
-            fontWeight: 'bold',
-            backgroundColor: 'var(--orange)'
+            color: 'var(--orange)'
           }}
         >
           resume
@@ -259,9 +249,7 @@ const NavBar = () => {
           exact
           to='/blog'
           activeStyle={{
-            color: 'var(--white)',
-            fontWeight: 'bold',
-            backgroundColor: 'var(--purple)'
+            color: 'var(--purple)'
           }}
         >
           blog

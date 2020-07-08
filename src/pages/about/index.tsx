@@ -121,7 +121,7 @@ const AcImage = styled(ProfileImage)`
   }
 `
 
-const Dialogue = styled.div`
+const Dialogue = styled.section`
   width: var(--mobile-width);
 
   h2 {
