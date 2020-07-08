@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button, Divider } from 'components'
+import { Button, Divider, LazyImage } from 'components'
 import resumeUrl from './resume-preview.jpg'
+import resumeThumb from './resume-preview-thumbnail.jpg'
 
 const StyledDivider = styled(Divider)`
   display: none;
@@ -51,13 +52,14 @@ const StyledButton = styled(Button)`
   margin: 70px 0;
 `
 
-const ResumePreview = styled.img`
+const ResumePreview = styled(LazyImage)`
   display: none;
 
   @media only screen and (min-width: 700px) {
     display: unset;
 
     width: var(--mobile-width);
+    height: calc(var(--mobile-width) * 1.3);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 5vw;
     margin: 20px 0;
@@ -81,6 +83,7 @@ const ResumePreview = styled.img`
 
   @media only screen and (min-width: 1200px) {
     width: var(--desktop-width);
+    height: calc(var(--desktop-width) * 1.3);
     border-radius: 50px;
   }
 `
@@ -92,7 +95,7 @@ const ResumePage = () => (
       <Dialogue>Look no further! You’ve found the candidate you’re looking for.😏</Dialogue>
       <StyledButton color='var(--orange)' label='Download' link='/wal_resume.pdf' />
     </Content>
-    <ResumePreview src={resumeUrl} />
+    <ResumePreview alt='Resume Preview' src={resumeUrl} thumbnail={resumeThumb} />
   </>
 )
 

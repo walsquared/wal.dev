@@ -12,7 +12,7 @@ body {
   --purple: #745296;
   --purple-dark: #b367ff;
   --desktop-width: 1200px;
-  --mobile-width: 90%;
+  --mobile-width: 90vw;
   --bkg: var(--white);
   --text: var(--black);
 

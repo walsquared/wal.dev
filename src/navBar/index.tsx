@@ -20,6 +20,7 @@ const StyledNavBar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 
   @media only screen and (min-width: 700px) {
     background-color: unset;

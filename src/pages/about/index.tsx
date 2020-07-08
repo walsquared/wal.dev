@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Button, Divider } from 'components'
+import { Button, Divider, LazyImage } from 'components'
 import { useInterval } from 'hooks'
-import smirkProfileUrl from './smirkProfile.jpg'
+import smirkProfileUrl from './smirk-profile.jpg'
+import smirkProfileThumb from './smirk-profile-thumbnail.jpg'
 import acQuestionUrl from './ac-question.jpg'
+import acQuestionThumb from './ac-question-thumbnail.jpg'
 
 const ProfileDiv = styled.div`
   display: flex;
@@ -72,7 +74,9 @@ const AcDiv = styled(ProfileDiv)`
   }
 `
 
-const ProfileImage = styled.img`
+const ProfileImage = styled(LazyImage)`
+  flex-shrink: 0;
+
   width: 80vw;
   height: 80vw;
 
@@ -173,10 +177,10 @@ const Adjective = () => {
   return componentify(adjectives[index])
 }
 
-const About = () => (
+const AboutPage = () => (
   <>
     <ProfileDiv>
-      <ProfileImage src={smirkProfileUrl} />
+      <ProfileImage alt='Profile picture - smirk' src={smirkProfileUrl} thumbnail={smirkProfileThumb} />
       <div>
         <h1>
           I am <Adjective />.
@@ -200,7 +204,7 @@ const About = () => (
           <li>Recently completed a full year at Ribbon Communications as an intern</li>
         </ul>
       </div>
-      <AcImage src={acQuestionUrl} />
+      <AcImage alt='Animal Crossing' src={acQuestionUrl} thumbnail={acQuestionThumb} />
     </AcDiv>
     <DividerContainer>
       <Divider theme='turquoise' />
@@ -216,7 +220,6 @@ const About = () => (
         Carleton I've (mostly) focused my many passions into <strong>programming</strong>.
       </p>
     </Dialogue>
-
     <Dialogue>
       <h2>Hold on, how did programming enter the picture? 🤔</h2>
       <p>
@@ -256,4 +259,4 @@ const About = () => (
   </>
 )
 
-export default About
+export default AboutPage
