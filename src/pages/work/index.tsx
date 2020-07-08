@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Divider } from 'components'
+import { Divider, FadeAnimation } from 'components'
 import { Socials } from 'footer'
 import Card from './card'
 
@@ -15,6 +15,20 @@ const CardList = styled.div`
   flex-direction: column;
 
   width: var(--mobile-width);
+
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out 0.2s forwards;
+  will-change: opacity;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (min-width: 700px) {
     align-items: center;
@@ -30,6 +44,20 @@ const IntroContainer = styled.div`
   flex-direction: column;
 
   width: var(--mobile-width);
+
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out 0s forwards;
+  will-change: opacity;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (min-width: 1200px) {
     max-width: var(--desktop-width);
@@ -112,7 +140,7 @@ const StyledSocials = styled(Socials)`
 `
 
 const WorkPage = () => (
-  <>
+  <FadeAnimation>
     <IntroContainer>
       <Introduction>
         <NameText>
@@ -163,7 +191,7 @@ const WorkPage = () => (
         preview={savingCindi}
       />
     </CardList>
-  </>
+  </FadeAnimation>
 )
 
 export default WorkPage

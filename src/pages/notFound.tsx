@@ -18,7 +18,7 @@ const Page = styled.div`
   }
 
   @media only screen and (min-width: 700px) {
-    height: calc(100vh - 217px); /* 217px comes from the combined height of the navbar and footer */
+    height: 50vh;
   }
 
   @media only screen and (min-width: 1200px) {

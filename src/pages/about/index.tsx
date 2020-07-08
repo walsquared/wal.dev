@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Button, Divider, LazyImage } from 'components'
+import { Button, Divider, FadeAnimation, LazyImage } from 'components'
 import { useInterval } from 'hooks'
 import smirkProfileUrl from './smirk-profile.jpg'
 import smirkProfileThumb from './smirk-profile-thumbnail.jpg'
@@ -36,6 +36,20 @@ const ProfileDiv = styled.div`
     font-size: 1.5rem;
   }
 
+  /* opacity: 0;
+  animation: fadeIn 0.2s ease-out 0s forwards;
+  will-change: opacity;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  } */
+
   @media only screen and (min-width: 700px) {
     flex-direction: row;
     justify-content: space-between;
@@ -61,6 +75,8 @@ const AcDiv = styled(ProfileDiv)`
 
   text-align: left;
   font-size: 1rem;
+
+  /* animation-delay: 0.2s; */
 
   @media only screen and (min-width: 700px) {
     margin: 20px 0;
@@ -142,6 +158,20 @@ const Dialogue = styled.section`
 `
 
 const DividerContainer = styled.div`
+  /* opacity: 0;
+  animation: fadeIn 0.2s ease-out 0.1s forwards;
+  will-change: opacity;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  } */
+
   @media only screen and (min-width: 700px) {
     width: var(--mobile-width);
     max-width: var(--desktop-width);
@@ -149,6 +179,18 @@ const DividerContainer = styled.div`
     display: flex;
   }
 `
+
+// const DividerContainer2 = styled(DividerContainer)`
+//   animation-delay: 0.3s;
+// `
+
+// const DividerContainer3 = styled(DividerContainer2)`
+//   animation-delay: 0.5s;
+// `
+
+// const DividerContainer4 = styled(DividerContainer3)`
+//   animation-delay: 0.7s;
+// `
 
 const StyledButton = styled(Button)`
   margin: 20px 0 50px;
@@ -178,10 +220,10 @@ const Adjective = () => {
 }
 
 const AboutPage = () => (
-  <>
+  <FadeAnimation delay={0.2}>
     <ProfileDiv>
       <ProfileImage alt='Profile picture - smirk' src={smirkProfileUrl} thumbnail={smirkProfileThumb} />
-      <div>
+      <section>
         <h1>
           I am <Adjective />.
         </h1>
@@ -189,13 +231,13 @@ const AboutPage = () => (
           Glad you would like to learn a little more about me! 😊 Before you ask - Yes, my first name is actually the
           same as my last. Also, it's pronounced "wool". 🐑
         </p>
-      </div>
+      </section>
     </ProfileDiv>
     <DividerContainer>
       <Divider theme='turquoise' />
     </DividerContainer>
     <AcDiv>
-      <div>
+      <section>
         <h2>🎯A little more about what I’m up to at the moment...</h2>
         <ul>
           {/* <li>I’ve started a blog!</li> */}
@@ -203,7 +245,7 @@ const AboutPage = () => (
           <li>Putting too many hours into Animal Crossing</li>
           <li>Recently completed a full year at Ribbon Communications as an intern</li>
         </ul>
-      </div>
+      </section>
       <AcImage alt='Animal Crossing' src={acQuestionUrl} thumbnail={acQuestionThumb} />
     </AcDiv>
     <DividerContainer>
@@ -256,7 +298,7 @@ const AboutPage = () => (
     <DividerContainer>
       <StyledButton color='var(--turquoise)' label='Email me' external link='mailto:wal@walsquared.ca' />
     </DividerContainer>
-  </>
+  </FadeAnimation>
 )
 
 export default AboutPage

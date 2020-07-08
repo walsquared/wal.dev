@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button, Divider, LazyImage } from 'components'
+import { Button, Divider, FadeAnimation, LazyImage } from 'components'
 import resumeUrl from './resume-preview.jpg'
 import resumeThumb from './resume-preview-thumbnail.jpg'
 
@@ -28,6 +28,20 @@ const Content = styled.div`
   height: calc(100vh - 285px); /* 285px comes from the combined height of the navbar and footer */
 
   min-height: 300px;
+
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out 0s forwards;
+  will-change: opacity;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (min-width: 700px) {
     height: unset;
@@ -65,10 +79,10 @@ const ResumePreview = styled(LazyImage)`
     margin: 20px 0;
 
     opacity: 0;
-    animation: fadeIn 1s ease-out 0.5s forwards;
+    animation: fadeInResume 1s ease-out 0.5s forwards;
     will-change: opacity, transform;
 
-    @keyframes fadeIn {
+    @keyframes fadeInResume {
       from {
         opacity: 0;
         transform: translateY(10px);
