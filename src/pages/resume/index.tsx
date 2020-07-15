@@ -104,10 +104,10 @@ const ResumePreview = styled(LazyImage)`
 
 const ResumePage = () => (
   <>
-    <StyledDivider theme='orange' />
+    <StyledDivider theme='yellow' />
     <Content>
       <Dialogue>Look no further! You’ve found the candidate you’re looking for.😏</Dialogue>
-      <StyledButton color='var(--orange)' label='Download' link='/wal_resume.pdf' />
+      <StyledButton color='var(--yellow)' label='Download' link='/wal_resume.pdf' />
     </Content>
     <ResumePreview alt='Resume Preview' src={resumeUrl} thumbnail={resumeThumb} />
   </>

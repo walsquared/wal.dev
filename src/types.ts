@@ -1,1 +1,1 @@
-export type ThemeColor = 'red' | 'turquoise' | 'orange' | 'purple'
+export type ThemeColor = 'red' | 'green' | 'yellow' | 'blue'

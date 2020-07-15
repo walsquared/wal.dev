@@ -8,10 +8,9 @@ body {
   --grey: #8a8887;
   --white: #fbfbfb;
   --red: #ed6a5a;
-  --turquoise: #3ab795;
-  --orange: #e19214;
-  --purple: #745296;
-  --purple-dark: #b367ff;
+  --green: #00af6c;
+  --yellow: #ebaf16;
+  --blue: #5379ff;
   --desktop-width: 1200px;
   --mobile-width: 90vw;
   --bkg: var(--white);

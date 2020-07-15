@@ -188,11 +188,11 @@ const NavBar = () => {
   const colorMap = (route: string): ThemeColor => {
     switch (route) {
       case 'about':
-        return 'turquoise'
+        return 'green'
       case 'resume':
-        return 'orange'
+        return 'yellow'
       case 'blog':
-        return 'purple'
+        return 'blue'
       default:
         return 'red'
     }
@@ -225,31 +225,31 @@ const NavBar = () => {
           work
         </NavButton>
         <NavButton
-          color='turquoise'
+          color='green'
           exact
           to='/about'
           activeStyle={{
-            color: 'var(--turquoise)'
+            color: 'var(--green)'
           }}
         >
           about
         </NavButton>
         <NavButton
-          color='orange'
+          color='yellow'
           exact
           to='/resume'
           activeStyle={{
-            color: 'var(--orange)'
+            color: 'var(--yellow)'
           }}
         >
           resume
         </NavButton>
         <NavButton
-          color='purple'
+          color='blue'
           exact
           to='/blog'
           activeStyle={{
-            color: 'var(--purple)'
+            color: 'var(--blue)'
           }}
         >
           blog

@@ -25,7 +25,7 @@ const ProfileDiv = styled.div`
     font-size: 2rem;
 
     span {
-      color: var(--turquoise);
+      color: var(--green);
       font-weight: 900;
     }
   }
@@ -234,7 +234,7 @@ const AboutPage = () => (
       </section>
     </ProfileDiv>
     <DividerContainer>
-      <Divider theme='turquoise' />
+      <Divider theme='green' />
     </DividerContainer>
     <AcDiv>
       <section>
@@ -249,7 +249,7 @@ const AboutPage = () => (
       <AcImage alt='Animal Crossing' src={acQuestionUrl} thumbnail={acQuestionThumb} />
     </AcDiv>
     <DividerContainer>
-      <Divider theme='turquoise' />
+      <Divider theme='green' />
     </DividerContainer>
     <Dialogue>
       <h2>⌛ About my past </h2>
@@ -278,7 +278,7 @@ const AboutPage = () => (
       </p>
     </Dialogue>
     <DividerContainer>
-      <Divider theme='turquoise' />
+      <Divider theme='green' />
     </DividerContainer>
     <Dialogue>
       <p>
@@ -296,7 +296,7 @@ const AboutPage = () => (
       </p>
     </Dialogue>
     <DividerContainer>
-      <StyledButton color='var(--turquoise)' label='Email me' external link='mailto:wal@walsquared.ca' />
+      <StyledButton color='var(--green)' label='Email me' external link='mailto:wal@walsquared.ca' />
     </DividerContainer>
   </FadeAnimation>
 )
