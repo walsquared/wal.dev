@@ -202,7 +202,7 @@ const NavBar = () => {
     <StyledNavBar>
       <MobileMenu isOpen={menuOpen} close={() => toggleMenu(false)} color={menuColor} />
       <Logo to='/'>
-        wal<LogoSpan>squared</LogoSpan>
+        wal<LogoSpan>wal</LogoSpan>
       </Logo>
       <MenuButton
         type='button'

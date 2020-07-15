@@ -1,106 +1,55 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
-const DisabledButton = styled.div`
+const genericButton = css`
+  border: 2px solid var(--grey);
   background-color: var(--bkg);
-  color: var(--grey) !important;
+  color: var(--grey);
 
-  border-color: var(--grey);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 25px;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: 900;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
-  text-align: center;
-  text-decoration: none;
+  font-weight: 600;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45px;
-  padding: 2px 25px 0;
+  padding: 0.75rem 1rem;
 
   user-select: none;
+`
+
+const DisabledButton = styled.div`
+  ${genericButton}
+`
+
+const enabledButton = css`
+  ${genericButton}
+
+  color: var(--text);
+  border-color: var(--text);
+
   transition: 0.1s ease-in;
 `
 
 const StyledButton = styled(Link)<{ color: string }>`
-  background-color: ${(props) => props.color};
-  color: var(--white) !important;
-
-  border-color: ${(props) => props.color};
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 25px;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: 900;
-  font-size: 1.125rem;
-  text-align: center;
-  text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  padding: 2px 25px 0;
-
-  user-select: none;
-
-  transition: 0.1s ease-in;
-
-  &:active {
-    background-color: var(--bkg);
-    color: ${(props) => props.color} !important;
-  }
+  ${enabledButton}
 
   @media only screen and (min-width: 700px) {
     &:hover {
-      background-color: var(--bkg);
-      color: ${(props) => props.color} !important;
+      background-color: ${(props) => props.color};
     }
   }
 `
 
 const StyledAnchor = styled.a<{ color: string }>`
-  background-color: ${(props) => props.color};
-  color: var(--white) !important;
-
-  border-color: ${(props) => props.color};
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 25px;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: 900;
-  font-size: 1.125rem;
-  text-align: center;
-  text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  padding: 2px 25px 0;
-
-  user-select: none;
-
-  transition: 0.1s ease-in;
-
-  &:active {
-    background-color: var(--bkg);
-    color: ${(props) => props.color} !important;
-  }
+  ${enabledButton}
 
   @media only screen and (min-width: 700px) {
     &:hover {
-      background-color: var(--bkg);
-      color: ${(props) => props.color} !important;
+      background-color: ${(props) => props.color};
     }
   }
 `
@@ -111,7 +60,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: -5px;
 `
 
-export interface ButtonProps {
+interface ButtonProps {
   className?: string
   color: string
   external?: boolean
@@ -122,18 +71,18 @@ export interface ButtonProps {
 
 const Button = ({ className, color, label, link = '/', external = false, disabled }: ButtonProps) => {
   if (disabled) {
-    return <DisabledButton>{label?.toUpperCase()}</DisabledButton>
+    return <DisabledButton>{label}</DisabledButton>
   } else if (external) {
     return (
       <StyledAnchor className={className} target='_blank' rel='noopener noreferrer external' href={link} color={color}>
-        {label?.toUpperCase()}
+        {label}
         <StyledIcon icon={faExternalLinkAlt} size='1x' />
       </StyledAnchor>
     )
   }
   return (
     <StyledButton className={className} to={link} color={color}>
-      {label?.toUpperCase()}
+      {label}
     </StyledButton>
   )
 }

@@ -1,6 +1,6 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import * as ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect, Switch, useLocation } from 'react-router-dom'
 import './index.css'
 
 import NavBar from './navBar'
@@ -11,8 +11,19 @@ const AboutPage = lazy(() => import(/* webpackChunkName: "about-page" */ './page
 const ResumePage = lazy(() => import(/* webpackChunkName: "resume-page" */ './pages/resume'))
 const NotFound = lazy(() => import(/* webpackChunkName: "not-found-page" */ './pages/notFound'))
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 const App = () => (
   <Router>
+    <ScrollToTop />
     <NavBar />
     <Suspense fallback={() => <div>Loading...</div>}>
       <Switch>

@@ -1,76 +1,26 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
-import { Button } from 'components'
-import { ButtonProps } from 'components/button'
-
-interface CardProps {
-  title: string
-  subtitle: string
-  description: string
-  buttonProps: Omit<ButtonProps, 'color'>
-  themeColors: Array<string>
-  preview: string
-}
-
-const StyledCard = styled.div`
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-
-  margin-bottom: 50px;
-
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-
-  @media only screen and (min-width: 700px) {
-    max-width: 750px;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    flex-direction: row;
-
-    max-width: var(--desktop-width);
-    min-height: 400px;
-  }
-`
-
-const Preview = styled.div<{ image: string }>`
-  display: none;
-
-  @media only screen and (min-width: 700px) {
-    display: unset;
-
-    width: 100%;
-    height: 100vh;
-
-    max-width: 750px;
-    max-height: 300px;
-
-    background-image: url(${(props) => props.image});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    overflow: hidden;
-
-    width: 62.5%;
-    height: unset;
-
-    max-height: unset;
-  }
-`
-
-const Content = styled.div`
+const cardStyle = css`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 50px 40px;
-  background-color: #ffffff;
+
+  margin-bottom: 5vw;
+  padding: 33px 38px;
+
+  border: 2px solid var(--black);
+
+  background-position: center;
+  background-size: cover;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: overlay;
+
+  transition: 0.1s ease-in;
 
   h1 {
     margin: 0;
@@ -81,65 +31,117 @@ const Content = styled.div`
 
   h2 {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
     font-size: 1.1rem;
-    color: var(--grey);
-  }
-
-  p {
-    margin-bottom: 30px;
   }
 
   @media only screen and (min-width: 700px) {
+    margin-bottom: 20px;
+
+    background-color: #ffffff;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
     h1 {
-      font-size: 2.625rem;
+      font-size: 2.25rem;
     }
 
     h2 {
       font-size: 1.375rem;
-    }
-
-    p {
-      margin-bottom: 30px;
+      color: var(--grey);
     }
   }
 
   @media only screen and (min-width: 1200px) {
-    width: 37.5%;
+    width: 510px;
   }
 `
+
+const LinkContainer = styled(Link)<{ bkg: string }>`
+  ${cardStyle}
+
+  background-image: ${(props) => `url(${props.bkg})`};
+`
+
+const AnchorContainer = styled.a<{ bkg: string }>`
+  ${cardStyle}
+
+  background-image: ${(props) => `url(${props.bkg})`};
+`
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
 const ThemeDisplay = styled.div`
+  overflow: visible;
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 `
 
 const ThemeDot = styled.div<{ color: string }>`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 
-  border-radius: 12.5px;
-  margin-right: 25px;
+  border: 2px solid var(--black);
+  border-radius: 100%;
+  margin-right: 20px;
 
   background-color: ${(props) => props.color};
+
+  @media only screen and (min-width: 700px) {
+    width: 25px;
+    height: 25px;
+    margin-right: 25px;
+  }
 `
 
-const Card = ({ title, subtitle, description, buttonProps, themeColors, preview }: CardProps) => (
-  <StyledCard>
-    <Preview image={preview} />
-    <Content>
-      <ThemeDisplay>
-        {themeColors.map((color, i) => (
-          <ThemeDot key={i} color={color} />
-        ))}
-      </ThemeDisplay>
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <p>{description}</p>
-      <Button color={themeColors[0]} {...buttonProps} />
-    </Content>
-  </StyledCard>
-)
+interface CardProps {
+  title: string
+  subtitle: string
+  themeColors: Array<string>
+  preview: string
+  linkProps: {
+    link: string
+    external: boolean
+  }
+}
+
+const Card = ({ linkProps = { link: '/', external: false }, ...props }: CardProps) => {
+  if (linkProps.external) {
+    return (
+      <AnchorContainer target='_blank' rel='noopener noreferrer external' href={linkProps.link} bkg={props.preview}>
+        <Header>
+          <ThemeDisplay>
+            {props.themeColors.map((color, i) => (
+              <ThemeDot key={i} color={color} />
+            ))}
+          </ThemeDisplay>
+          <FontAwesomeIcon icon={faExternalLinkAlt} size='lg' />
+        </Header>
+        <h1>{props.title}</h1>
+        <h2>{props.subtitle}</h2>
+      </AnchorContainer>
+    )
+  } else {
+    return (
+      <LinkContainer to={linkProps.link} bkg={props.preview}>
+        <ThemeDisplay>
+          {props.themeColors.map((color, i) => (
+            <ThemeDot key={i} color={color} />
+          ))}
+        </ThemeDisplay>
+        <h1>{props.title}</h1>
+        <h2>{props.subtitle}</h2>
+      </LinkContainer>
+    )
+  }
+}
 
 export default Card

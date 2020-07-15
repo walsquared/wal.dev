@@ -1,18 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ThemeColor } from '../types'
+import { ThemeColor } from '../../types'
 
-interface Props {
-  theme: ThemeColor
-}
-
-const Form = styled.form<{ color: string }>`
+const Container = styled.form<{ color: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 5vw;
-  width: var(--mobile-width);
+  width: calc(var(--mobile-width) - 10vw);
 
   background-color: ${(props) => props.color};
 
@@ -86,8 +82,12 @@ const Button = styled.button<{ color: string }>`
   }
 `
 
-const ContactForm = (props: Props) => (
-  <Form color={`var(--${props.theme})`}>
+interface Props {
+  theme: ThemeColor
+}
+
+const Form = (props: Props) => (
+  <Container color={`var(--${props.theme})`}>
     <Field>
       Name
       <Input required name='name' type='text' />
@@ -103,7 +103,7 @@ const ContactForm = (props: Props) => (
     <Button type='submit' color={`var(--${props.theme})`}>
       Send Message
     </Button>
-  </Form>
+  </Container>
 )
 
-export default ContactForm
+export default Form
