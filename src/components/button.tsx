@@ -4,15 +4,6 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
-export interface ButtonProps {
-  className?: string
-  color: string
-  external?: boolean
-  disabled?: boolean
-  label?: string
-  link?: string
-}
-
 const DisabledButton = styled.div`
   background-color: var(--bkg);
   color: var(--grey) !important;
@@ -119,6 +110,15 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-top: -2px;
   margin-right: -5px;
 `
+
+export interface ButtonProps {
+  className?: string
+  color: string
+  external?: boolean
+  disabled?: boolean
+  label?: string
+  link?: string
+}
 
 const Button = ({ className, color, label, link = '/', external = false, disabled }: ButtonProps) => {
   if (disabled) {

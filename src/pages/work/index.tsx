@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Divider, FadeAnimation } from 'components'
+import { ContactForm, Divider, FadeAnimation } from 'components'
 import { Socials } from 'footer'
 import Card from './card'
 
@@ -141,6 +141,7 @@ const StyledSocials = styled(Socials)`
 
 const WorkPage = () => (
   <FadeAnimation>
+    <ContactForm theme='red' />
     <IntroContainer>
       <Introduction>
         <NameText>
