@@ -16,19 +16,9 @@ const Introduction = styled.div`
   width: var(--mobile-width);
   margin-bottom: 100px;
 
-  @media only screen and (min-width: 700px) {
-    p {
-      font-size: 1.25rem;
-    }
-  }
-
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
     max-width: var(--desktop-width);
-
-    p {
-      font-size: 1.5rem;
-    }
   }
 `
 
@@ -93,12 +83,13 @@ const IntroText = styled.p`
   }
 
   @media only screen and (min-width: 700px) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   @media only screen and (min-width: 1200px) {
     padding-left: 40px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin: 0;
   }
 `
 
@@ -108,11 +99,6 @@ const WorkContainer = styled.div`
   align-items: flex-start;
 
   width: var(--mobile-width);
-  margin-bottom: 75px;
-
-  @media only screen and (min-width: 700px) {
-    margin-bottom: 150px;
-  }
 
   @media only screen and (min-width: 1200px) {
     max-width: var(--desktop-width);

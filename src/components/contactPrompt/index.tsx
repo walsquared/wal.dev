@@ -10,12 +10,15 @@ const StyledDiv = styled.div`
   align-items: flex-start;
 
   width: var(--mobile-width);
+  margin-top: 75px;
   margin-bottom: 50px;
 
   @media only screen and (min-width: 700px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    margin-top: 150px;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -37,7 +40,7 @@ const Dialogue = styled.div`
   p {
     margin: 20px 0;
 
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.25rem;
   }
 
@@ -46,13 +49,8 @@ const Dialogue = styled.div`
 
     p {
       margin: 10px 0 30px;
-
-      font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
     }
-  }
-
-  @media only screen and (min-width: 1200px) {
   }
 `
 
