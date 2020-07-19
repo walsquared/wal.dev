@@ -1,115 +1,235 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button, Divider, FadeAnimation, LazyImage } from 'components'
-import resumeUrl from './resume-preview.jpg'
-import resumeThumb from './resume-preview-thumbnail.jpg'
+import { Button, ContactPrompt } from 'components'
+import bulletSvg from './bullet.svg'
 
-const StyledDivider = styled(Divider)`
-  display: none;
-
-  @media only screen and (min-width: 700px) {
-    display: unset;
-    width: 400px;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    width: 500px;
-  }
-`
-
-const Content = styled.div`
+const SnarkyDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   width: var(--mobile-width);
-  height: calc(100vh - 285px); /* 285px comes from the combined height of the navbar and footer */
+  margin: 0 5vw 50px;
 
-  min-height: 300px;
-
-  opacity: 0;
-  animation: fadeIn 0.2s ease-out 0s forwards;
-  will-change: opacity;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @media only screen and (min-width: 700px) {
-    height: unset;
+  @media only screen and (min-width: 900px) {
+    align-items: flex-start;
   }
 
   @media only screen and (min-width: 1200px) {
-    width: var(--desktop-width);
+    max-width: var(--desktop-width);
   }
 `
 
-const Dialogue = styled.p`
-  width: 90%;
+const SnarkyText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vw;
+
+  background-color: var(--yellow);
+
+  font-size: 1.2rem;
   text-align: center;
-  margin: 40px 0 0;
 
-  @media only screen and (min-width: 700px) {
-    font-size: 1.5rem;
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+
+    margin: 0;
   }
-`
 
-const StyledButton = styled(Button)`
-  margin: 70px 0;
-`
+  p {
+    margin: 10px 0 5vw;
+  }
 
-const ResumePreview = styled(LazyImage)`
-  display: none;
+  @media only screen and (min-width: 900px) {
+    padding: 35px 40px;
+    align-items: flex-start;
+    text-align: left;
 
-  @media only screen and (min-width: 700px) {
-    display: unset;
-
-    width: var(--mobile-width);
-    height: calc(var(--mobile-width) * 1.3);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5vw;
-    margin: 20px 0;
-
-    opacity: 0;
-    animation: fadeInResume 1s ease-out 0.5s forwards;
-    will-change: opacity, transform;
-
-    @keyframes fadeInResume {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0px);
-      }
+    p {
+      margin-bottom: 35px;
     }
   }
 
   @media only screen and (min-width: 1200px) {
-    width: var(--desktop-width);
-    height: calc(var(--desktop-width) * 1.3);
-    border-radius: 50px;
+    font-size: 1.5rem;
+
+    h1 {
+      font-size: 3rem;
+    }
   }
+`
+
+const Preview = styled.div`
+  width: var(--mobile-width);
+
+  columns: 1;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5vw; */
+
+  @media only screen and (min-width: 900px) {
+    columns: 2;
+    column-gap: 20px;
+  }
+
+  @media only screen and (min-width: 900px) {
+    max-width: var(--desktop-width);
+  }
+`
+
+const Card = styled.div`
+  border: 2px solid var(--black);
+  padding: 33px 38px;
+  margin-bottom: 5vw;
+
+  display: inline-block;
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin: 5px 0;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #888;
+    margin: 0;
+  }
+
+  ul {
+    list-style: url(${bulletSvg});
+    padding-left: 1rem;
+  }
+
+  @media only screen and (min-width: 900px) {
+    margin-bottom: 20px;
+  }
+`
+
+const CardCuHacking = styled(Card)`
+  @media only screen and (min-width: 900px) {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 3;
+  }
+`
+
+const CardCsr = styled(Card)`
+  @media only screen and (min-width: 900px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / span 2;
+  }
+`
+
+const CardRibbon = styled(Card)`
+  @media only screen and (min-width: 900px) {
+    grid-column: 2 / 3;
+    grid-row: 3 / span 3;
+  }
+`
+
+const CardAlp = styled(Card)`
+  @media only screen and (min-width: 900px) {
+    grid-column: 1 / 2;
+    grid-row: 4 / span 3;
+  }
+`
+
+const Label = styled.p`
+  background: var(--yellow);
+  margin: 0;
+  width: max-content;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.9rem;
 `
 
 const ResumePage = () => (
   <>
-    <StyledDivider theme='yellow' />
-    <Content>
-      <Dialogue>Look no further! You’ve found the candidate you’re looking for.😏</Dialogue>
-      <StyledButton color='var(--yellow)' label='Download' link='/wal_resume.pdf' />
-    </Content>
-    <ResumePreview alt='Resume Preview' src={resumeUrl} thumbnail={resumeThumb} />
+    <SnarkyDiv>
+      <SnarkyText>
+        <h1>Look no further!😎</h1>
+        <p>You may have just come to the last stop in your search for talent.</p>
+        <Button color='var(--yellow)' label='Download My Resume' link='/wal_resume.pdf' />
+      </SnarkyText>
+    </SnarkyDiv>
+    <Preview>
+      <CardCuHacking>
+        <Label>Volunteer Experience</Label>
+        <h2>Director of Development</h2>
+        <h3>cuHacking | April 2019 - Present</h3>
+        <ul>
+          <li>
+            <strong>(2021 Season)</strong> Managing a large group of developers working to develop several applications
+            for the benefit of all students at Carleton University
+          </li>
+          <li>
+            <strong>(2020 Season)</strong> Coordinated a team of six developers to create a suite of online services
+            used to augment the experience of 600+ hackers at cuHacking 2020
+          </li>
+          <li>
+            <strong>(2020 Season)</strong> Designed a system of web applications capable of handling the hackathon's
+            applications to effectively process 1200+ registered applicants
+          </li>
+        </ul>
+      </CardCuHacking>
+      <CardCsr>
+        <Label>Work Experience</Label>
+        <h2>Service Representative</h2>
+        <h3>City of Ottawa | September 2019 - Present</h3>
+        <ul>
+          <li>
+            <strong>Process</strong> registrations for programs and events at City of Ottawa facilities while providing
+            friendly and knowledgeable customer service
+          </li>
+        </ul>
+      </CardCsr>
+      <CardRibbon>
+        <Label>Work Experience</Label>
+        <h2>Software Developer (Intern)</h2>
+        <h3>Ribbon Communications (Kandy.io) | April 2019 - May 2020</h3>
+        <ul>
+          <li>
+            <strong>Focused</strong> on developing a tool (name: Werkout) which was used to reproduce isolated online
+            environments involving multiple web apps by acting as a resource manager
+          </li>
+          <li>
+            <strong>Refactored</strong> a project which used Werkout to execute end-to-end tests on the Kandy SDK in the
+            CI process eliminating the need for manual regression tests
+          </li>
+          <li>
+            <strong>Educated</strong> the rest of the team on how to write new end-to-end tests effectively to
+            capitalize on my improvements to the Werkout project
+          </li>
+        </ul>
+      </CardRibbon>
+      <CardAlp>
+        <Label>Work Experience</Label>
+        <h2>Advanced Leadership Instructor</h2>
+        <h3>City of Ottawa | February 2018 - April 2019</h3>
+        <ul>
+          <li>
+            <strong>Educated</strong> youth ages 16-21 on essential leadership skills such as teamwork, communication,
+            and management styles which allowed them to integrate smoothly into the City of Ottawa workplace
+          </li>
+          <li>
+            <strong>Established</strong> myself as a positive role model which any of the youth could reach out to for
+            inquiries regarding school school, work, or personal life
+          </li>
+        </ul>
+      </CardAlp>
+    </Preview>
+    <ContactPrompt theme='yellow'>
+      <h1>Convinced? You don’t have to wait.</h1>
+      <p>I’m currently looking for more opportunities!</p>
+    </ContactPrompt>
   </>
 )
 

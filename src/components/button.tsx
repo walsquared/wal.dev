@@ -40,6 +40,7 @@ const StyledButton = styled(Link)<{ color: string }>`
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: ${(props) => props.color};
+      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
     }
   }
 `
@@ -50,6 +51,7 @@ const StyledAnchor = styled.a<{ color: string }>`
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: ${(props) => props.color};
+      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
     }
   }
 `

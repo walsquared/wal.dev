@@ -77,26 +77,6 @@ const IntroText = styled.section`
   }
 `
 
-// const UpdateDiv = styled(ProfileDiv)`
-//   flex-direction: column-reverse;
-
-//   text-align: left;
-//   font-size: 1rem;
-
-//   h2 {
-//     font-family: 'Inter', sans-serif;
-//     font-weight: 700;
-//     font-size: 1.5rem;
-//   }
-
-//   @media only screen and (min-width: 700px) {
-//     margin: 20px 0;
-
-//     text-align: left;
-//     font-size: 1.2rem;
-//   }
-// `
-
 const UpdateDiv = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -196,45 +176,6 @@ const Dialogue = styled.section`
   @media only screen and (min-width: 1200px) {
     max-width: var(--desktop-width);
   }
-`
-
-const DividerContainer = styled.div`
-  /* opacity: 0;
-  animation: fadeIn 0.2s ease-out 0.1s forwards;
-  will-change: opacity;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  } */
-
-  @media only screen and (min-width: 700px) {
-    width: var(--mobile-width);
-    max-width: var(--desktop-width);
-
-    display: flex;
-  }
-`
-
-// const DividerContainer2 = styled(DividerContainer)`
-//   animation-delay: 0.3s;
-// `
-
-// const DividerContainer3 = styled(DividerContainer2)`
-//   animation-delay: 0.5s;
-// `
-
-// const DividerContainer4 = styled(DividerContainer3)`
-//   animation-delay: 0.7s;
-// `
-
-const StyledButton = styled(Button)`
-  margin: 20px 0 50px;
 `
 
 const Adjective = () => {
