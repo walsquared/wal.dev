@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-import { Button, Divider, FadeAnimation, LazyImage } from 'components'
+import { Button, ContactPrompt, LazyImage } from 'components'
 import { useInterval } from 'hooks'
+import MoodBoard from './moodBoard'
 import smirkProfileUrl from './smirk-profile.jpg'
 import smirkProfileThumb from './smirk-profile-thumbnail.jpg'
 import acQuestionUrl from './ac-question.jpg'
 import acQuestionThumb from './ac-question-thumbnail.jpg'
+
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+`
 
 const ProfileDiv = styled.div`
   display: flex;
@@ -14,7 +20,21 @@ const ProfileDiv = styled.div`
   align-items: center;
 
   width: var(--mobile-width);
-  margin: 50px 0 20px;
+  margin-bottom: 50px;
+
+  @media only screen and (min-width: 700px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: var(--desktop-width);
+  }
+`
+
+const IntroText = styled.section`
+  margin: 20px 0;
+  background-color: var(--green);
 
   font-size: 1.2rem;
   text-align: center;
@@ -25,10 +45,69 @@ const ProfileDiv = styled.div`
     font-size: 2rem;
 
     span {
-      color: var(--green);
+      color: var(--white);
       font-weight: 900;
     }
   }
+
+  @media only screen and (min-width: 700px) {
+    padding: 35px 40px;
+    text-align: right;
+
+    h1 {
+      margin: 0;
+      font-size: 2.25rem;
+    }
+
+    p {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 1.5rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      margin: 35px 0 0 0;
+    }
+  }
+`
+
+// const UpdateDiv = styled(ProfileDiv)`
+//   flex-direction: column-reverse;
+
+//   text-align: left;
+//   font-size: 1rem;
+
+//   h2 {
+//     font-family: 'Inter', sans-serif;
+//     font-weight: 700;
+//     font-size: 1.5rem;
+//   }
+
+//   @media only screen and (min-width: 700px) {
+//     margin: 20px 0;
+
+//     text-align: left;
+//     font-size: 1.2rem;
+//   }
+// `
+
+const UpdateDiv = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  width: var(--mobile-width);
+
+  text-align: left;
+  font-size: 1rem;
+
+  margin-bottom: 50px;
 
   h2 {
     font-family: 'Inter', sans-serif;
@@ -36,56 +115,27 @@ const ProfileDiv = styled.div`
     font-size: 1.5rem;
   }
 
-  /* opacity: 0;
-  animation: fadeIn 0.2s ease-out 0s forwards;
-  will-change: opacity;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  } */
-
   @media only screen and (min-width: 700px) {
     flex-direction: row;
     justify-content: space-between;
-    text-align: right;
+    text-align: left;
+    font-size: 1.2rem;
 
-    h1 {
-      font-size: 2.25rem;
+    border: 2px solid var(--black);
+    padding: 33px 38px;
+    width: calc(var(--mobile-width) - 80px);
+
+    h2 {
+      font-size: 1.75rem;
     }
   }
 
   @media only screen and (min-width: 1200px) {
-    max-width: var(--desktop-width);
     font-size: 1.5rem;
+    max-width: calc(var(--desktop-width) - 80px);
 
-    h1 {
-      font-size: 3rem;
-    }
-  }
-`
-
-const AcDiv = styled(ProfileDiv)`
-  flex-direction: column-reverse;
-
-  text-align: left;
-  font-size: 1rem;
-
-  /* animation-delay: 0.2s; */
-
-  @media only screen and (min-width: 700px) {
-    margin: 20px 0;
-
-    text-align: left;
-    font-size: 1.2rem;
-
-    h1 {
-      font-size: 3rem;
+    h2 {
+      font-size: 2rem;
     }
   }
 `
@@ -96,43 +146,34 @@ const ProfileImage = styled(LazyImage)`
   width: 80vw;
   height: 80vw;
 
-  border-radius: 40vw;
-
   @media only screen and (min-width: 700px) {
-    width: 300px;
-    height: 300px;
-
-    border-radius: 150px;
-
+    width: 200px;
+    height: 272px;
     margin-right: 30px;
   }
 
   @media only screen and (min-width: 1200px) {
-    width: 450px;
-    height: 450px;
-
-    border-radius: calc(450px / 2);
-
+    width: 355px;
+    height: 482.4px;
     margin-right: 50px;
   }
 `
 
-const AcImage = styled(ProfileImage)`
+const AcImage = styled(LazyImage)`
+  flex-shrink: 0;
+
+  width: 80vw;
+  height: 80vw;
+
   @media only screen and (min-width: 700px) {
     width: 200px;
     height: 200px;
-
-    border-radius: 100px;
-
     margin-left: 30px;
   }
 
   @media only screen and (min-width: 1200px) {
-    width: 350px;
-    height: 350px;
-
-    border-radius: calc(350px / 2);
-
+    width: 320px;
+    height: 320px;
     margin-right: 50px;
   }
 `
@@ -220,50 +261,47 @@ const Adjective = () => {
 }
 
 const AboutPage = () => (
-  <FadeAnimation delay={0.2}>
+  <>
     <ProfileDiv>
       <ProfileImage alt='Profile picture - smirk' src={smirkProfileUrl} thumbnail={smirkProfileThumb} />
-      <section>
+      <IntroText>
         <h1>
           I am <Adjective />.
         </h1>
         <p>
           Glad you would like to learn a little more about me! 😊 Before you ask - Yes, my first name is actually the
-          same as my last. Also, it's pronounced "wool". 🐑
+          same as my last.
         </p>
-      </section>
+      </IntroText>
     </ProfileDiv>
-    <DividerContainer>
-      <Divider theme='green' />
-    </DividerContainer>
-    <AcDiv>
+    <UpdateDiv>
       <section>
-        <h2>🎯A little more about what I’m up to at the moment...</h2>
+        <h2>🎯 What am I up to right now?</h2>
         <ul>
-          {/* <li>I’ve started a blog!</li> */}
+          <li>
+            I’ve started a <StyledLink to='/blog'>blog</StyledLink>!
+          </li>
           <li>Making some cool stuff as Director of Development at cuHacking</li>
           <li>Putting too many hours into Animal Crossing</li>
           <li>Recently completed a full year at Ribbon Communications as an intern</li>
         </ul>
       </section>
       <AcImage alt='Animal Crossing' src={acQuestionUrl} thumbnail={acQuestionThumb} />
-    </AcDiv>
-    <DividerContainer>
-      <Divider theme='green' />
-    </DividerContainer>
+    </UpdateDiv>
+    <MoodBoard />
     <Dialogue>
-      <h2>⌛ About my past </h2>
+      <h3>⌛ About my past </h3>
       <p>
         I'm a <strong>South Sudanese</strong> Canadian raised in Ottawa, and currently attending{' '}
-        <strong>Carleton University</strong> for <strong>Computer Science</strong> along with minor studies in Music (I
-        know, it's a weird pairing). In high school I was the kid who dipped their fingers into every club - I was the
-        lead in multiple school musicals, I was first clarinet in the concert band, and I handled the lights and sound
-        for assemblies and performances as part of the "tech crew". I was even on the student council once. 😅 Now at
+        <strong>Carleton University</strong> for <strong>Computer Science</strong> along with minor studies in
+        Entrepreneurship. In high school I was the kid who dipped their fingers into every club - I was the lead in
+        multiple school musicals, I was first clarinet in the concert band, and I handled the lights and sound for
+        assemblies and performances as part of the "tech crew". I was even on the student council once. 😅 Now at
         Carleton I've (mostly) focused my many passions into <strong>programming</strong>.
       </p>
     </Dialogue>
     <Dialogue>
-      <h2>Hold on, how did programming enter the picture? 🤔</h2>
+      <h3>Hold on, how did programming enter the picture? 🤔</h3>
       <p>
         I was fortunate enough that my high school offered Computer Science courses, of which I took three. They were
         all game development focused, but they still opened that door for me which I didn't know existed. It wasn't
@@ -277,9 +315,6 @@ const AboutPage = () => (
         in a more "Project Manager" or, dare I say “CTO” type position with my current role at cuHacking.
       </p>
     </Dialogue>
-    <DividerContainer>
-      <Divider theme='green' />
-    </DividerContainer>
     <Dialogue>
       <p>
         Today, I'm in a constant search for new friends and collaborators. I've also discovered that my passion has{' '}
@@ -295,10 +330,12 @@ const AboutPage = () => (
         Want to get in touch? The inbox is open so <strong>contact me below</strong>.
       </p>
     </Dialogue>
-    <DividerContainer>
-      <StyledButton color='var(--green)' label='Email me' external link='mailto:wal@walsquared.ca' />
-    </DividerContainer>
-  </FadeAnimation>
+    <ContactPrompt theme='green'>
+      <h1>Feeling inspired? Let’s talk about it.</h1>
+      <p>I’m always looking to act on new ideas, start new projects, or even just spill tea.</p>
+      <Button color='var(--green)' label='My Resume' link='/resume' />
+    </ContactPrompt>
+  </>
 )
 
 export default AboutPage

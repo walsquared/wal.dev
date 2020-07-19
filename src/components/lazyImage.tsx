@@ -15,6 +15,7 @@ const Container = styled.div`
 
 const StyledImage = styled.img<{ isLoaded: boolean }>`
   position: absolute;
+  object-fit: cover;
   top: 0;
   left: 0;
 
