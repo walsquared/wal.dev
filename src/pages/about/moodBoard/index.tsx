@@ -125,10 +125,10 @@ const TileKota = styled(Tile)`
   }
 `
 
-const TilePrestige = styled(Tile)`
+const TileDefund = styled(Tile)`
   @media only screen and (min-width: 1200px) {
     grid-column: 1 / 2;
-    grid-row: 3 / 6;
+    grid-row: 3 / 4;
   }
 `
 
@@ -143,6 +143,13 @@ const TileSong = styled(Tile)`
   @media only screen and (min-width: 1200px) {
     grid-column: 3 / 4;
     grid-row: 2 / 7;
+  }
+`
+
+const TilePrestige = styled(Tile)`
+  @media only screen and (min-width: 1200px) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 9;
   }
 `
 
@@ -220,6 +227,16 @@ const MoodBoard = () => (
           Solar Return by Kota the Friend
         </ExternalLink>
       </TileKota>
+      <TileDefund>
+        <h3>Defund the Police</h3>
+        <p>
+          Check out these flyers about{' '}
+          <ExternalLink link='https://drive.google.com/drive/folders/1HUpCPvOwUJElxtUP4mCysAY9GyZrSmUk?usp=sharing'>
+            alternatives to policing
+          </ExternalLink>{' '}
+          to see what this might look like.
+        </p>
+      </TileDefund>
       <TilePrestige>
         <h3>
           “But at campus career centers, students are struggling with the dual, and sometimes dueling, desires for{' '}
