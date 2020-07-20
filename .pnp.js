@@ -50,6 +50,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:5.4.0"
       ],
       [
+        "@tryghost/content-api",
+        "npm:1.4.1"
+      ],
+      [
         "@types/react",
         "npm:16.9.41"
       ],
@@ -64,6 +68,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "@types/styled-components",
         "npm:5.1.0"
+      ],
+      [
+        "@types/tryghost__content-api",
+        "npm:1.3.4"
       ],
       [
         "@types/webpack",
@@ -150,10 +158,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-solid-svg-icons", "npm:5.13.1"],
             ["@fortawesome/react-fontawesome", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:0.1.11"],
             ["@svgr/webpack", "npm:5.4.0"],
+            ["@tryghost/content-api", "npm:1.4.1"],
             ["@types/react", "npm:16.9.41"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/react-router-dom", "npm:5.1.5"],
             ["@types/styled-components", "npm:5.1.0"],
+            ["@types/tryghost__content-api", "npm:1.3.4"],
             ["@types/webpack", "npm:4.41.18"],
             ["@types/webpack-dev-server", "npm:3.11.0"],
             ["css-loader", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:3.6.0"],
@@ -1991,6 +2001,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@tryghost/content-api", [
+        ["npm:1.4.1", {
+          "packageLocation": "./.yarn/cache/@tryghost-content-api-npm-1.4.1-c4fddb738e-c15746f88f.zip/node_modules/@tryghost/content-api/",
+          "packageDependencies": [
+            ["@tryghost/content-api", "npm:1.4.1"],
+            ["axios", "npm:0.19.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/anymatch", [
         ["npm:1.3.1", {
           "packageLocation": "./.yarn/cache/@types-anymatch-npm-1.3.1-b86e9de5d9-1647865e52.zip/node_modules/@types/anymatch/",
@@ -2292,6 +2312,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-tapable-npm-1.0.6-394f282d8c-01709a2f8d.zip/node_modules/@types/tapable/",
           "packageDependencies": [
             ["@types/tapable", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/tryghost__content-api", [
+        ["npm:1.3.4", {
+          "packageLocation": "./.yarn/cache/@types-tryghost__content-api-npm-1.3.4-4cc53f81f4-31b1262739.zip/node_modules/@types/tryghost__content-api/",
+          "packageDependencies": [
+            ["@types/tryghost__content-api", "npm:1.3.4"]
           ],
           "linkType": "HARD",
         }]
@@ -2923,6 +2952,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/aws4-npm-1.10.0-74d09999c1-f8c20a0031.zip/node_modules/aws4/",
           "packageDependencies": [
             ["aws4", "npm:1.10.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["axios", [
+        ["npm:0.19.2", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.19.2-e4e8599895-bad346deea.zip/node_modules/axios/",
+          "packageDependencies": [
+            ["axios", "npm:0.19.2"],
+            ["follow-redirects", "npm:1.5.10"]
           ],
           "linkType": "HARD",
         }]
@@ -4131,6 +4170,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
+        ["virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0", {
+          "packageLocation": "./.yarn/$$virtual/debug-virtual-f2284580f9/0/cache/debug-npm-3.1.0-9f0accb99b-1295acd5e0.zip/node_modules/debug/",
+          "packageDependencies": [
+            ["debug", "virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0"],
+            ["ms", "npm:2.0.0"],
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:f0cd2f5d3c16940a04c694d45948f24481320342de12ac9d60de4a8c45164c343ab402b00c42a387cc92d78d4aa9f3ffec95adbe2965c3216670151f44ecb362#npm:3.2.6", {
           "packageLocation": "./.yarn/$$virtual/debug-virtual-dbf4d13374/0/cache/debug-npm-3.2.6-6214e40f12-619feb53b1.zip/node_modules/debug/",
           "packageDependencies": [
@@ -5035,6 +5086,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/follow-redirects-npm-1.12.1-42db1ca623-afd9b64329.zip/node_modules/follow-redirects/",
           "packageDependencies": [
             ["follow-redirects", "npm:1.12.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:1.5.10", {
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.5.10-bde6f43576-6e58e02c31.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "npm:1.5.10"],
+            ["debug", "virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0"]
           ],
           "linkType": "HARD",
         }]
@@ -7664,10 +7723,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-solid-svg-icons", "npm:5.13.1"],
             ["@fortawesome/react-fontawesome", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:0.1.11"],
             ["@svgr/webpack", "npm:5.4.0"],
+            ["@tryghost/content-api", "npm:1.4.1"],
             ["@types/react", "npm:16.9.41"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/react-router-dom", "npm:5.1.5"],
             ["@types/styled-components", "npm:5.1.0"],
+            ["@types/tryghost__content-api", "npm:1.3.4"],
             ["@types/webpack", "npm:4.41.18"],
             ["@types/webpack-dev-server", "npm:3.11.0"],
             ["css-loader", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:3.6.0"],

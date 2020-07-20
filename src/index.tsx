@@ -9,6 +9,7 @@ import Footer from './footer'
 const WorkPage = lazy(() => import(/* webpackChunkName: "work-page" */ './pages/work'))
 const AboutPage = lazy(() => import(/* webpackChunkName: "about-page" */ './pages/about'))
 const ResumePage = lazy(() => import(/* webpackChunkName: "resume-page" */ './pages/resume'))
+const BlogPage = lazy(() => import(/* webpackChunkName: "not-found-page" */ './pages/blog'))
 const NotFound = lazy(() => import(/* webpackChunkName: "not-found-page" */ './pages/notFound'))
 
 const ScrollToTop = () => {
@@ -29,8 +30,9 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={WorkPage} />
         <Route path='/work' render={() => <Redirect to='/' />} />
-        <Route exact path='/about' component={AboutPage} />
-        <Route exact path='/resume' component={ResumePage} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/resume' component={ResumePage} />
+        <Route path='/blog' component={BlogPage} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

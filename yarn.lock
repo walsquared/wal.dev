@@ -1561,6 +1561,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tryghost/content-api@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@tryghost/content-api@npm:1.4.1"
+  dependencies:
+    axios: 0.19.2
+  checksum: c15746f88f9af6dfcc3081e2e5ee7f94859848f232aa60926348f2eea9808e3f4ca3f1ade7c2578731a79f4e38c688756be3348c785b10e8d6ac1384b82602b9
+  languageName: node
+  linkType: hard
+
 "@types/anymatch@npm:*":
   version: 1.3.1
   resolution: "@types/anymatch@npm:1.3.1"
@@ -1819,6 +1828,13 @@ __metadata:
   version: 1.0.6
   resolution: "@types/tapable@npm:1.0.6"
   checksum: 01709a2f8dbea665a39c008ba6995c76210fabb52434815e7632c7fff22ecad1dd49a1d75b8f5b2e9b365c6d7a6407127bed834587df4777b800110c2a74fc36
+  languageName: node
+  linkType: hard
+
+"@types/tryghost__content-api@npm:^1":
+  version: 1.3.4
+  resolution: "@types/tryghost__content-api@npm:1.3.4"
+  checksum: 31b1262739ddbd62b9c8a0c1f9ebf0cceb0ac4b5ab8a2110a5a82b13f54935d6b3be0cdc9530ea3a41695f58b0c4871c58829f5c2c62ddd276b1f9b5c214e672
   languageName: node
   linkType: hard
 
@@ -2364,6 +2380,15 @@ __metadata:
   version: 1.10.0
   resolution: "aws4@npm:1.10.0"
   checksum: f8c20a0031a2ae88bb29a89d5e5f8139eb0cc8aa964d0a8d69a476a4b0f6cf3954e3dd40bd08cea69c95ee31e2e69226d82e804628261a2375223ac67582009d
+  languageName: node
+  linkType: hard
+
+"axios@npm:0.19.2":
+  version: 0.19.2
+  resolution: "axios@npm:0.19.2"
+  dependencies:
+    follow-redirects: 1.5.10
+  checksum: bad346deea24050f9953ce09bb8015f85a99a7b8f016806adccfab0b8981827d1fbee9c77c0ef7c70cc48392c1af6bbc65e07c3e88221d17282d2d5fd0a191f6
   languageName: node
   linkType: hard
 
@@ -3417,6 +3442,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:=3.1.0":
+  version: 3.1.0
+  resolution: "debug@npm:3.1.0"
+  dependencies:
+    ms: 2.0.0
+  checksum: 1295acd5e0531761255661d325cd0a80ac8c5f6de8942a53bb23c2197ccb97526972de662ed0e5d9393be83f3428a298a6e7185ecb02f0da6282019cd2ffb4a8
+  languageName: node
+  linkType: hard
+
 "debug@npm:^3.1.1, debug@npm:^3.2.5":
   version: 3.2.6
   resolution: "debug@npm:3.2.6"
@@ -4225,6 +4259,15 @@ __metadata:
     inherits: ^2.0.3
     readable-stream: ^2.3.6
   checksum: b8fa1fbfadd5c4b6df3cf2c34b3c408fe508a2899c536bafa339f679de545689997e907bd4ff61dd292942f8044fb2f293a5956dd8b601f6a5601617842d0dda
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:1.5.10":
+  version: 1.5.10
+  resolution: "follow-redirects@npm:1.5.10"
+  dependencies:
+    debug: =3.1.0
+  checksum: 6e58e02c31337b6b41ffc3d5f3d49920b7db428eddcf374537da00ef121fe473983e12d8557f4304287604168d3efcc288d1f009abaf4c9d61e5db0c0cee3c4a
   languageName: node
   linkType: hard
 
@@ -6601,10 +6644,12 @@ fsevents@~2.1.2:
     "@fortawesome/free-solid-svg-icons": ^5.13.1
     "@fortawesome/react-fontawesome": ^0.1.11
     "@svgr/webpack": ^5.4.0
+    "@tryghost/content-api": ^1.4.1
     "@types/react": ^16.9.41
     "@types/react-dom": ^16.9.8
     "@types/react-router-dom": ^5
     "@types/styled-components": ^5
+    "@types/tryghost__content-api": ^1
     "@types/webpack": ^4
     "@types/webpack-dev-server": ^3
     css-loader: ^3.6.0
