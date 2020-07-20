@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -29,7 +28,7 @@ const SocialDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 16em;
+  width: 12em;
 `
 const StyledIcon = styled.a`
   transition: 0.1s ease-in;
@@ -49,9 +48,6 @@ export const Socials = ({ className }: { className?: string }) => (
     </StyledIcon>
     <StyledIcon target='_blank' rel='noopener noreferrer external' href='https://linkedin.com/in/wal-wal'>
       <FontAwesomeIcon icon={faLinkedin} size='2x' />
-    </StyledIcon>
-    <StyledIcon target='_blank' rel='noopener noreferrer external' href='mailto:wal@walsquared.ca'>
-      <FontAwesomeIcon icon={faEnvelope} size='2x' />
     </StyledIcon>
   </SocialDiv>
 )
