@@ -10,7 +10,7 @@ import { LoadingSpinner } from 'components'
 const WorkPage = lazy(() => import(/* webpackChunkName: "work-page" */ './pages/work'))
 const AboutPage = lazy(() => import(/* webpackChunkName: "about-page" */ './pages/about'))
 const ResumePage = lazy(() => import(/* webpackChunkName: "resume-page" */ './pages/resume'))
-const BlogPage = lazy(() => import(/* webpackChunkName: "not-found-page" */ './pages/blog'))
+const BlogPage = lazy(() => import(/* webpackChunkName: "blog-page" */ './pages/blog'))
 const NotFound = lazy(() => import(/* webpackChunkName: "not-found-page" */ './pages/notFound'))
 
 const ScrollToTop = () => {
@@ -34,7 +34,7 @@ const App = () => (
         <Route path='/about' component={AboutPage} />
         <Route path='/resume' component={ResumePage} />
         <Route path='/blog' component={BlogPage} />
-        <Route component={NotFound} />
+        <Route path='*' component={NotFound} />
       </Switch>
     </Suspense>
     <Footer />

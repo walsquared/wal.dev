@@ -226,7 +226,6 @@ const NavBar = () => {
         </NavButton>
         <NavButton
           color='green'
-          exact
           to='/about'
           activeStyle={{
             color: 'var(--green)'
@@ -236,7 +235,6 @@ const NavBar = () => {
         </NavButton>
         <NavButton
           color='yellow'
-          exact
           to='/resume'
           activeStyle={{
             color: 'var(--yellow)'
@@ -246,7 +244,6 @@ const NavBar = () => {
         </NavButton>
         <NavButton
           color='blue'
-          exact
           to='/blog'
           activeStyle={{
             color: 'var(--blue)'

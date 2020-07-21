@@ -6,12 +6,15 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'source-map',
   devServer: {
-    port: 3000,
-    historyApiFallback: true
+    historyApiFallback: {
+      index: '/index.html'
+    },
+    port: 3000
   },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     filename: '[name].[hash].bundle.js',
     chunkFilename: '[name].[chunkhash].bundle.js'
   },

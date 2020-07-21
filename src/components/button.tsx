@@ -93,7 +93,7 @@ const Button = (props: ButtonProps) => {
         {props.label}
       </StyledButton>
     )
-  } else if (external) {
+  } else if (props.external) {
     return (
       <StyledAnchor
         className={props.className}
