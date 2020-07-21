@@ -14,7 +14,8 @@ const useGhost = () => {
     const getPosts = async () => {
       try {
         const blog = await api.posts.browse({
-          limit: 'all'
+          limit: 'all',
+          include: 'tags'
         })
 
         setPosts(blog)
@@ -31,6 +32,13 @@ const useGhost = () => {
   return {
     posts,
     isLoading: loading
+    // async getSinglePost(slug: string) {
+    //   try {
+    //     return await api.posts.read({ slug })
+    //   } catch (error) {
+    //     console.log('Error getting post: ', error)
+    //   }
+    // }
   }
 }
 

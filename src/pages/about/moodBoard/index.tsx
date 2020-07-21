@@ -69,7 +69,7 @@ const Tiles = styled.div`
 `
 
 const Tile = styled.div`
-  padding: 33px 38px;
+  padding: 5vw;
   margin-bottom: 5vw;
 
   border: 2px solid var(--black);
@@ -99,6 +99,7 @@ const Tile = styled.div`
   @media only screen and (min-width: 700px) {
     display: inline-block;
     margin-bottom: 20px;
+    padding: 33px 38px;
     width: calc(45vw - 90px); /** idk why this works, it should be 45vw - 20px - 100px */
   }
 
@@ -194,7 +195,6 @@ const SpotifyFrame = () => (
       width='100%'
       height='100%'
       frameBorder={0}
-      allowTransparency={true}
       allow='encrypted-media'
     />
   </SpotifyDiv>

@@ -65,11 +65,7 @@ const SnarkyText = styled.div`
 
 const Preview = styled.div`
   width: var(--mobile-width);
-
   columns: 1;
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 5vw; */
 
   @media only screen and (min-width: 900px) {
     columns: 2;
@@ -83,7 +79,7 @@ const Preview = styled.div`
 
 const Card = styled.div`
   border: 2px solid var(--black);
-  padding: 33px 38px;
+  padding: 5vw;
   margin-bottom: 5vw;
 
   display: inline-block;
@@ -109,6 +105,7 @@ const Card = styled.div`
 
   @media only screen and (min-width: 900px) {
     margin-bottom: 20px;
+    padding: 33px 38px;
   }
 `
 
@@ -140,7 +137,7 @@ const CardAlp = styled(Card)`
   }
 `
 
-const Label = styled.p`
+const Tag = styled.p`
   background: var(--yellow);
   margin: 0;
   width: max-content;
@@ -162,7 +159,7 @@ const ResumePage = () => (
     </SnarkyDiv>
     <Preview>
       <CardCuHacking>
-        <Label>Volunteer Experience</Label>
+        <Tag>Volunteer Experience</Tag>
         <h2>Director of Development</h2>
         <h3>cuHacking | April 2019 - Present</h3>
         <ul>
@@ -181,7 +178,7 @@ const ResumePage = () => (
         </ul>
       </CardCuHacking>
       <CardCsr>
-        <Label>Work Experience</Label>
+        <Tag>Work Experience</Tag>
         <h2>Service Representative</h2>
         <h3>City of Ottawa | September 2019 - Present</h3>
         <ul>
@@ -192,7 +189,7 @@ const ResumePage = () => (
         </ul>
       </CardCsr>
       <CardRibbon>
-        <Label>Work Experience</Label>
+        <Tag>Work Experience</Tag>
         <h2>Software Developer (Intern)</h2>
         <h3>Ribbon Communications (Kandy.io) | April 2019 - May 2020</h3>
         <ul>
@@ -211,7 +208,7 @@ const ResumePage = () => (
         </ul>
       </CardRibbon>
       <CardAlp>
-        <Label>Work Experience</Label>
+        <Tag>Work Experience</Tag>
         <h2>Advanced Leadership Instructor</h2>
         <h3>City of Ottawa | February 2018 - April 2019</h3>
         <ul>

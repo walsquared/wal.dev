@@ -32,7 +32,7 @@ const ProfileDiv = styled.div`
   }
 `
 
-const IntroText = styled.section`
+const IntroText = styled.div`
   margin: 20px 0;
   background-color: var(--green);
 
