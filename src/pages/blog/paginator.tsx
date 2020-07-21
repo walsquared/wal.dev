@@ -3,9 +3,8 @@ import styled from 'styled-components'
 import { Pagination, PostOrPage } from '@tryghost/content-api'
 
 import { useGhost } from 'hooks'
-import { Button } from 'components'
+import { Button, LoadingSpinner } from 'components'
 import { PostPreview, NewestPostPreview } from './postPreview'
-import { ReactComponent as LoadingSpinner } from './loading.svg'
 
 const LoadingDiv = styled.div`
   display: flex;
@@ -75,7 +74,7 @@ const Paginator = () => {
       </Posts>
       {loading ? (
         <LoadingDiv>
-          <LoadingSpinner />
+          <LoadingSpinner color='var(--blue)' />
         </LoadingDiv>
       ) : pageMeta?.next !== null ? (
         <Button label='Load more' color='var(--blue)' action={() => setPageNumber(pageNumber + 1)} />

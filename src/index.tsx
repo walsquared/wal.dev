@@ -5,6 +5,7 @@ import './index.css'
 
 import NavBar from './navBar'
 import Footer from './footer'
+import { LoadingSpinner } from 'components'
 
 const WorkPage = lazy(() => import(/* webpackChunkName: "work-page" */ './pages/work'))
 const AboutPage = lazy(() => import(/* webpackChunkName: "about-page" */ './pages/about'))
@@ -26,7 +27,7 @@ const App = () => (
   <Router>
     <ScrollToTop />
     <NavBar />
-    <Suspense fallback={() => <div>Loading...</div>}>
+    <Suspense fallback={() => <LoadingSpinner color='var(--text)' />}>
       <Switch>
         <Route exact path='/' component={WorkPage} />
         <Route path='/work' render={() => <Redirect to='/' />} />
