@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import styled from 'styled-components'
+import { Route, Switch, useRouteMatch } from 'react-router-dom'
 
 import Paginator from './paginator'
+
+const PostPage = lazy(() => import(/* webpackChunkName: "post-page" */ './postPage'))
 
 const BlogText = styled.div`
   background-color: var(--blue);
@@ -55,15 +58,19 @@ const BlogText = styled.div`
 `
 
 const BlogPage = () => {
-  console.log(new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase())
+  let { path } = useRouteMatch()
+
   return (
-    <>
-      <BlogText>
-        <h1>A simple blog.</h1>
-        <p>My thoughts, lessons, and experiences immortalized for your consumption. 📎</p>
-      </BlogText>
-      <Paginator />
-    </>
+    <Switch>
+      <Route exact path={path}>
+        <BlogText>
+          <h1>A simple blog.</h1>
+          <p>My thoughts, lessons, and experiences immortalized for your consumption. 📎</p>
+        </BlogText>
+        <Paginator />
+      </Route>
+      <Route path={`${path}/:slug`} component={PostPage} />
+    </Switch>
   )
 }
 
