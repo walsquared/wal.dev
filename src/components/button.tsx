@@ -34,7 +34,19 @@ const enabledButton = css`
   transition: 0.1s ease-in;
 `
 
-const StyledButton = styled(Link)<{ color: string }>`
+const StyledButton = styled.button<{ color: string }>`
+  ${enabledButton}
+
+  @media only screen and (min-width: 700px) {
+    &:hover {
+      background-color: ${(props) => props.color};
+      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
+      cursor: pointer;
+    }
+  }
+`
+
+const StyledLink = styled(Link)<{ color: string }>`
   ${enabledButton}
 
   @media only screen and (min-width: 700px) {
@@ -69,23 +81,36 @@ interface ButtonProps {
   disabled?: boolean
   label?: string
   link?: string
+  action?: () => void
 }
 
-const Button = ({ className, color, label, link = '/', external = false, disabled }: ButtonProps) => {
-  if (disabled) {
-    return <DisabledButton>{label}</DisabledButton>
+const Button = (props: ButtonProps) => {
+  if (props.disabled) {
+    return <DisabledButton>{props.label}</DisabledButton>
+  } else if (!props.link) {
+    return (
+      <StyledButton className={props.className} color={props.color} onClick={props.action}>
+        {props.label}
+      </StyledButton>
+    )
   } else if (external) {
     return (
-      <StyledAnchor className={className} target='_blank' rel='noopener noreferrer external' href={link} color={color}>
-        {label}
+      <StyledAnchor
+        className={props.className}
+        target='_blank'
+        rel='noopener noreferrer external'
+        href={props.link}
+        color={props.color}
+      >
+        {props.label}
         <StyledIcon icon={faExternalLinkAlt} size='1x' />
       </StyledAnchor>
     )
   }
   return (
-    <StyledButton className={className} to={link} color={color}>
-      {label}
-    </StyledButton>
+    <StyledLink className={props.className} to={props.link} color={props.color}>
+      {props.label}
+    </StyledLink>
   )
 }
 

@@ -5,33 +5,7 @@ import ghostConfig from '../../ghostConfig.json'
 const api = new GhostContentAPI(ghostConfig as GhostContentAPIOptions)
 
 const useGhost = () => {
-  const [posts, setPosts] = useState<PostsOrPages>()
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-
-    const getPosts = async () => {
-      try {
-        const blog = await api.posts.browse({
-          limit: 'all',
-          include: 'tags'
-        })
-
-        setPosts(blog)
-      } catch (error) {
-        console.log('Error fetching posts: ', error)
-      }
-
-      setLoading(false)
-    }
-
-    getPosts()
-  }, [])
-
   return {
-    posts,
-    isLoading: loading
     // async getSinglePost(slug: string) {
     //   try {
     //     return await api.posts.read({ slug })
@@ -39,6 +13,17 @@ const useGhost = () => {
     //     console.log('Error getting post: ', error)
     //   }
     // }
+    async getPosts(page: number) {
+      try {
+        return api.posts.browse({
+          include: 'tags',
+          limit: 7,
+          page
+        })
+      } catch (error) {
+        console.error('[Ghost Error] Failed to load page: ', error)
+      }
+    }
   }
 }
 

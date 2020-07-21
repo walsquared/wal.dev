@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Pagination, PostOrPage } from '@tryghost/content-api'
 
 import { useGhost } from 'hooks'
+import { Button } from 'components'
 import { PostPreview, NewestPostPreview } from './postPreview'
+import { ReactComponent as LoadingSpinner } from './loading.svg'
+
+const LoadingDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 700px;
+`
 
 const Posts = styled.div`
   width: var(--mobile-width);
@@ -24,21 +35,55 @@ const Posts = styled.div`
 `
 
 const Paginator = () => {
-  const { isLoading, posts } = useGhost()
-  console.log(posts)
+  const ghost = useGhost()
+  const [pageMeta, setPageMeta] = useState<Pagination>()
+  const [posts, setPosts] = useState<Array<PostOrPage>>([])
+  const [loading, setLoading] = useState(true)
+  const [pageNumber, setPageNumber] = useState(1)
 
-  if (isLoading) {
-    return <Posts>loading...</Posts>
-  } else {
-    return (
+  useEffect(() => {
+    setLoading(true)
+
+    const getPosts = async () => {
+      try {
+        const blog = await ghost.getPosts(pageNumber)
+        if (!blog) throw new Error('Blog returned undefined')
+
+        setPageMeta(blog.meta.pagination)
+
+        // This turns `blog` back into an array of PostOrPage (as opposed to being PostsOrPages)
+        const newPosts = blog?.map((post) => post)
+
+        setPosts(posts.concat(newPosts))
+      } catch (error) {
+        console.error('Error fetching posts: ', error)
+      }
+
+      setLoading(false)
+    }
+
+    getPosts()
+  }, [pageNumber])
+
+  return (
+    <>
       <Posts>
-        <NewestPostPreview key={posts?.[0].id} post={posts?.[0]} />
-        {posts?.slice(1).map((post) => (
+        {posts.length !== 0 ? <NewestPostPreview key={posts[0].id} post={posts[0]} /> : <></>}
+        {posts.slice(1).map((post) => (
           <PostPreview key={post.id} post={post} />
         ))}
       </Posts>
-    )
-  }
+      {loading ? (
+        <LoadingDiv>
+          <LoadingSpinner />
+        </LoadingDiv>
+      ) : pageMeta?.next !== null ? (
+        <Button label='Load more' color='var(--blue)' action={() => setPageNumber(pageNumber + 1)} />
+      ) : (
+        <></>
+      )}
+    </>
+  )
 }
 
 export default Paginator

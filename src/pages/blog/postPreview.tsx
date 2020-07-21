@@ -135,13 +135,15 @@ export const PostPreview = ({ post }: { post: PostOrPage }) => {
         .toUpperCase()
     : ''
 
+  const readingTime = post.reading_time == 0 ? 1 : post.reading_time
+
   return (
     <PostPreviewDiv to={`/blog/${post.slug}`} bkg={post.feature_image}>
       <Tag>{post.tags?.[0].name?.toUpperCase()}</Tag>
       <Title>{post.title}</Title>
       <Excerpt>{post.excerpt}</Excerpt>
       <Meta>
-        {date} • {post.reading_time} MIN READ
+        {date} • {readingTime} MIN READ
       </Meta>
     </PostPreviewDiv>
   )
@@ -203,6 +205,8 @@ export const NewestPostPreview = ({ post }: { post?: PostOrPage }) => {
         .toUpperCase()
     : ''
 
+  const readingTime = post.reading_time == 0 ? 1 : post.reading_time
+
   return (
     <NewestPostPreviewDiv to={`/blog/${post.slug}`} bkg={post.feature_image}>
       <Preview image={post.feature_image} />
@@ -211,7 +215,7 @@ export const NewestPostPreview = ({ post }: { post?: PostOrPage }) => {
         <NewestTitle>{post.title}</NewestTitle>
         <NewestExcerpt>{post.excerpt}</NewestExcerpt>
         <NewestMeta>
-          {date} • {post.reading_time} MIN READ
+          {date} • {readingTime} MIN READ
         </NewestMeta>
       </PostBrief>
     </NewestPostPreviewDiv>
