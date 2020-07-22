@@ -138,22 +138,14 @@ const NewestMeta = styled.p`
     font-size: 1rem;
   }
 `
-export const PostPreview = ({ post }: { post: PostOrPage }) => {
-  const date = post.published_at
-    ? new Date(post.published_at)
-        .toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
-        .toUpperCase()
-    : ''
-
-  const readingTime = post.reading_time == 0 ? 1 : post.reading_time
-
+export const PostPreview = ({ post }) => {
   return (
-    <PostPreviewDiv to={`/blog/${post.slug}`} bkg={post.feature_image}>
-      <Tag>{post.tags?.[0].name?.toUpperCase()}</Tag>
-      <Title>{post.title}</Title>
-      <Excerpt>{post.excerpt}</Excerpt>
+    <PostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
+      <Tag>{post.frontmatter.tags[0].toUpperCase()}</Tag>
+      <Title>{post.frontmatter.title}</Title>
+      <Excerpt>{post.frontmatter.brief}</Excerpt>
       <Meta>
-        {date} • {readingTime} MIN READ
+        {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
       </Meta>
     </PostPreviewDiv>
   )
@@ -218,14 +210,14 @@ export const NewestPostPreview = ({ post }: { post?: PostOrPage }) => {
   const readingTime = post.reading_time == 0 ? 1 : post.reading_time
 
   return (
-    <NewestPostPreviewDiv to={`/blog/${post.slug}`} bkg={post.feature_image}>
-      <Preview image={post.feature_image} />
+    <NewestPostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
+      <Preview image={post.frontmatter.cover.childImageSharp.fluid.src} />
       <PostBrief>
-        <NewestTag>{post.tags?.[0].name?.toUpperCase()}</NewestTag>
-        <NewestTitle>{post.title}</NewestTitle>
-        <NewestExcerpt>{post.excerpt}</NewestExcerpt>
+        <NewestTag>{post.frontmatter.tags[0].toUpperCase()}</NewestTag>
+        <NewestTitle>{post.frontmatter.title}</NewestTitle>
+        <NewestExcerpt>{post.frontmatter.brief}</NewestExcerpt>
         <NewestMeta>
-          {date} • {readingTime} MIN READ
+          {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
         </NewestMeta>
       </PostBrief>
     </NewestPostPreviewDiv>

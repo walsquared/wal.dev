@@ -186,7 +186,6 @@ const NavBar = () => {
 
   const route: Array<string> = useLocation().pathname.split('/')
 
-  console.log(route)
   const colorMap = (route: string): ThemeColor => {
     switch (route) {
       case 'about':
@@ -247,6 +246,7 @@ const NavBar = () => {
         <NavButton
           color='blue'
           to='/blog'
+          partiallyActive={true}
           activeStyle={{
             color: 'var(--blue)'
           }}

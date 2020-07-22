@@ -15,8 +15,16 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -33,6 +41,20 @@ module.exports = {
         hooks: path.join(__dirname, 'src/hooks'),
         images: path.join(__dirname, 'src/images'),
         pages: path.join(__dirname, 'src/pages')
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200
+            }
+          }
+        ]
       }
     },
     `gatsby-plugin-styled-components`

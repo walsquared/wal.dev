@@ -1,11 +1,9 @@
-import React, { lazy } from 'react'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-// import { Route, Switch, useRouteMatch } from 'react-router-dom'
 
 import { Layout, SEO } from 'components'
-// import Paginator from './paginator'
-
-// const PostPage = lazy(() => import(/* webpackChunkName: "post-page" */ './postPage'))
+import { PostPreview, NewestPostPreview } from './postPreview'
 
 const BlogText = styled.div`
   background-color: var(--blue);
@@ -58,7 +56,33 @@ const BlogText = styled.div`
   }
 `
 
-const BlogPage = () => {
+const Posts = styled.div`
+  width: var(--mobile-width);
+  margin-bottom: 50px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5vw;
+
+  @media only screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: var(--desktop-width);
+  }
+`
+
+const BlogPage = ({ data }) => {
+  const { edges } = data.allMdx
+
+  const posts = edges
+    .map((edge) => edge.node)
+    .sort((nodeA, nodeB) => new Date(nodeB.frontmatter.date).getTime() - new Date(nodeA.frontmatter.date).getTime())
+
+  console.log(posts)
   return (
     <Layout>
       <SEO title='Blog' description={`My thoughts, lessons, and experiences immortalized for your consumption.`} />
@@ -66,9 +90,47 @@ const BlogPage = () => {
         <h1>A simple blog.</h1>
         <p>My thoughts, lessons, and experiences immortalized for your consumption. 📎</p>
       </BlogText>
-      {/* <Paginator /> */}
+      <Posts>
+        {posts.length !== 0 ? <NewestPostPreview key={posts[0].id} post={posts[0]} /> : <></>}
+        {posts.slice(1).map((post) => (
+          <PostPreview key={post.id} post={post} />
+        ))}
+      </Posts>
     </Layout>
   )
 }
 
 export default BlogPage
+
+export const pageQuery = graphql`
+  query blogIndex {
+    allMdx {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            brief
+            cover {
+              childImageSharp {
+                fluid {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
+            date(formatString: "D MMM YYYY")
+            readingTime
+            tags
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
