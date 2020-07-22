@@ -3689,6 +3689,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"at-least-node@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "at-least-node@npm:1.0.0"
+  checksum: 8f33efc16287ed39766065c718a2d36a469f702c66c6eb41fa460c0c62bca395301a6a02946e315ae4a84c9cc7f44c94ec73a556bc2a1049350da98d0b013afe
+  languageName: node
+  linkType: hard
+
 "atob@npm:^2.1.2":
   version: 2.1.2
   resolution: "atob@npm:2.1.2"
@@ -4208,6 +4215,7 @@ __metadata:
     gatsby: 2.23.12
     gatsby-image: ^2.4.9
     gatsby-plugin-client-side-redirect: ^1.1.0
+    gatsby-plugin-copy-files-enhanced: ^1.1.1
     gatsby-plugin-mdx: ^1.2.28
     gatsby-plugin-react-helmet: ^3.3.6
     gatsby-plugin-root-import: ^2.0.5
@@ -8210,6 +8218,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "fs-extra@npm:9.0.1"
+  dependencies:
+    at-least-node: ^1.0.0
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^1.0.0
+  checksum: b7374cb05819bd95fa15bf74a30fbec3d2b64a0c00d2df67d6e1d6a901a9a7582a1243fe652d27a6cd042b38a2c1cd9ae3b3d100bc98dd041cc2f3e29964884f
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -8428,6 +8448,15 @@ fsevents@~2.1.2:
   dependencies:
     fs-extra: ^7.0.0
   checksum: 32cf49971cf262b849a7a66f7381233ec7ed7f615edf526b22126f42d3b494ff2d92479331a83c02d98eed1711aa19fde2805aa8831484e6b16c1b6f1a9d8323
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-copy-files-enhanced@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "gatsby-plugin-copy-files-enhanced@npm:1.1.1"
+  dependencies:
+    fs-extra: ^9.0.0
+  checksum: 39494ab4646468beecb2560a597c03a445a03da615f412d9b6efce18721b54c11b90d6289bfa770d6fdb950a0777863630030604c00a96675a7a72ca1e826280
   languageName: node
   linkType: hard
 
@@ -11400,6 +11429,19 @@ is-whitespace@latest:
     graceful-fs:
       optional: true
   checksum: a40b7b64da41c84b0dc7ad753737ba240bb0dc50a94be20ec0b73459707dede69a6f89eb44b4d29e6994ed93ddf8c9b6e57f6b1f09dd707567959880ad6cee7f
+  languageName: node
+  linkType: hard
+
+"jsonfile@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "jsonfile@npm:6.0.1"
+  dependencies:
+    graceful-fs: ^4.1.6
+    universalify: ^1.0.0
+  dependenciesMeta:
+    graceful-fs:
+      optional: true
+  checksum: ebd6932424db468226b0b525b5b8acefd97e46f4fc5f36232c94e928b405716b47b2d7c2342025ecd7a0219f2146ae613d33878b917505698b7dc36ebe082c11
   languageName: node
   linkType: hard
 
@@ -18397,6 +18439,13 @@ is-whitespace@latest:
   version: 0.1.2
   resolution: "universalify@npm:0.1.2"
   checksum: 420fc6547357782c700d53e9a92506a8e95345b13e97684c8f9ab75237912ec2ebb6af8ac10d4f7406b7b6bd21c58f6c5c0811414fb0b4091b78b4743fa6806e
+  languageName: node
+  linkType: hard
+
+"universalify@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "universalify@npm:1.0.0"
+  checksum: d74303a8d9ff18598804f3e9f261c9376cad55b81a92346f086e59261803ae75bef347044dd6a25549eb3b1490c0dd106dc07154cd7ccad8f037fdae947c125d
   languageName: node
   linkType: hard
 

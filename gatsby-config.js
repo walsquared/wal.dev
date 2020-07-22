@@ -22,6 +22,21 @@ module.exports = {
         path: `${__dirname}/src/posts`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/assets`
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files-enhanced',
+      options: {
+        source: `${__dirname}/assets`,
+        destination: '/assets',
+        purge: true
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,

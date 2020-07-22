@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 const genericButton = css`
   border: 2px solid var(--grey);
@@ -77,6 +77,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 interface ButtonProps {
   className?: string
   color: string
+  download?: boolean
   external?: boolean
   disabled?: boolean
   label?: string
@@ -93,7 +94,7 @@ const Button = (props: ButtonProps) => {
         {props.label}
       </StyledButton>
     )
-  } else if (props.external) {
+  } else if (props.external || props.download) {
     return (
       <StyledAnchor
         className={props.className}
@@ -101,9 +102,10 @@ const Button = (props: ButtonProps) => {
         rel='noopener noreferrer external'
         href={props.link}
         color={props.color}
+        download={props.download}
       >
         {props.label}
-        <StyledIcon icon={faExternalLinkAlt} size='1x' />
+        <StyledIcon icon={props.download ? faDownload : faExternalLinkAlt} size='1x' />
       </StyledAnchor>
     )
   }

@@ -158,7 +158,12 @@ const ResumePage = () => (
       <SnarkyText>
         <h1>Look no further!😎</h1>
         <p>You may have just come to the last stop in your search for talent.</p>
-        <Button color='var(--yellow)' label='Download My Resume' link='/wal_resume.pdf' />
+        <Button
+          color='var(--yellow)'
+          label='Download My Resume'
+          link={`/assets/Wal's Resume (2020-07-22).pdf`}
+          download
+        />
       </SnarkyText>
     </SnarkyDiv>
     <Preview>
