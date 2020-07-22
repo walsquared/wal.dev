@@ -9,6 +9,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: `${__dirname}/src/components/layout.tsx`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -39,14 +45,13 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         components: path.join(__dirname, 'src/components'),
         hooks: path.join(__dirname, 'src/hooks'),
-        images: path.join(__dirname, 'src/images'),
-        pages: path.join(__dirname, 'src/pages')
+        images: path.join(__dirname, 'src/images')
       }
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
+        // extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
