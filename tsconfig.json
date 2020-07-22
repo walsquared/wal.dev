@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "es5",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": "./src"
+  },
+  "include": ["./custom.d.ts"]
+}
