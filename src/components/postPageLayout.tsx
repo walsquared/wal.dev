@@ -77,7 +77,6 @@ const Content = styled.div`
 `
 
 export default function PageTemplate({ data: { mdx } }) {
-  console.log(mdx.frontmatter)
   return (
     <Layout>
       <article>

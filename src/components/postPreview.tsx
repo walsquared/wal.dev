@@ -2,17 +2,6 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
-interface PostOrPage {
-  published_at: string
-  feature_image: string
-  title: string
-  excerpt: string
-  slug: string
-  reading_time: number
-  tags: Array<{ name: string }>
-  html: string
-}
-
 const postPreviewStyle = css`
   border: 2px solid var(--black);
   padding: 5vw;
@@ -198,17 +187,7 @@ const PostBrief = styled.div`
   }
 `
 
-export const NewestPostPreview = ({ post }: { post?: PostOrPage }) => {
-  if (!post) return <></>
-
-  const date = post.published_at
-    ? new Date(post.published_at)
-        .toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
-        .toUpperCase()
-    : ''
-
-  const readingTime = post.reading_time == 0 ? 1 : post.reading_time
-
+export const NewestPostPreview = ({ post }) => {
   return (
     <NewestPostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
       <Preview image={post.frontmatter.cover.childImageSharp.fluid.src} />

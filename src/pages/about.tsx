@@ -4,12 +4,8 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import { Button, ContactPrompt, Layout, SEO } from 'components'
+import MoodBoard from 'components/moodBoard'
 import { useInterval } from 'hooks'
-import MoodBoard from './moodBoard'
-// import smirkProfileUrl from './smirk-profile.jpg'
-// import smirkProfileThumb from './smirk-profile-thumbnail.jpg'
-// import acQuestionUrl from './ac-question.jpg'
-// import acQuestionThumb from './ac-question-thumbnail.jpg'
 
 const StyledLink = styled(Link)`
   text-decoration: underline;

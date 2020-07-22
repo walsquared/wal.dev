@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Button, ContactPrompt, Layout, SEO } from 'components'
-import bulletSvg from './bullet.svg'
+import bulletSvg from 'images/bullet.svg'
 
 const SnarkyDiv = styled.div`
   display: flex;

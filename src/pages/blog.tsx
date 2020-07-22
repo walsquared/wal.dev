@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import { Layout, SEO } from 'components'
-import { PostPreview, NewestPostPreview } from './postPreview'
+import { PostPreview, NewestPostPreview } from 'components/postPreview'
 
 const BlogText = styled.div`
   background-color: var(--blue);
@@ -82,7 +82,6 @@ const BlogPage = ({ data }) => {
     .map((edge) => edge.node)
     .sort((nodeA, nodeB) => new Date(nodeB.frontmatter.date).getTime() - new Date(nodeA.frontmatter.date).getTime())
 
-  console.log(posts)
   return (
     <Layout>
       <SEO title='Blog' description={`My thoughts, lessons, and experiences immortalized for your consumption.`} />
