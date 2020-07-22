@@ -4213,6 +4213,7 @@ __metadata:
     gatsby-plugin-sharp: ^2.6.14
     gatsby-plugin-styled-components: ^3.3.10
     gatsby-plugin-typescript: ^2.4.16
+    gatsby-remark-images: ^3.3.20
     gatsby-source-filesystem: ^2.3.21
     gatsby-transformer-sharp: ^2.5.7
     prettier: 2.0.5
@@ -4951,6 +4952,20 @@ __metadata:
     lodash.reject: ^4.4.0
     lodash.some: ^4.4.0
   checksum: fbdec8b182e1f070b3b351c8084cfd1d11e05f6e609ff9dbd5ba13d87f1ffe8f6ce033149e8bcf5ddfbc1cc4e0f2b853d6f35884c3e019ee66cbee47cea25d7a
+  languageName: node
+  linkType: hard
+
+"cheerio@npm:^1.0.0-rc.3":
+  version: 1.0.0-rc.3
+  resolution: "cheerio@npm:1.0.0-rc.3"
+  dependencies:
+    css-select: ~1.2.0
+    dom-serializer: ~0.1.1
+    entities: ~1.1.1
+    htmlparser2: ^3.9.1
+    lodash: ^4.15.0
+    parse5: ^3.0.1
+  checksum: 142f40a91badc37744a8cb2e14f7cff4e630602e5fd2ddb8b59649898e6974147db56e06f0f024e649816bb181d02a021f0b9f81c6dff7b94e4019c2a4e87bd1
   languageName: node
   linkType: hard
 
@@ -5872,6 +5887,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-selector-parser@npm:^1.1.0":
+  version: 1.4.1
+  resolution: "css-selector-parser@npm:1.4.1"
+  checksum: 1f5332e601c9bb402d804b7561dfe067cf50888c62c5c66aa9754b13e29d50d29b1b1e0798cdda7235eac2e83b1320e42f597b0976c893fe182c0f9c7a2dac59
+  languageName: node
+  linkType: hard
+
 "css-selector-tokenizer@npm:^0.7.0":
   version: 0.7.2
   resolution: "css-selector-tokenizer@npm:0.7.2"
@@ -6608,7 +6630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-serializer@npm:~0.1.0":
+"dom-serializer@npm:~0.1.0, dom-serializer@npm:~0.1.1":
   version: 0.1.1
   resolution: "dom-serializer@npm:0.1.1"
   dependencies:
@@ -8626,6 +8648,28 @@ fsevents@~2.1.2:
     ws: ^7.3.0
     xstate: ^4.10.0
   checksum: fd672bddde023920b25866b3656b5813e4d35a3f6bbbc27d8437942bea0dc933d047729af5d49064df38b691e6c51ff9bf3962b02d51bf9d88365868198cfd4c
+  languageName: node
+  linkType: hard
+
+"gatsby-remark-images@npm:^3.3.20":
+  version: 3.3.20
+  resolution: "gatsby-remark-images@npm:3.3.20"
+  dependencies:
+    "@babel/runtime": ^7.10.3
+    chalk: ^2.4.2
+    cheerio: ^1.0.0-rc.3
+    gatsby-core-utils: ^1.3.13
+    is-relative-url: ^3.0.0
+    lodash: ^4.17.15
+    mdast-util-definitions: ^1.2.5
+    potrace: ^2.1.6
+    query-string: ^6.13.1
+    unist-util-select: ^1.5.0
+    unist-util-visit-parents: ^2.1.2
+  peerDependencies:
+    gatsby: ^2.0.0
+    gatsby-plugin-sharp: ^2.0.0-beta.5
+  checksum: 2bdc4767afface344e4f7c6cbba9aa8a5bf94d799f2c415b7f305280a34b10a2897288108f1b0a74a1cd3bba39e5ba98e78888a2f8f99c16d9a2612a1e56d2bd
   languageName: node
   linkType: hard
 
@@ -11760,7 +11804,7 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.11.1, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0":
+"lodash@npm:^4.11.1, lodash@npm:^4.15.0, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
@@ -12076,6 +12120,15 @@ is-whitespace@latest:
   dependencies:
     unist-util-visit: ^2.0.0
   checksum: 0f1d42a28bb8dac13d663acdca0074e23547fe5859cf5dd1c807867f2988983da2a661108a3b1caf071e56e1fb1a3ebac9247f1cd88ad1eb93da07dc139b5bff
+  languageName: node
+  linkType: hard
+
+"mdast-util-definitions@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "mdast-util-definitions@npm:1.2.5"
+  dependencies:
+    unist-util-visit: ^1.0.0
+  checksum: 6f17efb7198d4af0c0007103a4a3cf6725aa008eda397db969b6dd60251c4c455551507259d0cd93e50c7b7a3963f05307853245dda8a58fa186e34186e54d9d
   languageName: node
   linkType: hard
 
@@ -12969,7 +13022,7 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
-"nth-check@npm:^1.0.2, nth-check@npm:~1.0.1":
+"nth-check@npm:^1.0.1, nth-check@npm:^1.0.2, nth-check@npm:~1.0.1":
   version: 1.0.2
   resolution: "nth-check@npm:1.0.2"
   dependencies:
@@ -13724,6 +13777,15 @@ is-whitespace@latest:
     parse-path: ^4.0.0
     protocols: ^1.4.0
   checksum: 6b7d9b89a5d2d8c4a442ecc85289cbf764062c99921f03b7b5068895e1b1432be45860400c273abb0c2f09d7cfe5bbc710e6bf0deb234dab74c4163c44236297
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^3.0.1":
+  version: 3.0.3
+  resolution: "parse5@npm:3.0.3"
+  dependencies:
+    "@types/node": "*"
+  checksum: 47086524700bc3f0806e2dec819a93a71684931736393bfb454a0c9fb58861710248f21ad2fc351ce9639e1158db07bca05ac9df79dfaad6eeb3a9a7d9482ec7
   languageName: node
   linkType: hard
 
@@ -18226,6 +18288,17 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
+"unist-util-select@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "unist-util-select@npm:1.5.0"
+  dependencies:
+    css-selector-parser: ^1.1.0
+    debug: ^2.2.0
+    nth-check: ^1.0.1
+  checksum: 0f0cc407d4a534ea9facb4bf7339cf3aaf25d59c30b30a9c92f2ef7b393dd67d415748f2c6103db07f5a09ac79e3df23a87339e347f9e1d476067a1c224aaa13
+  languageName: node
+  linkType: hard
+
 "unist-util-stringify-position@npm:^1.0.0, unist-util-stringify-position@npm:^1.1.1":
   version: 1.1.2
   resolution: "unist-util-stringify-position@npm:1.1.2"
@@ -18249,7 +18322,7 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
-"unist-util-visit-parents@npm:^2.0.0":
+"unist-util-visit-parents@npm:^2.0.0, unist-util-visit-parents@npm:^2.1.2":
   version: 2.1.2
   resolution: "unist-util-visit-parents@npm:2.1.2"
   dependencies:
@@ -18290,7 +18363,7 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
-"unist-util-visit@npm:^1.1.0, unist-util-visit@npm:^1.4.1":
+"unist-util-visit@npm:^1.0.0, unist-util-visit@npm:^1.1.0, unist-util-visit@npm:^1.4.1":
   version: 1.4.1
   resolution: "unist-util-visit@npm:1.4.1"
   dependencies:
