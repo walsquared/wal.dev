@@ -217,10 +217,13 @@ const NavBar = () => {
       <ButtonDiv>
         <NavButton
           color='red'
-          // exact
           to='/'
-          activeStyle={{
-            color: 'var(--red)'
+          getProps={({ isCurrent, location }) => {
+            return {
+              style: {
+                color: isCurrent || location.pathname.split('/')[1] === 'work' ? 'var(--red)' : 'var(--text)'
+              }
+            }
           }}
         >
           work

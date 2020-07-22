@@ -4207,6 +4207,7 @@ __metadata:
     babel-plugin-styled-components: ^1.10.7
     gatsby: 2.23.12
     gatsby-image: ^2.4.9
+    gatsby-plugin-client-side-redirect: ^1.1.0
     gatsby-plugin-mdx: ^1.2.28
     gatsby-plugin-react-helmet: ^3.3.6
     gatsby-plugin-root-import: ^2.0.5
@@ -8187,6 +8188,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "fs-extra@npm:7.0.1"
+  dependencies:
+    graceful-fs: ^4.1.2
+    jsonfile: ^4.0.0
+    universalify: ^0.1.0
+  checksum: 0de3773953a13b517f053dbfa291166da076cc563cdd8f0ecefc64018ab15d2614f1707860b82e6b0e41695f613c1855f410749bd01bcb585f0243b1018a6595
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
@@ -8407,6 +8419,15 @@ fsevents@~2.1.2:
     lodash: ^4.17.15
     micromatch: ^3.1.10
   checksum: f5f0ed4f9e8d2aba074a5d361ac38cd541d4b76643f9945a0d703b97d7e23952fddca055b81bc0f826f19d4c6b8d9445367f82efd2a5d285fb80a7f6527f8685
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-client-side-redirect@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "gatsby-plugin-client-side-redirect@npm:1.1.0"
+  dependencies:
+    fs-extra: ^7.0.0
+  checksum: 32cf49971cf262b849a7a66f7381233ec7ed7f615edf526b22126f42d3b494ff2d92479331a83c02d98eed1711aa19fde2805aa8831484e6b16c1b6f1a9d8323
   languageName: node
   linkType: hard
 

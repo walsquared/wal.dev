@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { Button, ContactPrompt, Layout, SEO } from 'components'
 import Card from 'components/card'
 
-import cuHacking from 'images/cuHacking-preview.jpg'
-import cuHacking2020 from 'images/cuHacking-2020-preview.jpg'
-import ribbon from 'images/ribbon-preview.svg'
+import cuHacking from './work/pushing-student-developers-beyond-the-cs-curriculum/cuHacking-preview.jpg'
+import cuHacking2020 from './work/modernizing-the-hackathon/cuHacking-2020-preview.jpg'
+import ribbon from './work/automating-the-automator/ribbon-preview.svg'
 import savingCindi from 'images/saving-cindi-preview.jpg'
 
 const Introduction = styled.div`
@@ -158,7 +158,7 @@ const WorkPage = () => (
           themeColors={['#00D0FE', '#7C39BF', '#280749']}
           preview={cuHacking}
           linkProps={{
-            link: '/',
+            link: '/work/pushing-student-developers-beyond-the-cs-curriculum',
             external: false
           }}
         />
@@ -168,7 +168,7 @@ const WorkPage = () => (
           themeColors={['#7C39BF', '#280749']}
           preview={cuHacking2020}
           linkProps={{
-            link: '/',
+            link: '/work/modernizing-the-hackathon',
             external: false
           }}
         />
@@ -178,7 +178,7 @@ const WorkPage = () => (
           themeColors={['#FF007F', '#C0059E', '#7E00B9', '#4B4B4B']}
           preview={ribbon}
           linkProps={{
-            link: '/',
+            link: '/work/automating-the-automator',
             external: false
           }}
         />
@@ -195,7 +195,7 @@ const WorkPage = () => (
       </CardList>
     </WorkContainer>
     <ContactPrompt theme='red'>
-      <h1>Don’t be shy, send me a message!</h1>
+      <h1>Don’t be shy, shoot me a message!</h1>
       <p>I’m always open to meeting new people. Let’s talk about anything.</p>
       <Button color='var(--red)' label='More About Me' link='/about' />
     </ContactPrompt>

@@ -18,8 +18,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
+  // Redirecting '/' -> '/work'
+  createRedirect({ fromPath: '/work', toPath: '/', isPermanent: true })
+
+  // Creating pages for MDX posts
   const result = await graphql(`
     query {
       allMdx {
