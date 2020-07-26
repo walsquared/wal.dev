@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const postPreviewStyle = css`
   border: 2px solid var(--black);
@@ -127,18 +128,16 @@ const NewestMeta = styled.p`
     font-size: 1rem;
   }
 `
-export const PostPreview = ({ post }) => {
-  return (
-    <PostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
-      <Tag>{post.frontmatter.tags[0].toUpperCase()}</Tag>
-      <Title>{post.frontmatter.title}</Title>
-      <Excerpt>{post.frontmatter.brief}</Excerpt>
-      <Meta>
-        {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
-      </Meta>
-    </PostPreviewDiv>
-  )
-}
+export const PostPreview = ({ post }) => (
+  <PostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
+    <Tag>{post.frontmatter.tags[0].toUpperCase()}</Tag>
+    <Title>{post.frontmatter.title}</Title>
+    <Excerpt>{post.frontmatter.brief}</Excerpt>
+    <Meta>
+      {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
+    </Meta>
+  </PostPreviewDiv>
+)
 
 const NewestPostPreviewDiv = styled(Link)<{ bkg?: string | null | undefined }>`
   ${postPreviewStyle}
@@ -159,7 +158,7 @@ const NewestPostPreviewDiv = styled(Link)<{ bkg?: string | null | undefined }>`
   }
 `
 
-const Preview = styled.div<{ image?: string | undefined | null }>`
+const Preview = styled(Img)`
   display: none;
 
   @media only screen and (min-width: 1200px) {
@@ -169,11 +168,6 @@ const Preview = styled.div<{ image?: string | undefined | null }>`
     height: 400px;
     max-width: 750px;
     max-height: unset;
-    background-image: ${(props) => (props.image ? `url(${props.image})` : `unset`)};
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
     overflow: hidden;
   }
 `
@@ -187,18 +181,16 @@ const PostBrief = styled.div`
   }
 `
 
-export const NewestPostPreview = ({ post }) => {
-  return (
-    <NewestPostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
-      <Preview image={post.frontmatter.cover.childImageSharp.fluid.src} />
-      <PostBrief>
-        <NewestTag>{post.frontmatter.tags[0].toUpperCase()}</NewestTag>
-        <NewestTitle>{post.frontmatter.title}</NewestTitle>
-        <NewestExcerpt>{post.frontmatter.brief}</NewestExcerpt>
-        <NewestMeta>
-          {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
-        </NewestMeta>
-      </PostBrief>
-    </NewestPostPreviewDiv>
-  )
-}
+export const NewestPostPreview = ({ post }) => (
+  <NewestPostPreviewDiv to={post.fields.slug} bkg={post.frontmatter.cover.childImageSharp.fluid.src}>
+    <Preview fluid={post.frontmatter.cover.childImageSharp.fluid} />
+    <PostBrief>
+      <NewestTag>{post.frontmatter.tags[0].toUpperCase()}</NewestTag>
+      <NewestTitle>{post.frontmatter.title}</NewestTitle>
+      <NewestExcerpt>{post.frontmatter.brief}</NewestExcerpt>
+      <NewestMeta>
+        {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
+      </NewestMeta>
+    </PostBrief>
+  </NewestPostPreviewDiv>
+)

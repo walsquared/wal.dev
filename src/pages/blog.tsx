@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import { Layout, SEO } from 'components'
@@ -112,7 +112,7 @@ export const pageQuery = graphql`
             brief
             cover {
               childImageSharp {
-                fluid {
+                fluid(quality: 100) {
                   base64
                   aspectRatio
                   src
