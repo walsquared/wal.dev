@@ -2,36 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
-// import { LazyImage } from 'components'
-// import cakeUrl from './cake.jpg'
-// import cakeThumb from './cake-thumb.jpg'
-// import animeUrl from './greatest-anime-betrayal.jpg'
-// import animeThumb from './greatest-anime-betrayal-thumb.jpg'
-
-const StyledAnchor = styled.a`
-  text-decoration: underline;
-  font-style: italic;
-`
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  margin-left: 0.25rem;
-`
-
-interface LinkProps {
-  children: React.ReactNode
-  link: string
-  style?: any
-}
-
-const ExternalLink = (props: LinkProps) => (
-  <StyledAnchor style={props.style} target='_blank' rel='noopener noreferrer external' href={props.link}>
-    {props.children}
-    <StyledIcon icon={faExternalLinkAlt} size='1x' />
-  </StyledAnchor>
-)
+import ExternalLink from './inlineExternalAnchor'
 
 const Container = styled.div`
   width: var(--mobile-width);

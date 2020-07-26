@@ -1,19 +1,26 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
+import ExternalLink from './inlineExternalAnchor'
 
-/* Here you can pass components down to Mdx so they don't need to be imported
- * You can also define how the regular markdown components are rendered.
- * See: https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/?=mdx#components
- */
-const shortcodes = { Link, h1: (props) => <h1 style={{ color: 'red' }} {...props} /> }
+const Article = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
-const Synopsis = styled.div``
+const Synopsis = styled.div`
+  width: var(--mobile-width);
+
+  @media only screen and (min-width: 700px) {
+    max-width: 680px;
+  }
+`
 
 const Tag = styled.p`
   margin: 0;
@@ -29,19 +36,35 @@ const Tag = styled.p`
   }
 `
 
+const styledHeader = css`
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+
+  margin: 0;
+`
+
 const Title = styled.h1`
-  margin: 5px 0;
+  ${styledHeader}
+
+  font-size: 2.25rem;
+  margin: 5px 0 0;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 2.75rem;
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 3rem;
+    }
+  }
 `
 
 const Brief = styled.p`
   color: #888;
   font-size: 1.1rem;
-  /* margin-bottom: 10vw; */
+  margin: 5vw 0;
 
   @media only screen and (min-width: 700px) {
-    /* margin-bottom: 35px; */
-  }
-  @media only screen and (min-width: 1200px) {
+    margin: 25px 0;
     font-size: 1.25rem;
   }
 `
@@ -56,6 +79,7 @@ const Meta = styled.p`
   font-size: 0.8rem;
 
   @media only screen and (min-width: 700px) {
+    font-size: 1rem;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -65,8 +89,13 @@ const Meta = styled.p`
 `
 
 const Preview = styled(Img)`
-  margin: 30px 0 50px;
+  margin: 5vw 0 2.5vw;
   width: 100vw;
+
+  @media only screen and (min-width: 700px) {
+    margin: 50px 0;
+    max-width: 1200px;
+  }
 `
 
 const Content = styled.div`
@@ -74,27 +103,192 @@ const Content = styled.div`
   flex-direction: column;
 
   width: var(--mobile-width);
+
+  font-size: 1.1rem;
+
+  p {
+    line-height: 160%;
+  }
+
+  @media only screen and (min-width: 700px) {
+    max-width: 680px;
+  }
 `
+
+/* Here you can pass components down to Mdx so they don't need to be imported
+ * You can also define how the regular markdown components are rendered.
+ * See: https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/?=mdx#components
+ */
+const StyledP = styled.p`
+  margin: 2.5vw 0;
+  line-height: 160%;
+  font-size: 1.1rem;
+
+  @media only screen and (min-width: 700px) {
+    margin: 10px 0;
+    font-size: 1.25rem;
+  }
+`
+
+const StyledH1 = styled.h1`
+  ${styledHeader}
+  font-size: 2rem;
+  margin: 5vw 0 2.5vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 2.5rem;
+    margin: 30px 0 10px;
+  }
+`
+
+const StyledH2 = styled.h2`
+  ${styledHeader}
+  font-size: 1.5rem;
+  margin: 4.5vw 0 2.25vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.8rem;
+    margin: 25px 0 10px;
+  }
+`
+
+const StyledH3 = styled.h3`
+  ${styledHeader}
+  font-size: 1.25rem;
+  margin: 4vw 0 2vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+  }
+`
+
+const StyledH4 = styled.h4`
+  ${styledHeader}
+  font-size: 1.2rem;
+  margin: 4vw 0 2vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.4rem;
+    margin: 20px 0 10px;
+  }
+`
+
+const StyledH5 = styled.h5`
+  ${styledHeader}
+  font-size: 1.1rem;
+  margin: 4vw 0 2vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.3rem;
+    margin: 20px 0 10px;
+  }
+`
+
+const StyledH6 = styled.h6`
+  ${styledHeader}
+  font-size: 1rem;
+  margin: 4vw 0 2vw;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.25rem;
+    margin: 20px 0 10px;
+  }
+`
+
+const StyledBlockquote = styled.blockquote`
+  border-left: 2px solid var(--blue);
+
+  margin-left: 5vw;
+  padding-left: 15px;
+
+  p {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 700px) {
+    margin-left: 25px;
+    padding-left: 25px;
+  }
+`
+
+const listStyle = css`
+  padding-left: 5vw;
+
+  @media only screen and (min-width: 700px) {
+    padding-left: 25px;
+  }
+`
+
+const StyledUl = styled.ul`
+  ${listStyle}
+
+  p {
+    margin: 0;
+  }
+`
+
+const StyledOl = styled.ol`
+  ${listStyle}
+
+  p {
+    margin: 0;
+  }
+`
+
+const StyledTable = styled.table`
+  /* Style this if you ever come to using an html table*/
+`
+
+const StyledHr = styled.hr`
+  width: 90%;
+  margin: 5vw 0;
+  align-self: center;
+
+  border: 1px solid var(--blue);
+
+  @media only screen and (min-width: 700px) {
+    margin: 50px 0;
+  }
+`
+
+const blogStyle = {
+  p: (props) => <StyledP {...props} />,
+  h1: (props) => <StyledH1 {...props} />,
+  h2: (props) => <StyledH2 {...props} />,
+  h3: (props) => <StyledH3 {...props} />,
+  h4: (props) => <StyledH4 {...props} />,
+  h5: (props) => <StyledH5 {...props} />,
+  h6: (props) => <StyledH6 {...props} />,
+  blockquote: (props) => <StyledBlockquote {...props} />,
+  ul: (props) => <StyledUl {...props} />,
+  ol: (props) => <StyledOl {...props} />,
+  table: (props) => <StyledTable {...props} />,
+  hr: (props) => <StyledHr {...props} />,
+  a: (props) => <ExternalLink link={props.href} {...props} />
+}
+
+const shortcodes = { Link, ...blogStyle }
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <article>
+      <Article>
         <Synopsis>
           <Tag>{mdx.frontmatter.tags[0].toUpperCase()}</Tag>
           <Title>{mdx.frontmatter.title}</Title>
           <Brief>{mdx.frontmatter.brief}</Brief>
-          <Preview fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
           <Meta>
             {mdx.frontmatter.date.toUpperCase()} • {mdx.frontmatter.readingTime} MIN READ
           </Meta>
         </Synopsis>
+        <Preview fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
         <Content>
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </Content>
-      </article>
+      </Article>
     </Layout>
   )
 }
@@ -109,7 +303,7 @@ export const pageQuery = graphql`
         brief
         cover {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 1200, quality: 100) {
               base64
               aspectRatio
               src

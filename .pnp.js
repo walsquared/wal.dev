@@ -62,6 +62,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:14.0.24"
       ],
       [
+        "@types/prismjs",
+        "npm:1.16.1"
+      ],
+      [
         "@types/react",
         "npm:16.9.43"
       ],
@@ -122,6 +126,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.3.20"
       ],
       [
+        "gatsby-remark-prismjs",
+        "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.5.10"
+      ],
+      [
         "gatsby-source-filesystem",
         "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.3.21"
       ],
@@ -132,6 +140,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "prettier",
         "npm:2.0.5"
+      ],
+      [
+        "prism-themes",
+        "npm:1.4.0"
+      ],
+      [
+        "prismjs",
+        "npm:1.20.0"
       ],
       [
         "prop-types",
@@ -181,6 +197,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/react", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:1.6.13"],
             ["@types/mdx-js__react", "npm:1.5.2"],
             ["@types/node", "npm:14.0.24"],
+            ["@types/prismjs", "npm:1.16.1"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/styled-components", "npm:5.1.1"],
@@ -196,9 +213,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-styled-components", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.3.10"],
             ["gatsby-plugin-typescript", "npm:2.4.16"],
             ["gatsby-remark-images", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.3.20"],
+            ["gatsby-remark-prismjs", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.5.10"],
             ["gatsby-source-filesystem", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.3.21"],
             ["gatsby-transformer-sharp", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.5.7"],
             ["prettier", "npm:2.0.5"],
+            ["prism-themes", "npm:1.4.0"],
+            ["prismjs", "npm:1.20.0"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:16.13.1"],
@@ -3357,6 +3377,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/prismjs", [
+        ["npm:1.16.1", {
+          "packageLocation": "./.yarn/cache/@types-prismjs-npm-1.16.1-e97a0a22eb-f3807984ec.zip/node_modules/@types/prismjs/",
+          "packageDependencies": [
+            ["@types/prismjs", "npm:1.16.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/prop-types", [
         ["npm:15.7.3", {
           "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.3-084e0015c6-bd0eab69d5.zip/node_modules/@types/prop-types/",
@@ -5153,6 +5182,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/react", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:1.6.13"],
             ["@types/mdx-js__react", "npm:1.5.2"],
             ["@types/node", "npm:14.0.24"],
+            ["@types/prismjs", "npm:1.16.1"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/styled-components", "npm:5.1.1"],
@@ -5168,9 +5198,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-styled-components", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.3.10"],
             ["gatsby-plugin-typescript", "npm:2.4.16"],
             ["gatsby-remark-images", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.3.20"],
+            ["gatsby-remark-prismjs", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.5.10"],
             ["gatsby-source-filesystem", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.3.21"],
             ["gatsby-transformer-sharp", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.5.7"],
             ["prettier", "npm:2.0.5"],
+            ["prism-themes", "npm:1.4.0"],
+            ["prismjs", "npm:1.20.0"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:16.13.1"],
@@ -6169,6 +6202,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cli-width-npm-2.2.1-4bdb77393c-f7c830bddc.zip/node_modules/cli-width/",
           "packageDependencies": [
             ["cli-width", "npm:2.2.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["clipboard", [
+        ["npm:2.0.6", {
+          "packageLocation": "./.yarn/cache/clipboard-npm-2.0.6-3d616039e3-25e2e6b595.zip/node_modules/clipboard/",
+          "packageDependencies": [
+            ["clipboard", "npm:2.0.6"],
+            ["good-listener", "npm:1.2.2"],
+            ["select", "npm:1.1.2"],
+            ["tiny-emitter", "npm:2.1.0"]
           ],
           "linkType": "HARD",
         }]
@@ -7592,6 +7637,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/delayed-stream-npm-1.0.0-c5a4c4cc02-d9dfb0a7c7.zip/node_modules/delayed-stream/",
           "packageDependencies": [
             ["delayed-stream", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["delegate", [
+        ["npm:3.2.0", {
+          "packageLocation": "./.yarn/cache/delegate-npm-3.2.0-d3f849ea99-ccbbf29eb4.zip/node_modules/delegate/",
+          "packageDependencies": [
+            ["delegate", "npm:3.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -10290,6 +10344,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["gatsby-remark-prismjs", [
+        ["virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.5.10", {
+          "packageLocation": "./.yarn/$$virtual/gatsby-remark-prismjs-virtual-d289dc841a/0/cache/gatsby-remark-prismjs-npm-3.5.10-303c8e3702-10ba139744.zip/node_modules/gatsby-remark-prismjs/",
+          "packageDependencies": [
+            ["gatsby-remark-prismjs", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:3.5.10"],
+            ["@babel/runtime", "npm:7.10.3"],
+            ["gatsby", "virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.23.12"],
+            ["parse-numeric-range", "npm:0.0.2"],
+            ["prismjs", "npm:1.20.0"],
+            ["unist-util-visit", "npm:1.4.1"]
+          ],
+          "packagePeers": [
+            "gatsby",
+            "prismjs"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["gatsby-source-filesystem", [
         ["virtual:c6dcce817fa225290e033ab3df9d032741dc228bb28c9cbb4719875ef6095c1c8f4a1ecb6d1cce6f1119ad7c9bb93c31bc307a4e235fab5627d039ca42e55b65#npm:2.3.21", {
           "packageLocation": "./.yarn/$$virtual/gatsby-source-filesystem-virtual-3bd5aeed68/0/cache/gatsby-source-filesystem-npm-2.3.21-4294190ced-0e808307b8.zip/node_modules/gatsby-source-filesystem/",
@@ -10667,6 +10739,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:3.3.10"],
             ["pify", "npm:3.0.0"],
             ["slash", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["good-listener", [
+        ["npm:1.2.2", {
+          "packageLocation": "./.yarn/cache/good-listener-npm-1.2.2-e7865da849-640a1627e5.zip/node_modules/good-listener/",
+          "packageDependencies": [
+            ["good-listener", "npm:1.2.2"],
+            ["delegate", "npm:3.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -15844,6 +15926,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["parse-numeric-range", [
+        ["npm:0.0.2", {
+          "packageLocation": "./.yarn/cache/parse-numeric-range-npm-0.0.2-e67d73fd46-a058c6ef46.zip/node_modules/parse-numeric-range/",
+          "packageDependencies": [
+            ["parse-numeric-range", "npm:0.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["parse-passwd", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/parse-passwd-npm-1.0.0-ace6effa1d-e196edc373.zip/node_modules/parse-passwd/",
@@ -16869,6 +16960,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ansi-regex", "npm:5.0.0"],
             ["ansi-styles", "npm:4.2.1"],
             ["react-is", "npm:16.13.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["prism-themes", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/prism-themes-npm-1.4.0-166c744261-a5ed0d3276.zip/node_modules/prism-themes/",
+          "packageDependencies": [
+            ["prism-themes", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["prismjs", [
+        ["npm:1.20.0", {
+          "packageLocation": "./.yarn/cache/prismjs-npm-1.20.0-05080b8b0a-b4cb8bdd48.zip/node_modules/prismjs/",
+          "packageDependencies": [
+            ["prismjs", "npm:1.20.0"],
+            ["clipboard", "npm:2.0.6"]
           ],
           "linkType": "HARD",
         }]
@@ -18424,6 +18534,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["seek-bzip", "npm:1.0.5"],
             ["commander", "npm:2.8.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["select", [
+        ["npm:1.1.2", {
+          "packageLocation": "./.yarn/cache/select-npm-1.1.2-13cd366fa2-66be63b7cf.zip/node_modules/select/",
+          "packageDependencies": [
+            ["select", "npm:1.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -20136,6 +20255,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/timsort-npm-0.3.0-868a28166c-d8300c3ecf.zip/node_modules/timsort/",
           "packageDependencies": [
             ["timsort", "npm:0.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["tiny-emitter", [
+        ["npm:2.1.0", {
+          "packageLocation": "./.yarn/cache/tiny-emitter-npm-2.1.0-2a4d94f487-0055509c72.zip/node_modules/tiny-emitter/",
+          "packageDependencies": [
+            ["tiny-emitter", "npm:2.1.0"]
           ],
           "linkType": "HARD",
         }]
