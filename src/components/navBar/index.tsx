@@ -184,7 +184,7 @@ const NavBar = () => {
   const [menuOpen, toggleMenu] = useState(false)
   const [menuColor, changeColor] = useState<ThemeColor>('red')
 
-  const route: Array<string> = useLocation().pathname.split('/')
+  const pathname: Array<string> = useLocation().pathname.split('/')
 
   const colorMap = (route: string): ThemeColor => {
     switch (route) {
@@ -209,7 +209,7 @@ const NavBar = () => {
         type='button'
         onClick={() => {
           toggleMenu(true)
-          changeColor(colorMap(route[1]))
+          changeColor(colorMap(pathname[1]))
         }}
       >
         <MenuIcon />

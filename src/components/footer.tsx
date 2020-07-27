@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   max-width: var(--desktop-width);
   margin: 50px 0;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 1200px) {
     flex-direction: row;
     margin: 10px 0 50px;
   }

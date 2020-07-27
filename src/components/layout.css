@@ -43,6 +43,7 @@ a:active {
   padding-top: 100px;
 
   min-height: calc(100vh - 100px);
+  position: relative;
 }
 
 @media only screen and (min-width: 700px) {
