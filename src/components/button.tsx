@@ -87,10 +87,10 @@ interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
   if (props.disabled) {
-    return <DisabledButton>{props.label}</DisabledButton>
+    return <DisabledButton {...props}>{props.label}</DisabledButton>
   } else if (!props.link) {
     return (
-      <StyledButton className={props.className} color={props.color} onClick={props.action}>
+      <StyledButton className={props.className} color={props.color} onClick={props.action} {...props}>
         {props.label}
       </StyledButton>
     )
@@ -103,6 +103,7 @@ const Button = (props: ButtonProps) => {
         href={props.link}
         color={props.color}
         download={props.download}
+        {...props}
       >
         {props.label}
         <StyledIcon icon={props.download ? faDownload : faExternalLinkAlt} size='1x' />
@@ -110,7 +111,7 @@ const Button = (props: ButtonProps) => {
     )
   }
   return (
-    <StyledLink className={props.className} to={props.link} color={props.color}>
+    <StyledLink className={props.className} to={props.link} color={props.color} {...props}>
       {props.label}
     </StyledLink>
   )

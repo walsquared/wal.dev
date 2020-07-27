@@ -94,7 +94,7 @@ const Card = styled.div`
   h3 {
     font-size: 1.1rem;
     font-weight: normal;
-    color: #888;
+    color: var(--grey);
     margin: 0;
   }
 

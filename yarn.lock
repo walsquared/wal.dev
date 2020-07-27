@@ -4241,6 +4241,7 @@ __metadata:
     react: ^16.12.0
     react-dom: ^16.12.0
     react-helmet: ^6.1.0
+    react-tooltip: ^4.2.7
     styled-components: ^5.1.1
     typeface-inter: ^3.12.0
     typeface-open-sans: ^0.0.75
@@ -15334,6 +15335,19 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
+"react-tooltip@npm:^4.2.7":
+  version: 4.2.7
+  resolution: "react-tooltip@npm:4.2.7"
+  dependencies:
+    prop-types: ^15.7.2
+    uuid: ^7.0.3
+  peerDependencies:
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: 33131479fdaacc149d2be2864d321d67e0a0f60537b9ce5e49f52b49251cdc47f7731c0a284db317d77fe55ab7d2109220f168b693c05ab2de3e9ed59758c457
+  languageName: node
+  linkType: hard
+
 "react@npm:^16.12.0, react@npm:^16.8.0":
   version: 16.13.1
   resolution: "react@npm:16.13.1"
@@ -18770,6 +18784,15 @@ is-whitespace@latest:
   bin:
     uuid: ./bin/uuid
   checksum: 1ce3f37e214d6d0dc94a6a9663a0365013ace66bc3fd5b203e6f5d2eeb978aaee1192367222386345d30b4c6a447928c501121aa84c637724bf105ef57284949
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "uuid@npm:7.0.3"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: a56be8a5bbf2bae755d749d0693637274935b5ae250dfaaaf79241391cf1a7c142a202492196363ec62ec51a476e5e3fc4de2944d854abf2e9b35a33e0e31d4c
   languageName: node
   linkType: hard
 

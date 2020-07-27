@@ -35,6 +35,7 @@ const Dialogue = styled.div`
 
   h1 {
     margin: 0;
+    font-family: 'Inter', sans-serif;
   }
 
   p {

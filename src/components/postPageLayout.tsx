@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { useLocation } from '@reach/router'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import ReactTooltip from 'react-tooltip'
 
 import Layout from './layout'
 import ExternalLink from './inlineExternalAnchor'
+import Button from './button'
 
 const Article = styled.article`
   display: flex;
@@ -53,13 +56,13 @@ const Title = styled.h1`
     font-size: 2.75rem;
 
     @media only screen and (min-width: 1200px) {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
   }
 `
 
 const Brief = styled.p`
-  color: #888;
+  color: var(--grey);
   font-size: 1.1rem;
   margin: 5vw 0;
 
@@ -112,6 +115,51 @@ const Content = styled.div`
 
   @media only screen and (min-width: 700px) {
     max-width: 680px;
+  }
+`
+
+const EndDivider = styled.hr`
+  width: 80%;
+  margin: 50px 0;
+  align-self: center;
+
+  border: 1px solid var(--grey);
+
+  @media only screen and (min-width: 700px) {
+    max-width: calc(680px * 0.8);
+    margin: 50px 0;
+  }
+`
+
+const SharePrompt = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+
+  margin-bottom: 50px;
+
+  width: var(--mobile-width);
+
+  h1 {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  p {
+    margin: 20px 0;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  @media only screen and (min-width: 700px) {
+    max-width: 680px;
+
+    p {
+      margin: 10px 0 30px;
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -197,7 +245,7 @@ const StyledH6 = styled.h6`
 `
 
 const StyledBlockquote = styled.blockquote`
-  border-left: 2px solid var(--blue);
+  border-left: 2px solid var(--grey);
 
   margin-left: 5vw;
   padding-left: 15px;
@@ -241,11 +289,11 @@ const StyledTable = styled.table`
 `
 
 const StyledHr = styled.hr`
-  width: 90%;
+  width: 80%;
   margin: 5vw 0;
   align-self: center;
 
-  border: 1px solid var(--blue);
+  border: 1px solid var(--grey);
 
   @media only screen and (min-width: 700px) {
     margin: 50px 0;
@@ -271,6 +319,11 @@ const blogStyle = {
 const shortcodes = { Link, ...blogStyle }
 
 export default function PageTemplate({ data: { mdx } }) {
+  const { href } = useLocation()
+  const [copyText, setCopyText] = useState<'Click to Copy' | 'Copying...' | 'Copied!' | 'Failed to Copy :('>(
+    'Click to Copy'
+  )
+
   return (
     <Layout>
       <Article>
@@ -289,6 +342,35 @@ export default function PageTemplate({ data: { mdx } }) {
           </MDXProvider>
         </Content>
       </Article>
+      <EndDivider />
+      <SharePrompt>
+        <h1>Liked this post?</h1>
+        <p>
+          Share it with a friend, or discuss with me on{' '}
+          <ExternalLink link='https://twitter.com/walsquared' style={{ fontStyle: 'normal' }}>
+            Twitter
+          </ExternalLink>
+          !
+        </p>
+        <Button
+          data-tip
+          data-for='copyToClipboard'
+          color='var(--blue)'
+          label='Copy Link to Post'
+          action={() => {
+            setCopyText('Copying...')
+            navigator.clipboard.writeText(href).then(
+              () => {
+                setCopyText('Copied!')
+              },
+              (err) => {
+                setCopyText('Failed to Copy :(')
+              }
+            )
+          }}
+        />
+        <ReactTooltip id='copyToClipboard' type='info' effect='solid' getContent={() => copyText} />
+      </SharePrompt>
     </Layout>
   )
 }
