@@ -89,7 +89,7 @@ const Button = styled.button<{ color: string }>`
   font-size: 1.125rem;
   font-weight: 600;
 
-  transition: 0.1s ease;
+  transition: 0.1s ease-in;
 
   &:hover {
     cursor: pointer;

@@ -72,10 +72,10 @@ const NavButton = styled(Link)<{ color: ThemeColor }>`
     height: 45px;
     margin-left: 35px;
 
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
 
     &:hover {
-      color: ${(props) => `var(--${props.color})`};
+      color: ${(props) => `var(--${props.color})`} !important;
     }
   }
 `
