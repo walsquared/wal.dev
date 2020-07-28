@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 import { useLocation } from '@reach/router'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -10,6 +10,7 @@ import ReactTooltip from 'react-tooltip'
 import Layout from './layout'
 import ExternalLink from './inlineExternalAnchor'
 import Button from './button'
+import Caption from './caption'
 
 const Article = styled.article`
   display: flex;
@@ -90,8 +91,11 @@ const Meta = styled.p`
     font-size: 1rem;
   }
 `
+const PreviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-const Preview = styled(Img)`
   margin: 5vw 0 2.5vw;
   width: 100vw;
 
@@ -100,6 +104,24 @@ const Preview = styled(Img)`
     max-width: 1200px;
   }
 `
+
+const Image = styled(Img)`
+  width: 100%;
+`
+
+interface PreviewProps {
+  fluid: FluidObject
+  caption?: string
+}
+
+const Preview = (props: PreviewProps) => {
+  return (
+    <PreviewContainer>
+      <Image fluid={props.fluid} />
+      {props.caption ? <Caption>{props.caption}</Caption> : <p />}
+    </PreviewContainer>
+  )
+}
 
 const Content = styled.div`
   display: flex;
@@ -316,7 +338,7 @@ const blogStyle = {
   a: (props) => <ExternalLink link={props.href} {...props} />
 }
 
-const shortcodes = { Link, ...blogStyle }
+const shortcodes = { Link, Caption, ...blogStyle }
 
 export default function PageTemplate({ data: { mdx } }) {
   const { href } = useLocation()
@@ -335,7 +357,7 @@ export default function PageTemplate({ data: { mdx } }) {
             {mdx.frontmatter.date.toUpperCase()} • {mdx.frontmatter.readingTime} MIN READ
           </Meta>
         </Synopsis>
-        <Preview fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
+        <Preview caption='My COVID-19 home workstation.' fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
         <Content>
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -363,8 +385,9 @@ export default function PageTemplate({ data: { mdx } }) {
               () => {
                 setCopyText('Copied!')
               },
-              (err) => {
+              (error) => {
                 setCopyText('Failed to Copy :(')
+                console.error(error)
               }
             )
           }}
