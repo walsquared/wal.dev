@@ -156,7 +156,7 @@ const MobileMenu = (props: MenuProps) => {
     <StyledMobileMenu isOpen={props.isOpen} color={props.color}>
       <MobileNavBar>
         <Logo to='/' onClick={props.close}>
-          wal<LogoSpan>squared</LogoSpan>
+          wal<LogoSpan>wal</LogoSpan>
         </Logo>
         <MenuButton type='button' onClick={props.close}>
           <CloseIcon />

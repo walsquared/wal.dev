@@ -117,7 +117,7 @@ const Showcase = () => (
       <AttributesPane color='#00C9E4'>
         <Attribute>
           <h2>Timeline</h2>
-          <p>April 2019 - April 2020</p>
+          <p>September 2019 - October 2019</p>
         </Attribute>
         <Attribute>
           <h2>Role</h2>
