@@ -136,16 +136,6 @@ const TileMeme = styled(Tile)`
   }
 `
 
-// const AnimeImage = styled(LazyImage)`
-//   width: 100%;
-//   padding-top: 56.25%;
-// `
-
-// const CakeImage = styled(LazyImage)`
-//   width: 100%;
-//   padding-top: 77.8%;
-// `
-
 const SpotifyDiv = styled.div`
   position: relative;
   overflow: hidden;
@@ -200,7 +190,6 @@ const MoodBoard = () => {
       <Prompt>If I were to summarize what’s been on my mind, it would look something like...</Prompt>
       <Tiles>
         <TileToG>
-          {/* <AnimeImage alt='greatest-anime-betrayal.jpg' src={animeUrl} thumbnail={animeThumb} /> */}
           <Img fluid={images.anime.childImageSharp.fluid} />
           <p>
             This scene from <strong>Tower of God</strong> is the greatest anime betrayal of all time. Prove me wrong.
@@ -220,7 +209,7 @@ const MoodBoard = () => {
             link='https://open.spotify.com/track/5av7NCtwaAsID0TJylcSD4?si=iPQBu256RkmQaO-tUmSyMQ'
             style={{ display: 'inline-block', textAlign: 'right', marginTop: '10px' }}
           >
-            Solar Return by Kota the Friend
+            <cite>Solar Return by Kota the Friend</cite>
           </ExternalLink>
         </TileKota>
         <TileDefund>
@@ -228,7 +217,7 @@ const MoodBoard = () => {
           <p>
             Check out these flyers about{' '}
             <ExternalLink link='https://drive.google.com/drive/folders/1HUpCPvOwUJElxtUP4mCysAY9GyZrSmUk?usp=sharing'>
-              alternatives to policing
+              <cite>alternatives to policing</cite>
             </ExternalLink>{' '}
             to see what this might look like.
           </p>
@@ -239,9 +228,12 @@ const MoodBoard = () => {
             <strong>prestige and purpose</strong>."
           </h3>
           <p>
-            <ExternalLink link='https://nyti.ms/2NerVLW'>‘Techlash’ Hits College Campuses</ExternalLink> is a short
-            article that describes an attitude developing on campuses that I’ve sympathized with a lot. If you’re a
-            student like me who will soon have to depart into the “real world”, I highly suggest giving it a quick read.
+            <ExternalLink link='https://nyti.ms/2NerVLW'>
+              <cite>‘Techlash’ Hits College Campuses</cite>
+            </ExternalLink>{' '}
+            is a short article that describes an attitude developing on campuses that I’ve sympathized with a lot. If
+            you’re a student like me who will soon have to depart into the “real world”, I highly suggest giving it a
+            quick read.
           </p>
         </TilePrestige>
         <TileMeasured>
@@ -251,8 +243,10 @@ const MoodBoard = () => {
           <p>
             This quote has been said by many and has shown itself in different forms, however the person I heard it from
             was Bukola on her YouTube channel,{' '}
-            <ExternalLink link='https://www.youtube.com/channel/UC-bFgwL_kFKLZA60AiB-CCQ'>The Come Up</ExternalLink>.
-            She talks about some stuff that I personally find helpful on my professional journey.
+            <ExternalLink link='https://www.youtube.com/channel/UC-bFgwL_kFKLZA60AiB-CCQ'>
+              <cite>The Come Up</cite>
+            </ExternalLink>
+            . She talks about some stuff that I personally find helpful on my professional journey.
           </p>
         </TileMeasured>
         <TileSong>
@@ -268,7 +262,6 @@ const MoodBoard = () => {
           </p>
         </TileSong>
         <TileMeme>
-          {/* <CakeImage alt='everything-is-cake.jpg' src={cakeUrl} thumbnail={cakeThumb} /> */}
           <Img fluid={images.cake.childImageSharp.fluid} />
 
           <p>

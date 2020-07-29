@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { Button, ContactPrompt, Layout, SEO } from 'components'
 import Card from 'components/card'
 
-import cuHacking from './work/pushing-student-developers-beyond-the-cs-curriculum/cuHacking-preview.jpg'
-import cuHacking2020 from './work/modernizing-the-hackathon/cuHacking-2020-preview.jpg'
-import ribbon from './work/automating-the-automator/ribbon-preview.svg'
-import savingCindi from 'images/saving-cindi-preview.jpg'
+import cuHacking from './work/cuhacking/cuHacking-preview.jpg'
+import cuHacking2020 from './work/cuhacking-2020/cuHacking-2020-preview.jpg'
+import ribbon from './work/ribbon-communications/ribbon-preview.svg'
+import savingCindi from './work/saving-cindi/saving-cindi-preview.jpg'
 
 const Introduction = styled.div`
   display: flex;
@@ -153,43 +153,43 @@ const WorkPage = () => (
       <Header>Recent Works</Header>
       <CardList>
         <Card
-          title='Pushing student developers beyond the CS curriculum'
+          title='Developing for the Community at cuHacking'
           subtitle='Director of Development | cuHacking'
           themeColors={['#00D0FE', '#7C39BF', '#280749']}
           preview={cuHacking}
           linkProps={{
-            link: '/work/pushing-student-developers-beyond-the-cs-curriculum',
+            link: '/work/cuhacking',
             external: false
           }}
         />
         <Card
-          title='Modernizing the “hackathon”'
+          title='Leading Developers at cuHacking'
           subtitle='Director of Development | cuHacking 2020'
           themeColors={['#7C39BF', '#280749']}
           preview={cuHacking2020}
           linkProps={{
-            link: '/work/modernizing-the-hackathon',
+            link: '/work/cuhacking-2020',
             external: false
           }}
         />
         <Card
-          title='Automating the automator'
+          title='Interning at Ribbon Communications'
           subtitle='Software Developer (Intern) | Ribbon'
           themeColors={['#FF007F', '#C0059E', '#7E00B9', '#4B4B4B']}
           preview={ribbon}
           linkProps={{
-            link: '/work/automating-the-automator',
+            link: '/work/ribbon-communications',
             external: false
           }}
         />
         <Card
-          title='Saving Cindi’s Website'
+          title='Making Saving Cindi’s Website'
           subtitle='Website Designer & Developer'
           themeColors={['#00C9E4', '#D804A9']}
           preview={savingCindi}
           linkProps={{
-            link: 'https://savingcindi.com',
-            external: true
+            link: '/work/saving-cindi',
+            external: false
           }}
         />
       </CardList>
