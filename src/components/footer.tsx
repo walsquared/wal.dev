@@ -11,11 +11,11 @@ const StyledFooter = styled.footer`
   align-items: center;
   width: var(--mobile-width);
   max-width: var(--desktop-width);
-  margin: 50px 0;
+  margin: 35px 0;
 
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
-    margin: 10px 0 50px;
+    margin: 35px 0 35px;
   }
 `
 

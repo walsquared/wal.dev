@@ -10,7 +10,7 @@ const cardStyle = css`
   align-items: flex-start;
 
   margin-bottom: 5vw;
-  padding: 33px 38px;
+  padding: 5vw;
 
   border: 2px solid var(--black);
 
@@ -38,6 +38,7 @@ const cardStyle = css`
 
   @media only screen and (min-width: 700px) {
     margin-bottom: 20px;
+    padding: 33px 38px;
 
     background-color: #ffffff;
 

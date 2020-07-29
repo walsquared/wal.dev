@@ -34,36 +34,36 @@ const enabledButton = css`
   transition: 0.1s ease-in;
 `
 
-const StyledButton = styled.button<{ color: string }>`
+const StyledButton = styled.button<{ color: string; whiteTextHover: boolean }>`
   ${enabledButton}
 
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: ${(props) => props.color};
-      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
+      color: ${(props) => (props.whiteTextHover ? 'var(--white)' : 'var(--black)')};
       cursor: pointer;
     }
   }
 `
 
-const StyledLink = styled(Link)<{ color: string }>`
+const StyledLink = styled(Link)<{ color: string; whiteTextHover: boolean }>`
   ${enabledButton}
 
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: ${(props) => props.color};
-      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
+      color: ${(props) => (props.whiteTextHover ? 'var(--white)' : 'var(--black)')};
     }
   }
 `
 
-const StyledAnchor = styled.a<{ color: string }>`
+const StyledAnchor = styled.a<{ color: string; whiteTextHover: boolean }>`
   ${enabledButton}
 
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: ${(props) => props.color};
-      color: ${(props) => (props.color === 'var(--black)' ? 'var(--white)' : 'var(--black)')};
+      color: ${(props) => (props.whiteTextHover ? 'var(--white)' : 'var(--black)')};
     }
   }
 `
@@ -77,6 +77,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 interface ButtonProps {
   className?: string
   color: string
+  whiteTextHover?: boolean
   download?: boolean
   external?: boolean
   disabled?: boolean
@@ -90,7 +91,13 @@ const Button = (props: ButtonProps) => {
     return <DisabledButton {...props}>{props.label}</DisabledButton>
   } else if (!props.link) {
     return (
-      <StyledButton className={props.className} color={props.color} onClick={props.action} {...props}>
+      <StyledButton
+        className={props.className}
+        color={props.color}
+        whiteTextHover={!!props.whiteTextHover}
+        onClick={props.action}
+        {...props}
+      >
         {props.label}
       </StyledButton>
     )
@@ -102,6 +109,7 @@ const Button = (props: ButtonProps) => {
         rel='noopener noreferrer external'
         href={props.link}
         color={props.color}
+        whiteTextHover={!!props.whiteTextHover}
         download={props.download}
         {...props}
       >
@@ -111,7 +119,13 @@ const Button = (props: ButtonProps) => {
     )
   }
   return (
-    <StyledLink className={props.className} to={props.link} color={props.color} {...props}>
+    <StyledLink
+      className={props.className}
+      to={props.link}
+      color={props.color}
+      whiteTextHover={!!props.whiteTextHover}
+      {...props}
+    >
       {props.label}
     </StyledLink>
   )

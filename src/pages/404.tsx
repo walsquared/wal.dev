@@ -39,7 +39,7 @@ const NotFoundPage = () => (
     <Page>
       <h1>Umm this is embarrassing...</h1>
       <p>You’re not supposed to be here. Let’s get you back to safety.</p>
-      <StyledButton color='var(--black)' label='Home' link='/' />
+      <StyledButton color='var(--black)' whiteTextHover label='Home' link='/' />
     </Page>
   </Layout>
 )

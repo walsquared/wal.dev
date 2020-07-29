@@ -206,7 +206,6 @@ const AboutPage = ({ data }: PageProps) => (
             same as my last.`}
     />
     <ProfileDiv>
-      {/* <ProfileImage alt='Profile picture - smirk' src={smirkProfileUrl} thumbnail={smirkProfileThumb} /> */}
       <ProfileImage fluid={data.profile.childImageSharp.fluid} alt='Profile picture' />
       <IntroText>
         <h1>
@@ -230,7 +229,6 @@ const AboutPage = ({ data }: PageProps) => (
           <li>Recently completed a full year at Ribbon Communications as an intern</li>
         </ul>
       </section>
-      {/* <AcImage alt='Animal Crossing' src={acQuestionUrl} thumbnail={acQuestionThumb} /> */}
       <AcImage fluid={data.animalCrossing.childImageSharp.fluid} alt='Animal Crossing Character' />
     </UpdateDiv>
     <MoodBoard />

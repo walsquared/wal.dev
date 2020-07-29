@@ -15,6 +15,7 @@ const Button = styled.button<{ color: ThemeColor; isVisible: boolean }>`
   justify-content: center;
   align-items: center;
   border: 2px solid var(--black);
+  background-color: var(--bkg);
   width: 50px;
   height: 50px;
   padding: 0;
@@ -34,7 +35,10 @@ const Button = styled.button<{ color: ThemeColor; isVisible: boolean }>`
     span {
       display: flex;
       padding-left: 10px;
+
+      font-family: 'Open Sans', sans-serif;
       font-size: 1rem;
+      font-weight: 600;
     }
 
     &:hover {

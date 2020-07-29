@@ -28,7 +28,7 @@ const StyledNavBar = styled.header`
     box-shadow: unset;
     width: var(--mobile-width);
     padding: 0;
-    margin: 25px 0 60px;
+    margin: 25px 0;
     position: relative;
     top: unset;
     left: unset;
