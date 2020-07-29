@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -50,6 +50,7 @@ const Button = styled.button<{ color: ThemeColor; isVisible: boolean }>`
 
 const BackToTopButton = () => {
   const scrollHeight = useScrollHeight()
+  const [isVisible, setIsVisible] = useState(false)
 
   const pathname: Array<string> = useLocation().pathname.split('/')
 
@@ -66,12 +67,16 @@ const BackToTopButton = () => {
     }
   }
 
+  useEffect(() => {
+    setIsVisible(scrollHeight >= window.innerHeight * 2)
+  }, [scrollHeight])
+
   return (
     <Button
       color={colorMap(pathname[1])}
-      isVisible={scrollHeight >= window.innerHeight * 2}
+      isVisible={isVisible}
       type='button'
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={() => (window ? window.scrollTo({ top: 0, behavior: 'smooth' }) : {})}
     >
       <FontAwesomeIcon icon={faChevronUp} size='2x' />
       <span>Back to Top</span>
