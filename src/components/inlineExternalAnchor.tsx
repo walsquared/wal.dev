@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 const StyledAnchor = styled.a`
+  white-space: nowrap;
   text-decoration: underline;
-  font-style: italic;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`

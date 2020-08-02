@@ -114,14 +114,12 @@ interface PreviewProps {
   caption?: string
 }
 
-const Preview = (props: PreviewProps) => {
-  return (
-    <PreviewContainer>
-      <Image fluid={props.fluid} />
-      {props.caption ? <Caption>{props.caption}</Caption> : <p />}
-    </PreviewContainer>
-  )
-}
+const Preview = (props: PreviewProps) => (
+  <PreviewContainer>
+    <Image fluid={props.fluid} />
+    {props.caption ? <Caption>{props.caption}</Caption> : <></>}
+  </PreviewContainer>
+)
 
 const Content = styled.div`
   display: flex;
@@ -322,6 +320,10 @@ const StyledHr = styled.hr`
   }
 `
 
+const StyledA = styled.a`
+  text-decoration: underline;
+`
+
 const blogStyle = {
   p: (props) => <StyledP {...props} />,
   h1: (props) => <StyledH1 {...props} />,
@@ -335,7 +337,7 @@ const blogStyle = {
   ol: (props) => <StyledOl {...props} />,
   table: (props) => <StyledTable {...props} />,
   hr: (props) => <StyledHr {...props} />,
-  a: (props) => <ExternalLink link={props.href} {...props} />
+  a: (props) => <StyledA target='_blank' rel='noopener noreferrer external' link={props.href} {...props} />
 }
 
 const shortcodes = { Link, Caption, ...blogStyle }
@@ -357,7 +359,7 @@ export default function PageTemplate({ data: { mdx } }) {
             {mdx.frontmatter.date.toUpperCase()} • {mdx.frontmatter.readingTime} MIN READ
           </Meta>
         </Synopsis>
-        <Preview caption='My COVID-19 home workstation.' fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
+        <Preview caption={mdx.frontmatter.coverCaption} fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
         <Content>
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -417,6 +419,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        coverCaption
         date(formatString: "D MMM YYYY")
         readingTime
         tags

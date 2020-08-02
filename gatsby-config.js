@@ -69,7 +69,7 @@ module.exports = {
             }
           },
           {
-            resolve: `gatsby-remark-prismjs`
+            resolve: `gatsby-remark-prismjs` // See https://awesomeopensource.com/project/andrewbranch/gatsby-remark-vscode?categoryPage=4
           }
         ]
       }

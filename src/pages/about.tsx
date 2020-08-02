@@ -248,8 +248,8 @@ const AboutPage = ({ data }: PageProps) => (
       <p>
         I was fortunate enough that my high school offered Computer Science courses, of which I took three. They were
         all game development focused, but they still opened that door for me which I didn't know existed. It wasn't
-        until my first hackathon (Random Hacks of Kindness, great hackathon by the way) in first year of university that
-        I started branching out past game development.{' '}
+        until my first hackathon (Random Hacks of Kindness, great hackathon by the way) in my first year of university
+        that I started branching out past game development.{' '}
         <strong>
           This is where I began to realize the limitless potential one carries with the ability to code and collaborate.
         </strong>{' '}

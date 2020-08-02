@@ -68,7 +68,7 @@ const BackToTopButton = () => {
   }
 
   useEffect(() => {
-    setIsVisible(scrollHeight >= window.innerHeight * 2)
+    setIsVisible(scrollHeight >= window.innerHeight)
   }, [scrollHeight])
 
   return (
