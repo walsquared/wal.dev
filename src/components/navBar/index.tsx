@@ -152,6 +152,8 @@ interface MenuProps {
 }
 
 const MobileMenu = (props: MenuProps) => {
+  console.log(useLocation())
+
   return (
     <StyledMobileMenu isOpen={props.isOpen} color={props.color}>
       <MobileNavBar>
