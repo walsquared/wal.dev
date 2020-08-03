@@ -134,7 +134,7 @@ export const PostPreview = ({ post }) => (
     <Title>{post.frontmatter.title}</Title>
     <Excerpt>{post.frontmatter.brief}</Excerpt>
     <Meta>
-      {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
+      {post.frontmatter.date.toUpperCase()} • {post.timeToRead} MIN READ
     </Meta>
   </PostPreviewDiv>
 )
@@ -189,7 +189,7 @@ export const NewestPostPreview = ({ post }) => (
       <NewestTitle>{post.frontmatter.title}</NewestTitle>
       <NewestExcerpt>{post.frontmatter.brief}</NewestExcerpt>
       <NewestMeta>
-        {post.frontmatter.date.toUpperCase()} • {post.frontmatter.readingTime} MIN READ
+        {post.frontmatter.date.toUpperCase()} • {post.timeToRead} MIN READ
       </NewestMeta>
     </PostBrief>
   </NewestPostPreviewDiv>

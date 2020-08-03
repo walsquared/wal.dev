@@ -107,6 +107,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          timeToRead
           frontmatter {
             title
             brief
@@ -122,7 +123,6 @@ export const pageQuery = graphql`
               }
             }
             date(formatString: "D MMM YYYY")
-            readingTime
             tags
           }
           fields {

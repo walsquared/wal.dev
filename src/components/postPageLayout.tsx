@@ -358,7 +358,7 @@ export default function PageTemplate({ data: { mdx } }) {
           <Title>{mdx.frontmatter.title}</Title>
           <Brief>{mdx.frontmatter.brief}</Brief>
           <Meta>
-            {mdx.frontmatter.date.toUpperCase()} • {mdx.frontmatter.readingTime} MIN READ
+            {mdx.frontmatter.date.toUpperCase()} • {mdx.timeToRead} MIN READ
           </Meta>
         </Synopsis>
         <Preview caption={mdx.frontmatter.coverCaption} fluid={mdx.frontmatter.cover.childImageSharp.fluid} />
@@ -423,9 +423,9 @@ export const pageQuery = graphql`
         }
         coverCaption
         date(formatString: "D MMM YYYY")
-        readingTime
         tags
       }
+      timeToRead
     }
   }
 `
