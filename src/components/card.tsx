@@ -64,13 +64,17 @@ const cardStyle = css`
 const LinkContainer = styled(Link)<{ bkg: string }>`
   ${cardStyle}
 
-  background-image: ${(props) => `url(${props.bkg})`};
+  @media only screen and (min-width: 700px) {
+    background-image: ${(props) => `url(${props.bkg})`};
+  }
 `
 
 const AnchorContainer = styled.a<{ bkg: string }>`
   ${cardStyle}
 
-  background-image: ${(props) => `url(${props.bkg})`};
+  @media only screen and (min-width: 700px) {
+    background-image: ${(props) => `url(${props.bkg})`};
+  }
 `
 
 const Header = styled.div`

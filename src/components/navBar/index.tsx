@@ -151,36 +151,32 @@ interface MenuProps {
   close(): void
 }
 
-const MobileMenu = (props: MenuProps) => {
-  console.log(useLocation())
-
-  return (
-    <StyledMobileMenu isOpen={props.isOpen} color={props.color}>
-      <MobileNavBar>
-        <Logo to='/' onClick={props.close}>
-          wal<LogoSpan>wal</LogoSpan>
-        </Logo>
-        <MenuButton type='button' onClick={props.close}>
-          <CloseIcon />
-        </MenuButton>
-      </MobileNavBar>
-      <MenuButtonDiv>
-        <MenuNavButton onClick={props.close} to='/'>
-          work
-        </MenuNavButton>
-        <MenuNavButton onClick={props.close} to='/about'>
-          about
-        </MenuNavButton>
-        <MenuNavButton onClick={props.close} to='/resume'>
-          resume
-        </MenuNavButton>
-        <MenuNavButton onClick={props.close} to='/blog'>
-          blog
-        </MenuNavButton>
-      </MenuButtonDiv>
-    </StyledMobileMenu>
-  )
-}
+const MobileMenu = (props: MenuProps) => (
+  <StyledMobileMenu isOpen={props.isOpen} color={props.color}>
+    <MobileNavBar>
+      <Logo to='/' onClick={props.close}>
+        wal<LogoSpan>wal</LogoSpan>
+      </Logo>
+      <MenuButton type='button' onClick={props.close}>
+        <CloseIcon />
+      </MenuButton>
+    </MobileNavBar>
+    <MenuButtonDiv>
+      <MenuNavButton onClick={props.close} to='/'>
+        work
+      </MenuNavButton>
+      <MenuNavButton onClick={props.close} to='/about'>
+        about
+      </MenuNavButton>
+      <MenuNavButton onClick={props.close} to='/resume'>
+        resume
+      </MenuNavButton>
+      <MenuNavButton onClick={props.close} to='/blog'>
+        blog
+      </MenuNavButton>
+    </MenuButtonDiv>
+  </StyledMobileMenu>
+)
 
 const NavBar = () => {
   const [menuOpen, toggleMenu] = useState(false)

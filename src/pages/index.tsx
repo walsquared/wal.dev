@@ -133,7 +133,7 @@ const CardList = styled.div`
 
 const WorkPage = () => (
   <Layout>
-    <SEO title='Work' description={`Get a snapshot of Wal Wal's most recent endeavours.`} />
+    <SEO />
     <Introduction>
       <NameText>
         Hi, I'm

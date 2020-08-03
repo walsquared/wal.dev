@@ -7,10 +7,11 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import ReactTooltip from 'react-tooltip'
 
-import Layout from './layout'
-import ExternalLink from './inlineExternalAnchor'
 import Button from './button'
 import Caption from './caption'
+import ExternalLink from './inlineExternalAnchor'
+import Layout from './layout'
+import SEO from './seo'
 
 const Article = styled.article`
   display: flex;
@@ -350,6 +351,7 @@ export default function PageTemplate({ data: { mdx } }) {
 
   return (
     <Layout>
+      <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.brief} />
       <Article>
         <Synopsis>
           <Tag>{mdx.frontmatter.tags[0].toUpperCase()}</Tag>

@@ -58,6 +58,7 @@ const Input = styled.input`
   padding: 0.5rem;
 
   border: 2px solid var(--black);
+  border-radius: 0;
   background-color: #ffffff;
 
   font-family: 'Open Sans', sans-serif;
@@ -71,6 +72,7 @@ const TextArea = styled.textarea`
   padding: 0.5rem;
 
   border: 2px solid var(--black);
+  border-radius: 0;
   background-color: #ffffff;
 
   font-family: 'Inter', sans-serif;
