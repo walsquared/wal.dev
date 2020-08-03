@@ -351,7 +351,11 @@ export default function PageTemplate({ data: { mdx } }) {
 
   return (
     <Layout>
-      <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.brief} />
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.brief}
+        image={mdx.frontmatter.twitterCard.publicURL}
+      />
       <Article>
         <Synopsis>
           <Tag>{mdx.frontmatter.tags[0].toUpperCase()}</Tag>
@@ -384,16 +388,20 @@ export default function PageTemplate({ data: { mdx } }) {
           color='var(--blue)'
           label='Copy Link to Post'
           action={() => {
-            setCopyText('Copying...')
-            navigator.clipboard.writeText(href).then(
-              () => {
-                setCopyText('Copied!')
-              },
-              (error) => {
-                setCopyText('Failed to Copy :(')
-                console.error(error)
-              }
-            )
+            if (navigator) {
+              setCopyText('Copying...')
+              navigator.clipboard.writeText(href).then(
+                () => {
+                  setCopyText('Copied!')
+                },
+                (error) => {
+                  setCopyText('Failed to Copy :(')
+                  console.error(error)
+                }
+              )
+            } else {
+              setCopyText('Failed to Copy :(')
+            }
           }}
         />
         <ReactTooltip id='copyToClipboard' type='info' effect='solid' getContent={() => copyText} />
@@ -410,6 +418,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         brief
+        twitterCard {
+          publicURL
+        }
         cover {
           childImageSharp {
             fluid(maxWidth: 1200, quality: 100) {

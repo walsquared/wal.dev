@@ -90,13 +90,15 @@ const Button = (props: ButtonProps) => {
   if (props.disabled) {
     return <DisabledButton {...props}>{props.label}</DisabledButton>
   } else if (!props.link) {
+    const { action, ...otherProps } = props
+
     return (
       <StyledButton
         className={props.className}
         color={props.color}
         whiteTextHover={!!props.whiteTextHover}
-        onClick={props.action}
-        {...props}
+        onClick={action}
+        {...otherProps}
       >
         {props.label}
       </StyledButton>

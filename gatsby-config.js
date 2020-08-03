@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Wal Wal`,
-    description: `Wal is a fullstack developer who loves collaborating with others to create solutions that solve real-world and everyday problems.`,
+    description: `A fullstack developer who loves collaborating with others to create solutions that solve real-world and everyday problems.`,
     author: `@walsquared`
   },
   plugins: [
@@ -74,7 +74,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-client-side-redirect` // must be last in the list
+    `gatsby-plugin-styled-components`
   ]
 }
