@@ -255,7 +255,7 @@ const AboutPage = ({ data }: PageProps) => (
         </strong>{' '}
         Fast forward to today, now I do a little bit of everything when it comes to the tech industry - frontend,
         backend, dev-ops-y stuff and even designing (funny how history repeats itself 🙈). Currently, I'm finding myself
-        in a more "Project Manager" or, dare I say “CTO” type position with my current role at cuHacking.
+        in a more "Project Manager" type position with my current role at cuHacking.
       </p>
     </Dialogue>
     <Dialogue>
