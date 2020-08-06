@@ -161,7 +161,7 @@ const ResumePage = () => (
         <Button
           color='var(--yellow)'
           label='Download My Resume'
-          link={`/assets/Wal's Resume (2020-08-02).pdf`}
+          link={`/assets/Wal's Resume (2020-08-06).pdf`}
           download
         />
       </SnarkyText>
