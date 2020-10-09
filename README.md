@@ -1,8 +1,10 @@
-# My Blog
+# My Personal Website
+
 The readme isn't going to tell you anything, you should just head over to the [live website](https://walwal.me) to see what's up yourself.
 
 ## Installation
-Not sure why you would like to clone my website, but if you insist: 
+
+Not sure why you would like to clone my website, but if you insist:
 
 1. Clone the project
 2. You're good to go

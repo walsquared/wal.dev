@@ -1,8 +1,8 @@
 {
-  "name": "blog",
+  "name": "portfolio-2",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
+  "description": "A personal website to showcase my current work and document my adventures.",
+  "version": "2.1.0",
   "homepage": "https://walwal.me",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
