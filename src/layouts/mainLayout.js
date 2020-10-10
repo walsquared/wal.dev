@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-// import BackToTopButton from './backToTopButton'
+import { BackToTopButton } from 'components'
 import 'typeface-inter'
 import 'typeface-open-sans'
 
@@ -60,7 +60,7 @@ const Root = styled.div`
 const Main = styled.main`
   column-count: 1;
   row-gap: 20px;
-  margin: 5vw 0;
+  margin: 5vw 0 20vw;
   width: var(--mobile-width);
   max-width: var(--desktop-width);
 `
@@ -70,7 +70,7 @@ const MainLayout = ({ children }) => (
     <GlobalStyle />
     <Root>
       <Main>{children}</Main>
-      {/* <BackToTopButton /> */}
+      <BackToTopButton />
     </Root>
   </>
 )
