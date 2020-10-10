@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -50,8 +49,6 @@ const Button = styled.button`
 const BackToTopButton = () => {
   const scrollHeight = useScrollHeight()
   const [isVisible, setIsVisible] = useState(false)
-
-  const pathname = useLocation().pathname.split('/')
 
   useEffect(() => {
     setIsVisible(scrollHeight >= window.innerHeight)

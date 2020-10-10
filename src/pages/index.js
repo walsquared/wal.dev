@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { MainLayout } from 'layouts'
 import { useInterval } from 'hooks'
@@ -121,10 +121,6 @@ const AdjectiveTile = () => {
     </AdjectiveTileBeta>
   )
 }
-
-const TemplateTileBeta = styled(SimpleTile)``
-
-const TemplateTile = () => <TemplateTileBeta></TemplateTileBeta>
 
 const KotaTileBeta = styled(SimpleTile)`
   p {
@@ -338,13 +334,15 @@ const getIcon = (label) => {
       return faGithub
     case 'Email':
       return faEnvelope
-    default:
+    case 'LinkedIn':
       return faLinkedin
+    default:
+      return faDownload
   }
 }
 
-const SocialButton = ({ label, href }) => (
-  <SocialButtonBeta href={href} rel='noopener noreferrer external'>
+const SocialButton = ({ label, href, ...props }) => (
+  <SocialButtonBeta href={href} rel='noopener noreferrer external' {...props}>
     <h1>
       <FontAwesomeIcon icon={getIcon(label)} /> {label}
     </h1>
@@ -388,6 +386,7 @@ export default ({ data }) => (
     <SocialButton label='GitHub' href='https://github.com/Walsker' />
     <SocialButton label='Email' href='mailto:hello@walwal.me' />
     <SocialButton label='LinkedIn' href='https://linkedin.com/in/wal-wal' />
+    <SocialButton label='Resume' href={`/assets/Wal's Resume (2020-08-06).pdf`} download />
   </MainLayout>
 )
 
