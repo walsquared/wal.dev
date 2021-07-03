@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  font-size: 2.75em;
+  font-size: 2.75rem;
 }
 
 #splash {
@@ -19,7 +19,7 @@ h1 {
   aspect-ratio: 2000 / 1273;
 }
 
-#content {
+#panel {
   padding: 5vw;
   border-top: 2px solid var(--black);
   background-color: var(--white);
@@ -32,6 +32,12 @@ h1 {
 }
 
 #links > a {
-  font-size: 1.25em;
   margin: 5px 0;
+  font-size: 1.25em;
+
+  transition: color var(--animSpeed);
+}
+
+#links > a:hover {
+  color: var(--indigo);
 }

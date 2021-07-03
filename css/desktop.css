@@ -1,0 +1,38 @@
+body {
+  flex-direction: row;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+#panel {
+  border: none;
+  border-left: 2px solid var(--black);
+
+  padding: 0 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  max-width: 450px;
+  font-size: 1.25em;
+}
+
+#links {
+  flex-direction: row;
+}
+
+#links > a {
+  margin: 0;
+  margin-right: 10%;
+
+  font-size: 1em;
+}
+
+#links > a:hover {
+  color: var(--indigo);
+}

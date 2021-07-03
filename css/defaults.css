@@ -6,6 +6,8 @@ body {
   --magenta: #b5179e;
   --indigo: #440381;
 
+  --animSpeed: 200ms;
+
   --titleFont: 'Inter', sans-serif;
   --bodyFont: 'Nunito', sans-serif;
 
