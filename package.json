@@ -8,6 +8,10 @@
   "author": "Wal Wal <walsker@walwal.me>",
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "serve": "^12.0.0"
+  },
+  "scripts": {
+    "start": "serve -l 3000"
   }
 }
