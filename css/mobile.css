@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 2em;
 }
 
 #splash {
@@ -19,9 +19,14 @@ h1 {
   aspect-ratio: 2000 / 1273;
 }
 
+#divider {
+  display: none;
+}
+
 #panel {
   padding: 5vw;
-  border-top: 2px solid var(--black);
+  border-top: 0.1em solid var(--black);
+  border-bottom: 0.1em solid var(--black);
   background-color: var(--white);
 }
 
@@ -40,4 +45,10 @@ h1 {
 
 #links > a:hover {
   color: var(--indigo);
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+  body {
+    font-size: 300%;
+  }
 }

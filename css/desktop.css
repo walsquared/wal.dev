@@ -3,14 +3,28 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3em;
+}
+
+#splash {
+  position: relative;
+  padding-right: 75px;
+}
+
+#divider {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inherit;
+}
+
+#divider > svg {
+  max-height: 100vh;
 }
 
 #panel {
   border: none;
-  border-left: 2px solid var(--black);
-
-  padding: 0 75px;
+  padding: 0 50px 0 25px;
 
   display: flex;
   align-items: center;
@@ -34,5 +48,5 @@ h1 {
 }
 
 #links > a:hover {
-  color: var(--indigo);
+  color: var(--magenta);
 }
