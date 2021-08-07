@@ -46,9 +46,3 @@ h1 {
 #links > a:hover {
   color: var(--indigo);
 }
-
-@media (-webkit-min-device-pixel-ratio: 3) {
-  body {
-    font-size: 300%;
-  }
-}
