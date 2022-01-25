@@ -16,9 +16,6 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 
-  min-width: 100vw;
-  min-height: 100vh;
-
   margin: 0;
 
   font-family: var(--bodyFont);
@@ -31,15 +28,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--red);
 }
-
-/* a:link,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-} */
 
 h1,
 h2,
@@ -66,4 +55,64 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
+}
+
+/* Reusables */
+
+.hyperlink {
+  border-bottom: 2px solid transparent;
+  color: var(--red);
+  transition: ease-out var(--animSpeed);
+}
+
+@media (hover: hover) {
+  .hyperlink:hover {
+    border-color: var(--red);
+  }
+}
+
+.icon-button {
+  padding: 0.5em;
+  width: calc(0.5em * 2 + 2em);
+  display: inline-block;
+
+  color: var(--green);
+  transition: ease-out var(--animSpeed);
+}
+
+@media (hover: hover) {
+  .icon-button:hover {
+    color: var(--red);
+  }
+}
+
+.cta-button {
+  background-color: var(--yellow);
+  color: var(--green);
+
+  border-radius: 2px;
+  padding: 8px 16px;
+
+  font-weight: 500;
+
+  transition: ease-out var(--animSpeed);
+}
+
+@media (hover: hover) {
+  .cta-button:hover {
+    background-color: var(--red);
+  }
+}
+
+.cta-button > * {
+  vertical-align: sub;
+}
+
+.arrow-right-icon {
+  margin-left: 4px;
+  width: 1em;
+  height: 1em;
+  display: inline;
+
+  color: inherit;
 }

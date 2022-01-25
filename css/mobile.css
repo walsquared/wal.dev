@@ -12,40 +12,6 @@ body {
   row-gap: 48px;
 }
 
-/* Reusables */
-
-.icon-button {
-  padding: 0.5em;
-  width: calc(0.5em * 2 + 2em);
-  display: inline-block;
-
-  color: var(--green);
-}
-
-.cta-button {
-  background-color: var(--yellow);
-  color: var(--green);
-
-  border-radius: 2px;
-
-  font-weight: 500;
-
-  padding: 8px 16px;
-}
-
-.cta-button > * {
-  vertical-align: sub;
-}
-
-.arrow-right-icon {
-  margin-left: 4px;
-  width: 1em;
-  height: 1em;
-  display: inline;
-
-  color: inherit;
-}
-
 /* Hero section */
 
 #greeting > :not(:last-child) {
@@ -67,6 +33,10 @@ body {
 }
 
 /* Projects */
+#projects > h2 {
+  margin-bottom: 8px;
+}
+
 #project-cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -81,8 +51,24 @@ body {
   padding: 8px;
 }
 
+@media (hover: hover) {
+  .project-card {
+    margin: 0 -8px;
+
+    background-color: transparent;
+    transition: ease-out var(--animSpeed);
+  }
+
+  .project-card:hover {
+    background-color: var(--pink);
+  }
+}
+
 .project-card img {
   border-radius: 2px;
+  object-fit: cover;
+
+  aspect-ratio: 8 / 3.5;
 }
 
 .project-card h4 {
