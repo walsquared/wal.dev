@@ -1,0 +1,69 @@
+body {
+  --black: #00332c;
+  --white: #fffffe;
+  --grey: #475d5b;
+  --off-white: #f2f7f5;
+  --green: #00473e;
+  --yellow: #faae2b;
+  --pink: #ffa8ba;
+  --red: #fa5246;
+
+  --animSpeed: 200ms;
+
+  --titleFont: 'Red Hat Display', sans-serif;
+  --bodyFont: 'Red Hat Text', sans-serif;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  margin: 0;
+
+  font-family: var(--bodyFont);
+  font-size: 100%;
+  font-weight: 500;
+
+  background-color: var(--off-white);
+  color: var(--grey);
+}
+
+a {
+  text-decoration: none;
+  color: var(--red);
+}
+
+/* a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--titleFont);
+  font-weight: bold;
+  color: var(--green);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}

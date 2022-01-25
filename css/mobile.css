@@ -1,48 +1,104 @@
 body {
   display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  font-size: 2em;
-}
-
-#splash {
-  flex: 1;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-#splash-img {
-  width: 100%;
-  aspect-ratio: 2000 / 1273;
+#content {
+  width: 90%;
+  margin: 48px 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
 }
 
-#divider {
-  display: none;
+/* Reusables */
+
+.icon-button {
+  padding: 0.5em;
+  width: calc(0.5em * 2 + 2em);
+  display: inline-block;
+
+  color: var(--green);
 }
 
-#panel {
-  padding: 5vw;
-  border-top: 0.1em solid var(--black);
-  border-bottom: 0.1em solid var(--black);
-  background-color: var(--white);
+.cta-button {
+  background-color: var(--yellow);
+  color: var(--green);
+
+  border-radius: 2px;
+
+  font-weight: 500;
+
+  padding: 8px 16px;
 }
 
-#links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.cta-button > * {
+  vertical-align: sub;
 }
 
-#links > a {
-  margin: 5px 0;
+.arrow-right-icon {
+  margin-left: 4px;
+  width: 1em;
+  height: 1em;
+  display: inline;
+
+  color: inherit;
+}
+
+/* Hero section */
+
+#greeting > :not(:last-child) {
+  margin-bottom: 16px;
+}
+
+#greeting > p {
   font-size: 1.25em;
-
-  transition: color var(--animSpeed);
 }
 
-#links > a:hover {
-  color: var(--indigo);
+.icons {
+  margin-left: -0.5em;
+}
+
+/* Sidebar */
+
+#about-prompt > h3 {
+  margin-bottom: 16px;
+}
+
+/* Projects */
+#project-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+}
+
+.project-card {
+  background-color: var(--white);
+  color: var(--grey);
+
+  border-radius: 2px;
+  padding: 8px;
+}
+
+.project-card img {
+  border-radius: 2px;
+}
+
+.project-card h4 {
+  margin-bottom: 4px;
+}
+
+.project-card .cta {
+  color: var(--green);
+
+  font-weight: 500;
+}
+
+.project-card .cta > * {
+  vertical-align: sub;
+}
+
+.project-card > :not(:last-child) {
+  margin-bottom: 8px;
 }
