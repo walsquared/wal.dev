@@ -28,8 +28,13 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
+.display-title,
+.title-1,
+.title-2,
+.title-3,
 h1,
 h2,
 h3,
@@ -41,19 +46,23 @@ h6 {
   color: var(--green);
 }
 
-h1 {
+h1,
+.display-title {
   font-size: 3rem;
 }
 
-h2 {
+h2,
+.title-1 {
   font-size: 2rem;
 }
 
-h3 {
+h3,
+.title-2 {
   font-size: 1.5rem;
 }
 
-h4 {
+h4,
+.title-3 {
   font-size: 1.25rem;
 }
 
@@ -71,17 +80,19 @@ h4 {
   }
 }
 
-.icon-button {
-  padding: 0.5em;
-  width: calc(0.5em * 2 + 2em);
+.feather {
   display: inline-block;
-
   color: var(--green);
-  transition: ease-out var(--animSpeed);
+}
+
+.hoverable,
+.hoverable > * {
+  transition: color ease-out var(--animSpeed);
 }
 
 @media (hover: hover) {
-  .icon-button:hover {
+  .hoverable:hover,
+  .hoverable:hover > * {
     color: var(--red);
   }
 }
@@ -106,13 +117,4 @@ h4 {
 
 .cta-button > * {
   vertical-align: sub;
-}
-
-.arrow-right-icon {
-  margin-left: 4px;
-  width: 1em;
-  height: 1em;
-  display: inline;
-
-  color: inherit;
 }

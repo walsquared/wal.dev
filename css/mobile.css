@@ -22,8 +22,13 @@ body {
   font-size: 1.25em;
 }
 
-.icons {
+.social-icons {
   margin-left: -0.5em;
+}
+
+.social-icon-button .feather {
+  padding: 0.5em;
+  width: 3em;
 }
 
 /* Sidebar */
@@ -51,12 +56,21 @@ body {
   padding: 8px;
 }
 
+.arrow-right-icon {
+  margin-left: 4px;
+  width: 1em;
+  height: 1em;
+  display: inline;
+
+  color: inherit;
+}
+
 @media (hover: hover) {
   .project-card {
     margin: 0 -8px;
 
     background-color: transparent;
-    transition: ease-out var(--animSpeed);
+    transition: background-color ease-out var(--animSpeed);
   }
 
   .project-card:hover {
@@ -68,7 +82,7 @@ body {
   border-radius: 2px;
   object-fit: cover;
 
-  aspect-ratio: 8 / 3.5;
+  aspect-ratio: 16 / 7;
 }
 
 .project-card h4 {
