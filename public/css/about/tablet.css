@@ -1,0 +1,24 @@
+#content {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  column-gap: 48px;
+}
+
+#navigation,
+#header,
+#about-paragraph {
+  grid-column: 1;
+}
+
+#about-paragraph {
+  grid-row: 3 / span 2;
+}
+
+#profile-picture,
+#social-links {
+  grid-column: 2;
+}
+
+#profile-picture {
+  grid-row: 2 / span 2;
+}

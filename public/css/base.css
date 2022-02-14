@@ -1,0 +1,145 @@
+body {
+  --black: #00332c;
+  --white: #fffffe;
+  --grey: #475d5b;
+  --off-white: #f2f7f5;
+  --green: #00473e;
+  --yellow: #faae2b;
+  --pink: #ffa8ba;
+  --red: #fa5246;
+
+  --animSpeed: 200ms;
+
+  --titleFont: 'Red Hat Display', sans-serif;
+  --bodyFont: 'Red Hat Text', sans-serif;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin: 0;
+
+  font-family: var(--bodyFont);
+  font-size: 100%;
+  font-weight: 500;
+
+  background-color: var(--off-white);
+  color: var(--grey);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.display-title,
+.title-1,
+.title-2,
+.title-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--titleFont);
+  font-weight: bold;
+  color: var(--green);
+}
+
+h1,
+.display-title {
+  font-size: 3rem;
+}
+
+h2,
+.title-1 {
+  font-size: 2rem;
+}
+
+h3,
+.title-2 {
+  font-size: 1.5rem;
+}
+
+h4,
+.title-3,
+.display-body {
+  font-size: 1.25rem;
+}
+
+/* Reusables */
+
+.hyperlink {
+  border-bottom: 2px solid transparent;
+  color: var(--red);
+  transition: ease-out var(--animSpeed);
+}
+
+@media (hover: hover) {
+  .hyperlink:hover {
+    border-color: var(--red);
+  }
+}
+
+.feather {
+  display: inline-block;
+  color: var(--green);
+}
+
+.hoverable,
+.hoverable > * {
+  transition: color ease-out var(--animSpeed);
+}
+
+@media (hover: hover) {
+  .hoverable:hover,
+  .hoverable:hover > * {
+    color: var(--red);
+  }
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-button .feather {
+  width: 2em;
+  padding: 0.25em;
+}
+
+.cta-button {
+  background-color: var(--yellow);
+  color: var(--green);
+
+  border-radius: 2px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  place-self: flex-start;
+
+  font-weight: 500;
+
+  transition: ease-out var(--animSpeed);
+}
+
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  color: inherit;
+}
+
+.inline-icon-right {
+  margin-left: 0.5ch;
+}
+
+.inline-icon-left {
+  margin-right: 0.75ch;
+}
+
+@media (hover: hover) {
+  .cta-button:hover {
+    background-color: var(--red);
+  }
+}

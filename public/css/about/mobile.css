@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  width: 90%;
+  margin: 48px 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
+}
+
+#profile-picture {
+  aspect-ratio: 1;
+  width: 200px;
+
+  overflow: hidden;
+
+  border: 2px solid var(--black);
+  border-radius: 8px;
+}
+
+#social-links {
+  display: grid;
+  row-gap: 16px;
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

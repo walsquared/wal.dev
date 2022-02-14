@@ -1,0 +1,9 @@
+#content {
+  grid-template-columns: 2fr 0.5fr 1fr;
+  max-width: 1200px;
+}
+
+#profile-picture,
+#social-links {
+  grid-column: 3;
+}

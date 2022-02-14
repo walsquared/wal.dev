@@ -1,0 +1,26 @@
+#content {
+  margin-top: 64px;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 48px;
+}
+
+/* Hero section */
+
+#greeting {
+  max-width: 500px;
+}
+
+/* Projects */
+@media only screen and (min-width: 1000px) {
+  #project-cards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+}
+
+/* Sidebar */
+
+#sidebar {
+  grid-column: 2;
+  padding-top: 48px;
+}
