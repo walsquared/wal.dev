@@ -9,8 +9,8 @@ yarn-error.log*
 node_modules/
 
 # Zero-install configuration for Yarn 2
+.pnp.*
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
