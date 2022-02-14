@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  width: 90%;
+  margin: 48px 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
+}
+
+.section > :not(:last-child) {
+  margin-bottom: 16px;
+}
