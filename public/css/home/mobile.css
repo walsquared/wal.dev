@@ -56,15 +56,6 @@ body {
   padding: 8px;
 }
 
-.arrow-right-icon {
-  margin-left: 4px;
-  width: 1em;
-  height: 1em;
-  display: inline;
-
-  color: inherit;
-}
-
 @media (hover: hover) {
   .project-card {
     margin: 0 -8px;
@@ -90,13 +81,11 @@ body {
 }
 
 .project-card .cta {
+  display: inline-flex;
+  align-items: center;
+
   color: var(--green);
-
   font-weight: 500;
-}
-
-.project-card .cta > * {
-  vertical-align: sub;
 }
 
 .project-card > :not(:last-child) {

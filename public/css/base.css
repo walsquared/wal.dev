@@ -97,24 +97,46 @@ h4,
   }
 }
 
+.back-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-button .feather {
+  width: 2em;
+}
+
 .cta-button {
   background-color: var(--yellow);
   color: var(--green);
 
   border-radius: 2px;
   padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
 
   font-weight: 500;
 
   transition: ease-out var(--animSpeed);
 }
 
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  color: inherit;
+}
+
+.inline-icon-right {
+  margin-left: 4px;
+}
+
+.inline-icon-left {
+  margin-right: 4px;
+}
+
 @media (hover: hover) {
   .cta-button:hover {
     background-color: var(--red);
   }
-}
-
-.cta-button > * {
-  vertical-align: sub;
 }

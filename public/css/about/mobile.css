@@ -12,15 +12,6 @@ body {
   row-gap: 48px;
 }
 
-#back-button {
-  display: inline-flex;
-  align-items: center;
-}
-
-#back-button .feather {
-  width: 2em;
-}
-
 #profile-picture {
   aspect-ratio: 1;
   width: 200px;
