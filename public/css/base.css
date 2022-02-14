@@ -62,7 +62,8 @@ h3,
 }
 
 h4,
-.title-3 {
+.title-3,
+.display-body {
   font-size: 1.25rem;
 }
 
@@ -114,6 +115,7 @@ h4,
   padding: 8px 16px;
   display: inline-flex;
   align-items: center;
+  place-self: flex-start;
 
   font-weight: 500;
 
@@ -128,11 +130,11 @@ h4,
 }
 
 .inline-icon-right {
-  margin-left: 4px;
+  margin-left: 0.5ch;
 }
 
 .inline-icon-left {
-  margin-right: 4px;
+  margin-right: 0.75ch;
 }
 
 @media (hover: hover) {
