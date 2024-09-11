@@ -1,3 +1,63 @@
+@font-face {
+  font-family: 'Indie Flower';
+  src: url('./fonts/IndieFlower-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Rock Salt';
+  src: url('./fonts/RockSalt-Regular.ttf');
+}
+
 body {
+  font-family: Indie Flower;
   background: url('./grid-paper-tile.svg');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.nameTitle {
+  font-family: Rock Salt;
+  white-space: nowrap;
+
+  font-size: 15vw;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 8rem;
+    margin-bottom: 25px;
+  }
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 15vh;
+
+  height: 100vh;
+  max-height: 1200px;
+
+  font-size: 4em;
+  line-height: 1.25;
+
+  & span,
+  & small {
+    display: block;
+  }
+
+  & small {
+    font-size: 0.375em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 6em;
+  }
 }
