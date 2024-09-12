@@ -137,10 +137,11 @@ a {
 .projects {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 48px;
+  row-gap: 96px;
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: auto auto;
+    grid-template-columns: 5fr 4fr;
+    column-gap: min(5vw, calc(1200px * 0.05));
   }
 }
 
@@ -159,6 +160,14 @@ a {
 .projectSectionDemo,
 .projectSectionDetails {
   flex: 1;
+}
+
+.projectSectionDemo {
+  margin-bottom: 32px;
+
+  & object {
+    width: 100%;
+  }
 }
 
 .projectSectionDetails {
