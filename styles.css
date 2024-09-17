@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Indie Flower';
-  src: url('./fonts/IndieFlower-Regular.ttf');
+  src: url('fonts/IndieFlower-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Rock Salt';
-  src: url('./fonts/RockSalt-Regular.ttf');
+  src: url('fonts/RockSalt-Regular.ttf');
 }
 
 html {
@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: Indie Flower;
-  background: url('./grid-paper-tile.svg');
+  background: url('grid-paper-tile.svg');
 
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ a {
     text-decoration: none;
 
     &:hover {
-      background-image: url('./button-border.svg');
+      background-image: url('button-border.svg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -217,11 +217,11 @@ a {
 #doka-worms-container {
   & video,
   & img {
-    mask-image: url(./project-screenshots/doka-worms-mask.svg);
+    mask-image: url(project-screenshots/doka-worms-mask.svg);
   }
 
   &::after {
-    background-image: url(./project-screenshots/doka-worms-border.svg);
+    background-image: url(project-screenshots/doka-worms-border.svg);
   }
 }
 
@@ -277,22 +277,22 @@ a {
 #fellow-1-container {
   & video,
   & img {
-    mask-image: url(./project-screenshots/fellow-1-mask.svg);
+    mask-image: url(project-screenshots/fellow-1-mask.svg);
   }
 
   &::after {
-    background-image: url(./project-screenshots/fellow-1-border.svg);
+    background-image: url(project-screenshots/fellow-1-border.svg);
   }
 }
 
 #fellow-2-container {
   & video,
   & img {
-    mask-image: url(./project-screenshots/fellow-2-mask.svg);
+    mask-image: url(project-screenshots/fellow-2-mask.svg);
   }
 
   &::after {
-    background-image: url(./project-screenshots/fellow-2-border.svg);
+    background-image: url(project-screenshots/fellow-2-border.svg);
   }
 }
 
