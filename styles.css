@@ -166,8 +166,133 @@ a {
 .projectSectionDemo {
   margin-bottom: 32px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   & object {
     width: 100%;
+  }
+}
+
+.videoContainer {
+  position: relative;
+
+  & video,
+  & img {
+    width: 100%;
+    height: 100%;
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  & img {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (prefers-reduced-motion) {
+    & video {
+      display: none;
+    }
+
+    & img {
+      display: block;
+    }
+  }
+}
+
+#doka-worms-container {
+  & video,
+  & img {
+    mask-image: url(./project-screenshots/doka-worms-mask.svg);
+  }
+
+  &::after {
+    background-image: url(./project-screenshots/doka-worms-border.svg);
+  }
+}
+
+.fellowVideos {
+  position: relative;
+
+  @media screen and (min-width: 480px) {
+    width: 100%;
+    height: 65vw;
+
+    #fellow-1-container,
+    #fellow-2-container {
+      position: absolute;
+      width: 75%;
+      min-width: 225px;
+    }
+
+    #fellow-1-container {
+      z-index: 1;
+      top: 0;
+      right: 0;
+    }
+
+    #fellow-2-container {
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 85%;
+    height: min(27.5vw, calc(1200px * 0.275));
+
+    #fellow-1-container,
+    #fellow-2-container {
+      position: absolute;
+      width: 65%;
+    }
+
+    #fellow-1-container {
+      z-index: 1;
+      top: 0;
+      right: 0;
+    }
+
+    #fellow-2-container {
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+#fellow-1-container {
+  & video,
+  & img {
+    mask-image: url(./project-screenshots/fellow-1-mask.svg);
+  }
+
+  &::after {
+    background-image: url(./project-screenshots/fellow-1-border.svg);
+  }
+}
+
+#fellow-2-container {
+  & video,
+  & img {
+    mask-image: url(./project-screenshots/fellow-2-mask.svg);
+  }
+
+  &::after {
+    background-image: url(./project-screenshots/fellow-2-border.svg);
   }
 }
 
@@ -196,43 +321,5 @@ a {
   @media screen and (min-width: 768px) {
     text-align: right;
     align-items: flex-end;
-  }
-}
-
-#doka-worms-container {
-  position: relative;
-
-  & video,
-  & img {
-    mask-image: url(./project-screenshots/doka-worms-mask.svg);
-    mask-size: contain;
-    mask-position: center;
-  }
-
-  & img {
-    display: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./project-screenshots/doka-worms-border.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  @media (prefers-reduced-motion) {
-    & video {
-      display: none;
-    }
-
-    & img {
-      display: block;
-    }
   }
 }
